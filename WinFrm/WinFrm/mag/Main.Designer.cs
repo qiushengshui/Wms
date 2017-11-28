@@ -43,16 +43,17 @@
             this.tsmiProdAcceptance = new System.Windows.Forms.ToolStripMenuItem();
             this.ttsddbStockOutManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiStockOutOrder = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiProdStockOutManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReturnManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiprodScrap = new System.Windows.Forms.ToolStripMenuItem();
             this.ttsddbInventoryManage = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiWarningManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCheckManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.库存查看与警报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWarningManage = new System.Windows.Forms.ToolStripMenuItem();
             this.ttsddbIntegratedQuery = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiProdInventoryQuery = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiStockOutRecordQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiStockRecordQuery = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStockOutRecordQuery = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInventoryWarningQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbMasterFileManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tmsiAccountManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiCustomerManage = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,6 @@
             this.tmsiProdCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiWarehouseManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiWarehouseAreaManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiReturnManage = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,8 +81,8 @@
             // tsslWelcomeInfo
             // 
             this.tsslWelcomeInfo.Name = "tsslWelcomeInfo";
-            this.tsslWelcomeInfo.Size = new System.Drawing.Size(164, 17);
-            this.tsslWelcomeInfo.Text = "欢迎您进入超市仓库管理系统";
+            this.tsslWelcomeInfo.Size = new System.Drawing.Size(176, 17);
+            this.tsslWelcomeInfo.Text = "欢迎您进入超市仓库管理系统！";
             // 
             // tsslloguser
             // 
@@ -92,9 +92,8 @@
             // tsslDateInfo
             // 
             this.tsslDateInfo.Name = "tsslDateInfo";
-            this.tsslDateInfo.Size = new System.Drawing.Size(642, 17);
+            this.tsslDateInfo.Size = new System.Drawing.Size(630, 17);
             this.tsslDateInfo.Spring = true;
-            this.tsslDateInfo.Text = "作者：XXX   指导老师：XXX";
             this.tsslDateInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStrip1
@@ -177,7 +176,7 @@
             this.ttsddbStockOutManage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ttsddbStockOutManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiStockOutOrder,
-            this.toolStripMenuItem10,
+            this.tsmiProdStockOutManage,
             this.tsmiReturnManage,
             this.tsmiprodScrap});
             this.ttsddbStockOutManage.Image = ((System.Drawing.Image)(resources.GetObject("ttsddbStockOutManage.Image")));
@@ -193,12 +192,19 @@
             this.tsmiStockOutOrder.Text = "出库订单管理";
             this.tsmiStockOutOrder.Click += new System.EventHandler(this.出库订单管理tsmiStockOutOrder);
             // 
-            // toolStripMenuItem10
+            // tsmiProdStockOutManage
             // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem10.Text = "商品出库管理";
-            this.toolStripMenuItem10.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
+            this.tsmiProdStockOutManage.Name = "tsmiProdStockOutManage";
+            this.tsmiProdStockOutManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiProdStockOutManage.Text = "商品出库管理";
+            this.tsmiProdStockOutManage.Click += new System.EventHandler(this.商品出库管理tsmiProdStockOutManage);
+            // 
+            // tsmiReturnManage
+            // 
+            this.tsmiReturnManage.Name = "tsmiReturnManage";
+            this.tsmiReturnManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReturnManage.Text = "退货管理";
+            this.tsmiReturnManage.Click += new System.EventHandler(this.退货管理tsmiReturnManage);
             // 
             // tsmiprodScrap
             // 
@@ -212,34 +218,26 @@
             this.ttsddbInventoryManage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ttsddbInventoryManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCheckManage,
-            this.tsmiWarningManage,
-            this.库存查看与警报ToolStripMenuItem});
+            this.tsmiWarningManage});
             this.ttsddbInventoryManage.Image = ((System.Drawing.Image)(resources.GetObject("ttsddbInventoryManage.Image")));
             this.ttsddbInventoryManage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ttsddbInventoryManage.Name = "ttsddbInventoryManage";
             this.ttsddbInventoryManage.Size = new System.Drawing.Size(69, 22);
             this.ttsddbInventoryManage.Text = "库存管理";
             // 
-            // tsmiWarningManage
-            // 
-            this.tsmiWarningManage.Name = "tsmiWarningManage";
-            this.tsmiWarningManage.Size = new System.Drawing.Size(160, 22);
-            this.tsmiWarningManage.Text = "预警管理";
-            this.tsmiWarningManage.Click += new System.EventHandler(this.预警管理tsmiWarningManage);
-            // 
             // tsmiCheckManage
             // 
             this.tsmiCheckManage.Name = "tsmiCheckManage";
-            this.tsmiCheckManage.Size = new System.Drawing.Size(160, 22);
+            this.tsmiCheckManage.Size = new System.Drawing.Size(152, 22);
             this.tsmiCheckManage.Text = "盘点管理";
             this.tsmiCheckManage.Click += new System.EventHandler(this.盘点管理tsmiCheckManage);
             // 
-            // 库存查看与警报ToolStripMenuItem
+            // tsmiWarningManage
             // 
-            this.库存查看与警报ToolStripMenuItem.Name = "库存查看与警报ToolStripMenuItem";
-            this.库存查看与警报ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.库存查看与警报ToolStripMenuItem.Text = "库存查看与警报";
-            this.库存查看与警报ToolStripMenuItem.Click += new System.EventHandler(this.库存查看与警报ToolStripMenuItem_Click);
+            this.tsmiWarningManage.Name = "tsmiWarningManage";
+            this.tsmiWarningManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiWarningManage.Text = "预警管理";
+            this.tsmiWarningManage.Click += new System.EventHandler(this.预警管理tsmiWarningManage);
             // 
             // ttsddbIntegratedQuery
             // 
@@ -247,7 +245,8 @@
             this.ttsddbIntegratedQuery.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiProdInventoryQuery,
             this.tmsiStockRecordQuery,
-            this.tsmiStockOutRecordQuery});
+            this.tsmiStockOutRecordQuery,
+            this.tsmiInventoryWarningQuery});
             this.ttsddbIntegratedQuery.Image = ((System.Drawing.Image)(resources.GetObject("ttsddbIntegratedQuery.Image")));
             this.ttsddbIntegratedQuery.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ttsddbIntegratedQuery.Name = "ttsddbIntegratedQuery";
@@ -257,23 +256,30 @@
             // tsmiProdInventoryQuery
             // 
             this.tsmiProdInventoryQuery.Name = "tsmiProdInventoryQuery";
-            this.tsmiProdInventoryQuery.Size = new System.Drawing.Size(152, 22);
+            this.tsmiProdInventoryQuery.Size = new System.Drawing.Size(148, 22);
             this.tsmiProdInventoryQuery.Text = "商品库存查询";
             this.tsmiProdInventoryQuery.Click += new System.EventHandler(this.商品库存查询tsmiProdInventoryQuery);
-            // 
-            // tsmiStockOutRecordQuery
-            // 
-            this.tsmiStockOutRecordQuery.Name = "tsmiStockOutRecordQuery";
-            this.tsmiStockOutRecordQuery.Size = new System.Drawing.Size(152, 22);
-            this.tsmiStockOutRecordQuery.Text = "出库记录查询";
-            this.tsmiStockOutRecordQuery.Click += new System.EventHandler(this.出库记录查询tsmiStockOutRecordQuery);
             // 
             // tmsiStockRecordQuery
             // 
             this.tmsiStockRecordQuery.Name = "tmsiStockRecordQuery";
-            this.tmsiStockRecordQuery.Size = new System.Drawing.Size(152, 22);
+            this.tmsiStockRecordQuery.Size = new System.Drawing.Size(148, 22);
             this.tmsiStockRecordQuery.Text = "入库记录查询";
             this.tmsiStockRecordQuery.Click += new System.EventHandler(this.入库记录查询tmsiStockRecordQuery);
+            // 
+            // tsmiStockOutRecordQuery
+            // 
+            this.tsmiStockOutRecordQuery.Name = "tsmiStockOutRecordQuery";
+            this.tsmiStockOutRecordQuery.Size = new System.Drawing.Size(148, 22);
+            this.tsmiStockOutRecordQuery.Text = "出库记录查询";
+            this.tsmiStockOutRecordQuery.Click += new System.EventHandler(this.出库记录查询tsmiStockOutRecordQuery);
+            // 
+            // tsmiInventoryWarningQuery
+            // 
+            this.tsmiInventoryWarningQuery.Name = "tsmiInventoryWarningQuery";
+            this.tsmiInventoryWarningQuery.Size = new System.Drawing.Size(148, 22);
+            this.tsmiInventoryWarningQuery.Text = "库存预警查询";
+            this.tsmiInventoryWarningQuery.Click += new System.EventHandler(this.库存预警查询tsmiInventoryWarningQuery);
             // 
             // tsddbMasterFileManage
             // 
@@ -295,58 +301,51 @@
             // tmsiAccountManage
             // 
             this.tmsiAccountManage.Name = "tmsiAccountManage";
-            this.tmsiAccountManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiAccountManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiAccountManage.Text = "用户管理";
             this.tmsiAccountManage.Click += new System.EventHandler(this.用户管理tmsiAccountManage);
             // 
             // tmsiCustomerManage
             // 
             this.tmsiCustomerManage.Name = "tmsiCustomerManage";
-            this.tmsiCustomerManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiCustomerManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiCustomerManage.Text = "客户管理";
             this.tmsiCustomerManage.Click += new System.EventHandler(this.客户管理tmsiCustomerManage);
             // 
             // tmsiProviderManage
             // 
             this.tmsiProviderManage.Name = "tmsiProviderManage";
-            this.tmsiProviderManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProviderManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiProviderManage.Text = "入驻商家";
             this.tmsiProviderManage.Click += new System.EventHandler(this.入驻商家tmsiProviderManage);
             // 
             // tmsiProdManage
             // 
             this.tmsiProdManage.Name = "tmsiProdManage";
-            this.tmsiProdManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProdManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiProdManage.Text = "商品管理";
             this.tmsiProdManage.Click += new System.EventHandler(this.商品管理tmsiProdManage);
             // 
             // tmsiProdCategory
             // 
             this.tmsiProdCategory.Name = "tmsiProdCategory";
-            this.tmsiProdCategory.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProdCategory.Size = new System.Drawing.Size(124, 22);
             this.tmsiProdCategory.Text = "商品分类";
             this.tmsiProdCategory.Click += new System.EventHandler(this.商品分类tmsiProdCategory);
             // 
             // tmsiWarehouseManage
             // 
             this.tmsiWarehouseManage.Name = "tmsiWarehouseManage";
-            this.tmsiWarehouseManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiWarehouseManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiWarehouseManage.Text = "仓库管理";
             this.tmsiWarehouseManage.Click += new System.EventHandler(this.仓库管理tmsiWarehouseManage);
             // 
             // tmsiWarehouseAreaManage
             // 
             this.tmsiWarehouseAreaManage.Name = "tmsiWarehouseAreaManage";
-            this.tmsiWarehouseAreaManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiWarehouseAreaManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiWarehouseAreaManage.Text = "库区管理";
             this.tmsiWarehouseAreaManage.Click += new System.EventHandler(this.库区管理tmsiWarehouseAreaManage);
-            // 
-            // tsmiReturnManage
-            // 
-            this.tsmiReturnManage.Name = "tsmiReturnManage";
-            this.tsmiReturnManage.Size = new System.Drawing.Size(152, 22);
-            this.tsmiReturnManage.Text = "退货管理";
-            this.tsmiReturnManage.Click += new System.EventHandler(this.退货管理tsmiReturnManage);
             // 
             // Main
             // 
@@ -358,7 +357,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "超市仓库管理系统!";
+            this.Text = "超市仓库管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmain_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -385,7 +384,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiProdAcceptance;
         private System.Windows.Forms.ToolStripDropDownButton ttsddbStockOutManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStockOutOrder;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem tsmiProdStockOutManage;
         private System.Windows.Forms.ToolStripDropDownButton ttsddbInventoryManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiWarningManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCheckManage;
@@ -401,9 +400,9 @@
         private System.Windows.Forms.ToolStripMenuItem tmsiWarehouseManage;
         private System.Windows.Forms.ToolStripMenuItem tmsiWarehouseAreaManage;
         private System.Windows.Forms.ToolStripMenuItem tmsiStockRecordQuery;
-        private System.Windows.Forms.ToolStripMenuItem 库存查看与警报ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiprodScrap;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoginOut;
         private System.Windows.Forms.ToolStripMenuItem tsmiReturnManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInventoryWarningQuery;
     }
 }

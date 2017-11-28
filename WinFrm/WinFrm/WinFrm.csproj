@@ -94,11 +94,11 @@
     <Compile Include="mag\ProdManage.Designer.cs">
       <DependentUpon>ProdManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\frmchancxbj.cs">
+    <Compile Include="mag\InventoryWarningQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\frmchancxbj.Designer.cs">
-      <DependentUpon>frmchancxbj.cs</DependentUpon>
+    <Compile Include="mag\InventoryWarningQuery.Designer.cs">
+      <DependentUpon>InventoryWarningQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="mag\ProdInventoryQuery.cs">
       <SubType>Form</SubType>
@@ -118,11 +118,11 @@
     <Compile Include="mag\ProdScrap.Designer.cs">
       <DependentUpon>ProdScrap.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\frmchuds.cs">
+    <Compile Include="mag\ProdStockOutManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\frmchuds.Designer.cs">
-      <DependentUpon>frmchuds.cs</DependentUpon>
+    <Compile Include="mag\ProdStockOutManage.Designer.cs">
+      <DependentUpon>ProdStockOutManage.cs</DependentUpon>
     </Compile>
     <Compile Include="mag\StockOutRecordQuery.cs">
       <SubType>Form</SubType>
@@ -240,8 +240,8 @@
     <EmbeddedResource Include="mag\ProdManage.resx">
       <DependentUpon>ProdManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\frmchancxbj.resx">
-      <DependentUpon>frmchancxbj.cs</DependentUpon>
+    <EmbeddedResource Include="mag\InventoryWarningQuery.resx">
+      <DependentUpon>InventoryWarningQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mag\ProdInventoryQuery.resx">
       <DependentUpon>ProdInventoryQuery.cs</DependentUpon>
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="mag\ProdScrap.resx">
       <DependentUpon>ProdScrap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\frmchuds.resx">
-      <DependentUpon>frmchuds.cs</DependentUpon>
+    <EmbeddedResource Include="mag\ProdStockOutManage.resx">
+      <DependentUpon>ProdStockOutManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mag\StockOutRecordQuery.resx">
       <DependentUpon>StockOutRecordQuery.cs</DependentUpon>

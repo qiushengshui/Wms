@@ -42,7 +42,6 @@ namespace WinFrm.mag
             return false;
         }
 
-
         private void tsmcopyright_Click(object sender, EventArgs e)
         {
             //if (this.checkchildfrmexist("help") == true)
@@ -67,41 +66,12 @@ namespace WinFrm.mag
             DataSet ds = dal.GetListT2("p_num<=p_xx");
             if (ds.Tables[0].Rows.Count > 0)
             {
-                frmchancxbj aa = new frmchancxbj();
+                InventoryWarningQuery aa = new InventoryWarningQuery();
                 aa.Show();
             }
             tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
             tsslDateInfo.Text = DateTime.Now.ToString();
         }
-
-        //商品出库管理
-        private void toolStripMenuItem10_Click(object sender, EventArgs e)
-        {
-            if (this.checkChildFormIsExist("frmchuds") == true)
-            {
-                return;
-            }
-            frmchuds newFrm = new frmchuds();
-            newFrm.m_id = m_id;
-
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
-        }
-
-        private void 库存查看与警报ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmchancxbj aa = new frmchancxbj();
-            aa.Show();
-
-        }
-
-
-
-
-
-
-
 
         private void 修改密码tsmiChangePwd(object sender, EventArgs e)
         {
@@ -162,6 +132,19 @@ namespace WinFrm.mag
                 return;
             }
             StockOutOrder newFrm = new StockOutOrder();
+            newFrm.m_id = m_id;
+            newFrm.m_ty = m_ty;
+            newFrm.MdiParent = this;
+            newFrm.Show();
+        }
+
+        private void 商品出库管理tsmiProdStockOutManage(object sender, EventArgs e)
+        {
+            if (this.checkChildFormIsExist("ProdStockOutManage") == true)
+            {
+                return;
+            }
+            ProdStockOutManage newFrm = new ProdStockOutManage();
             newFrm.m_id = m_id;
             newFrm.m_ty = m_ty;
             newFrm.MdiParent = this;
@@ -242,6 +225,12 @@ namespace WinFrm.mag
             newFrm.m_ty = m_ty;
             newFrm.MdiParent = this;
             newFrm.Show();
+        }
+
+        private void 库存预警查询tsmiInventoryWarningQuery(object sender, EventArgs e)
+        {
+            InventoryWarningQuery aa = new InventoryWarningQuery();
+            aa.Show();
         }
 
         private void 用户管理tmsiAccountManage(object sender, EventArgs e)
@@ -334,12 +323,6 @@ namespace WinFrm.mag
             newFrm.MdiParent = this;
             newFrm.Show();
         }
-
-
-
-
-
-
 
     }
 }

@@ -106,20 +106,20 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "用户权限：";
             // 
-            // comboBox1
+            // cbAccountType
             // 
             this.cbAccountType.FormattingEnabled = true;
             this.cbAccountType.Items.AddRange(new object[] {
             "管理员",
             "普通用户"});
             this.cbAccountType.Location = new System.Drawing.Point(143, 142);
-            this.cbAccountType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbAccountType.Name = "comboBox1";
+            this.cbAccountType.Margin = new System.Windows.Forms.Padding(2);
+            this.cbAccountType.Name = "cbAccountType";
             this.cbAccountType.Size = new System.Drawing.Size(162, 20);
             this.cbAccountType.TabIndex = 32;
             this.cbAccountType.Text = "管理员";
             // 
-            // frmlogin
+            // Login
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -134,9 +134,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Name = "frmlogin";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "超市超市仓库管理系统";
+            this.Text = "超市仓库管理系统";
             this.ResumeLayout(false);
             this.PerformLayout();
 
