@@ -64,243 +64,243 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.designer.cs">
+    <Compile Include="Views\Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ChangePwd.cs">
+    <Compile Include="Views\ChangePwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ChangePwd.designer.cs">
+    <Compile Include="Views\ChangePwd.designer.cs">
       <DependentUpon>ChangePwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\AccountManage.cs">
+    <Compile Include="Views\AccountManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\AccountManage.designer.cs">
+    <Compile Include="Views\AccountManage.designer.cs">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\Main.cs">
+    <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\Main.Designer.cs">
+    <Compile Include="Views\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdManage.cs">
+    <Compile Include="Views\ProdManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdManage.Designer.cs">
+    <Compile Include="Views\ProdManage.Designer.cs">
       <DependentUpon>ProdManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\InventoryWarningQuery.cs">
+    <Compile Include="Views\InventoryWarningQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\InventoryWarningQuery.Designer.cs">
+    <Compile Include="Views\InventoryWarningQuery.Designer.cs">
       <DependentUpon>InventoryWarningQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdInventoryQuery.cs">
+    <Compile Include="Views\ProdInventoryQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdInventoryQuery.Designer.cs">
+    <Compile Include="Views\ProdInventoryQuery.Designer.cs">
       <DependentUpon>ProdInventoryQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\StockOutOrder.cs">
+    <Compile Include="Views\StockOutOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\StockOutOrder.Designer.cs">
+    <Compile Include="Views\StockOutOrder.Designer.cs">
       <DependentUpon>StockOutOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdScrap.cs">
+    <Compile Include="Views\ProdScrap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdScrap.Designer.cs">
+    <Compile Include="Views\ProdScrap.Designer.cs">
       <DependentUpon>ProdScrap.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdStockOutManage.cs">
+    <Compile Include="Views\ProdStockOutManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdStockOutManage.Designer.cs">
+    <Compile Include="Views\ProdStockOutManage.Designer.cs">
       <DependentUpon>ProdStockOutManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\StockOutRecordQuery.cs">
+    <Compile Include="Views\StockOutRecordQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\StockOutRecordQuery.Designer.cs">
+    <Compile Include="Views\StockOutRecordQuery.Designer.cs">
       <DependentUpon>StockOutRecordQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\StockRecordQuery.cs">
+    <Compile Include="Views\StockRecordQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\StockRecordQuery.Designer.cs">
+    <Compile Include="Views\StockRecordQuery.Designer.cs">
       <DependentUpon>StockRecordQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\CheckManage.cs">
+    <Compile Include="Views\CheckManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\CheckManage.Designer.cs">
+    <Compile Include="Views\CheckManage.Designer.cs">
       <DependentUpon>CheckManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdAcceptance.cs">
+    <Compile Include="Views\ProdAcceptance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdAcceptance.Designer.cs">
+    <Compile Include="Views\ProdAcceptance.Designer.cs">
       <DependentUpon>ProdAcceptance.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\WarningManage.cs">
+    <Compile Include="Views\WarningManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\WarningManage.designer.cs">
+    <Compile Include="Views\WarningManage.designer.cs">
       <DependentUpon>WarningManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\CustomerManage.cs">
+    <Compile Include="Views\CustomerManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\CustomerManage.Designer.cs">
+    <Compile Include="Views\CustomerManage.Designer.cs">
       <DependentUpon>CustomerManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\WarehouseManage.cs">
+    <Compile Include="Views\WarehouseManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\WarehouseManage.Designer.cs">
+    <Compile Include="Views\WarehouseManage.Designer.cs">
       <DependentUpon>WarehouseManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\WarehouseAreaManage.cs">
+    <Compile Include="Views\WarehouseAreaManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\WarehouseAreaManage.Designer.cs">
+    <Compile Include="Views\WarehouseAreaManage.Designer.cs">
       <DependentUpon>WarehouseAreaManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProdCategory.cs">
+    <Compile Include="Views\ProdCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProdCategory.designer.cs">
+    <Compile Include="Views\ProdCategory.designer.cs">
       <DependentUpon>ProdCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\StockOrder.cs">
+    <Compile Include="Views\StockOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\StockOrder.Designer.cs">
+    <Compile Include="Views\StockOrder.Designer.cs">
       <DependentUpon>StockOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\ProviderManage.cs">
+    <Compile Include="Views\ProviderManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\ProviderManage.Designer.cs">
+    <Compile Include="Views\ProviderManage.Designer.cs">
       <DependentUpon>ProviderManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\SelectWarehouse.cs">
+    <Compile Include="Views\SelectWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\SelectWarehouse.Designer.cs">
+    <Compile Include="Views\SelectWarehouse.Designer.cs">
       <DependentUpon>SelectWarehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\SelectWarehouseArea.cs">
+    <Compile Include="Views\SelectWarehouseArea.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\SelectWarehouseArea.designer.cs">
+    <Compile Include="Views\SelectWarehouseArea.designer.cs">
       <DependentUpon>SelectWarehouseArea.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\SelectProvider.cs">
+    <Compile Include="Views\SelectProvider.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\SelectProvider.Designer.cs">
+    <Compile Include="Views\SelectProvider.Designer.cs">
       <DependentUpon>SelectProvider.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\SelectProdType.cs">
+    <Compile Include="Views\SelectProdType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\SelectProdType.designer.cs">
+    <Compile Include="Views\SelectProdType.designer.cs">
       <DependentUpon>SelectProdType.cs</DependentUpon>
     </Compile>
-    <Compile Include="mag\SelectCustomer.cs">
+    <Compile Include="Views\SelectCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mag\SelectCustomer.Designer.cs">
+    <Compile Include="Views\SelectCustomer.Designer.cs">
       <DependentUpon>SelectCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ChangePwd.resx">
+    <EmbeddedResource Include="Views\ChangePwd.resx">
       <DependentUpon>ChangePwd.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\AccountManage.resx">
+    <EmbeddedResource Include="Views\AccountManage.resx">
       <DependentUpon>AccountManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\Main.resx">
+    <EmbeddedResource Include="Views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdManage.resx">
+    <EmbeddedResource Include="Views\ProdManage.resx">
       <DependentUpon>ProdManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\InventoryWarningQuery.resx">
+    <EmbeddedResource Include="Views\InventoryWarningQuery.resx">
       <DependentUpon>InventoryWarningQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdInventoryQuery.resx">
+    <EmbeddedResource Include="Views\ProdInventoryQuery.resx">
       <DependentUpon>ProdInventoryQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\StockOutOrder.resx">
+    <EmbeddedResource Include="Views\StockOutOrder.resx">
       <DependentUpon>StockOutOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdScrap.resx">
+    <EmbeddedResource Include="Views\ProdScrap.resx">
       <DependentUpon>ProdScrap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdStockOutManage.resx">
+    <EmbeddedResource Include="Views\ProdStockOutManage.resx">
       <DependentUpon>ProdStockOutManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\StockOutRecordQuery.resx">
+    <EmbeddedResource Include="Views\StockOutRecordQuery.resx">
       <DependentUpon>StockOutRecordQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\StockRecordQuery.resx">
+    <EmbeddedResource Include="Views\StockRecordQuery.resx">
       <DependentUpon>StockRecordQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\CheckManage.resx">
+    <EmbeddedResource Include="Views\CheckManage.resx">
       <DependentUpon>CheckManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdAcceptance.resx">
+    <EmbeddedResource Include="Views\ProdAcceptance.resx">
       <DependentUpon>ProdAcceptance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\WarningManage.resx">
+    <EmbeddedResource Include="Views\WarningManage.resx">
       <DependentUpon>WarningManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\CustomerManage.resx">
+    <EmbeddedResource Include="Views\CustomerManage.resx">
       <DependentUpon>CustomerManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\WarehouseManage.resx">
+    <EmbeddedResource Include="Views\WarehouseManage.resx">
       <DependentUpon>WarehouseManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\WarehouseAreaManage.resx">
+    <EmbeddedResource Include="Views\WarehouseAreaManage.resx">
       <DependentUpon>WarehouseAreaManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProdCategory.resx">
+    <EmbeddedResource Include="Views\ProdCategory.resx">
       <DependentUpon>ProdCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\StockOrder.resx">
+    <EmbeddedResource Include="Views\StockOrder.resx">
       <DependentUpon>StockOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\ProviderManage.resx">
+    <EmbeddedResource Include="Views\ProviderManage.resx">
       <DependentUpon>ProviderManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\SelectWarehouse.resx">
+    <EmbeddedResource Include="Views\SelectWarehouse.resx">
       <DependentUpon>SelectWarehouse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\SelectWarehouseArea.resx">
+    <EmbeddedResource Include="Views\SelectWarehouseArea.resx">
       <DependentUpon>SelectWarehouseArea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\SelectProvider.resx">
+    <EmbeddedResource Include="Views\SelectProvider.resx">
       <DependentUpon>SelectProvider.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\SelectProdType.resx">
+    <EmbeddedResource Include="Views\SelectProdType.resx">
       <DependentUpon>SelectProdType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mag\SelectCustomer.resx">
+    <EmbeddedResource Include="Views\SelectCustomer.resx">
       <DependentUpon>SelectCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
