@@ -154,7 +154,7 @@
             this.lbldeptid2.TabIndex = 77;
             this.lbldeptid2.Visible = false;
             // 
-            // sel_frmcangku
+            // SelectWarehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbldeptid2);
             this.MaximizeBox = false;
-            this.Name = "sel_frmcangku";
+            this.Name = "SelectWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "仓库";
             this.Load += new System.EventHandler(this.sel_frmcangku_Load);

@@ -312,7 +312,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品出库列表";
             // 
-            // frmchuds
+            // ProdStockOutManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,7 +321,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "frmchuds";
+            this.Name = "ProdStockOutManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出库管理->商品出库管理";
             this.Load += new System.EventHandler(this.frmchuds_Load);

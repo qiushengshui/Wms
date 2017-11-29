@@ -289,7 +289,7 @@
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // frmchu
+            // StockOutOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,7 +298,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "frmchu";
+            this.Name = "StockOutOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出库管理>出库订单管理";
             this.Load += new System.EventHandler(this.frmchu_Load);

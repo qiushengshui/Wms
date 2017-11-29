@@ -154,7 +154,7 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
-            // sel_frmrzfang
+            // SelectProvider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbldeptid2);
             this.MaximizeBox = false;
-            this.Name = "sel_frmrzfang";
+            this.Name = "SelectProvider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "选择入驻商家";
             this.Load += new System.EventHandler(this.sel_frmrzfang_Load);

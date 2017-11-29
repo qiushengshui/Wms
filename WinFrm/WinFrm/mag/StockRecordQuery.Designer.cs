@@ -181,7 +181,7 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
-            // frmcxr
+            // StockRecordQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.MaximizeBox = false;
-            this.Name = "frmcxr";
+            this.Name = "StockRecordQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "综合查询>入库履历查询";
             this.Load += new System.EventHandler(this.frmcxr_Load);

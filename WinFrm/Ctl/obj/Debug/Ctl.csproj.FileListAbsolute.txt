@@ -45,3 +45,7 @@ E:\CSProject\cssys\WinFrm\Ctl\bin\Debug\Ctl.pdb
 E:\CSProject\cssys\WinFrm\Ctl\obj\Debug\Ctl.dll
 E:\CSProject\cssys\WinFrm\Ctl\obj\Debug\Ctl.pdb
 E:\CSProject\cssys\WinFrm\Ctl\obj\Debug\Ctl.csprojResolveAssemblyReference.cache
+E:\CSProject\Wms\WinFrm\Ctl\bin\Debug\Ctl.dll
+E:\CSProject\Wms\WinFrm\Ctl\bin\Debug\Ctl.pdb
+E:\CSProject\Wms\WinFrm\Ctl\obj\Debug\Ctl.dll
+E:\CSProject\Wms\WinFrm\Ctl\obj\Debug\Ctl.pdb

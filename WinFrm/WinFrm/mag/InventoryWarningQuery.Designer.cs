@@ -152,7 +152,7 @@
             this.label11.TabIndex = 81;
             this.label11.Text = "商品编号：";
             // 
-            // frmchancxbj
+            // InventoryWarningQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.Name = "frmchancxbj";
+            this.Name = "InventoryWarningQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "综合查询>商品库存报警";
             this.Load += new System.EventHandler(this.frmchan_Load);

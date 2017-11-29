@@ -255,7 +255,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "姓  名：";
             // 
-            // frmager
+            // AccountManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -264,7 +264,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "frmager";
+            this.Name = "AccountManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统用户";
             this.Load += new System.EventHandler(this.frmoptuser_Load);

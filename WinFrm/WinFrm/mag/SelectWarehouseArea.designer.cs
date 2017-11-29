@@ -154,7 +154,7 @@
             this.lbldeptid2.TabIndex = 75;
             this.lbldeptid2.Visible = false;
             // 
-            // sel_frmdept
+            // SelectWarehouseArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.lbldeptid2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "sel_frmdept";
+            this.Name = "SelectWarehouseArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库区";
             this.Load += new System.EventHandler(this.frmsupp_Load);

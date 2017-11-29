@@ -246,7 +246,7 @@
             this.tBtnSubmit.Text = "提交";
             this.tBtnSubmit.ToolTipText = "提交";
             // 
-            // frmyjset
+            // WarningManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,7 +255,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolBar1);
             this.MaximizeBox = false;
-            this.Name = "frmyjset";
+            this.Name = "WarningManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库内管理->库存预警管理";
             this.Load += new System.EventHandler(this.frmdrug_Load);

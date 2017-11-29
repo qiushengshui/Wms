@@ -330,7 +330,7 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "商品名称：";
             // 
-            // frmpan
+            // CheckManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,7 +339,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
-            this.Name = "frmpan";
+            this.Name = "CheckManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库内管理->库存盘点管理";
             this.Load += new System.EventHandler(this.frmpan_Load);

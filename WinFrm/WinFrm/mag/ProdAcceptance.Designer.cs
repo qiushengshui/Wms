@@ -335,7 +335,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品入库列表";
             // 
-            // frmruds
+            // ProdAcceptance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,7 +344,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "frmruds";
+            this.Name = "ProdAcceptance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入库管理->商品验收入库";
             this.Load += new System.EventHandler(this.frmruds_Load);

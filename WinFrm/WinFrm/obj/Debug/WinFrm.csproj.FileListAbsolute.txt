@@ -413,7 +413,6 @@ E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.CustomerManage.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.WarehouseManage.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.WarehouseAreaManage.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.ProdCategory.resources
-E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.frmru.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.ProviderManage.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.SelectWarehouse.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.SelectWarehouseArea.resources
@@ -422,3 +421,4 @@ E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.SelectProdType.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.SelectCustomer.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Properties.Resources.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csproj.GenerateResource.Cache
+E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.mag.StockOrder.resources

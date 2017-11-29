@@ -261,7 +261,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品报废列表";
             // 
-            // frmchudsbf
+            // ProdScrap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,7 +271,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.Name = "frmchudsbf";
+            this.Name = "ProdScrap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出库管理->商品报废";
             this.Load += new System.EventHandler(this.frmchuds_Load);

@@ -202,7 +202,7 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
-            // frmku
+            // WarehouseManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
-            this.Name = "frmku";
+            this.Name = "WarehouseManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->仓库管理";
             this.Load += new System.EventHandler(this.frmku_Load);

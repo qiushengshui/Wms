@@ -1,6 +1,6 @@
 ﻿namespace WinFrm.mag
 {
-    partial class frmru
+    partial class StockOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmru));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockOrder));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtuser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -289,7 +289,7 @@
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
             // 
-            // frmru
+            // StockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,7 +298,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolBar1);
             this.MaximizeBox = false;
-            this.Name = "frmru";
+            this.Name = "StockOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入库管理>入库订单管理";
             this.Load += new System.EventHandler(this.frmru_Load);

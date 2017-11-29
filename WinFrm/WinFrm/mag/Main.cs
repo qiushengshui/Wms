@@ -42,17 +42,6 @@ namespace WinFrm.mag
             return false;
         }
 
-        private void tsmcopyright_Click(object sender, EventArgs e)
-        {
-            //if (this.checkchildfrmexist("help") == true)
-            //{
-            //    return;
-            //}
-            //help newfrm = new help();
-            //newfrm.mdiparent = this;
-            //newfrm.show();
-        }
-
         private void frmain_Load(object sender, EventArgs e)
         {
             if (m_ty == "3")
@@ -105,7 +94,7 @@ namespace WinFrm.mag
             {
                 return;
             }
-            frmru newFrm = new frmru();
+            StockOrder newFrm = new StockOrder();
             newFrm.m_id = m_id;
             newFrm.m_ty = m_ty;
             newFrm.MdiParent = this;

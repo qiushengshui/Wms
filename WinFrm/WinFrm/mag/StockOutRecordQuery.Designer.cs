@@ -181,7 +181,7 @@
             this.label2.TabIndex = 86;
             this.label2.Text = "订单编号：";
             // 
-            // frmcx
+            // StockOutRecordQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.MaximizeBox = false;
-            this.Name = "frmcx";
+            this.Name = "StockOutRecordQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "综合查询>出库履历查询";
             this.Load += new System.EventHandler(this.frmcx_Load);

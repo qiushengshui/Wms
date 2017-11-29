@@ -202,7 +202,7 @@
             this.tBtnSubmit.Text = "提交";
             this.tBtnSubmit.ToolTipText = "提交";
             // 
-            // frmmodel
+            // ProdCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolBar1);
             this.MaximizeBox = false;
-            this.Name = "frmmodel";
+            this.Name = "ProdCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->商品分类管理";
             this.Load += new System.EventHandler(this.frmdrug_Load);

@@ -286,7 +286,7 @@
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // frmkehu
+            // CustomerManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -295,7 +295,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "frmkehu";
+            this.Name = "CustomerManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->客户管理";
             this.Load += new System.EventHandler(this.frmkehu_Load);

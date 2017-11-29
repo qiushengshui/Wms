@@ -265,7 +265,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据编辑区";
             // 
-            // frmrzfang
+            // ProviderManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,7 +274,7 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
-            this.Name = "frmrzfang";
+            this.Name = "ProviderManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->入驻商家管理";
             this.Load += new System.EventHandler(this.frmrzfang_Load);

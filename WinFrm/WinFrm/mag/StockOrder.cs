@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace WinFrm.mag
 {
-    public partial class frmru : Form
+    public partial class StockOrder : Form
     {
         public string m_id = null;
         public string m_ty = null;
-        public frmru()
+        public StockOrder()
         {
             InitializeComponent();
         }
