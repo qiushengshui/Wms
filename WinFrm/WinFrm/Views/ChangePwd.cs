@@ -22,8 +22,8 @@ namespace WinFrm
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Ctl.BLL.tb_user dal = new Ctl.BLL.tb_user();
-            Ctl.Model.tb_user model = new Ctl.Model.tb_user();
+            BLL.tb_user dal = new BLL.tb_user();
+            Model.tb_user model = new Model.tb_user();
             if (this.txtpwd.Text.Trim() == "")
             {
                 MessageBox.Show("请输入旧密码", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
 	/// <summary>
 	/// tb_order
 	/// </summary>
 	public partial class tb_order
 	{
-		private readonly Ctl.DAL.tb_order dal=new Ctl.DAL.tb_order();
+		private readonly DAL.tb_order dal=new DAL.tb_order();
 		public tb_order()
 		{}
 		#region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Ctl.Model.tb_order model)
+		public int  Add(Model.tb_order model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +42,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_order model)
+		public bool Update(Model.tb_order model)
 		{
 			return dal.Update(model);
 		}
@@ -66,7 +66,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_order GetModel(int o_id)
+		public Model.tb_order GetModel(int o_id)
 		{
 			
 			return dal.GetModel(o_id);
@@ -75,7 +75,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Ctl.Model.tb_order GetModelByCache(int o_id)
+		public Model.tb_order GetModelByCache(int o_id)
 		{
 			
 			string CacheKey = "tb_orderModel-" + o_id;
@@ -93,7 +93,7 @@ namespace Ctl.BLL
 				}
 				catch{}
 			}
-			return (Ctl.Model.tb_order)objModel;
+			return (Model.tb_order)objModel;
 		}
 
 		/// <summary>
@@ -117,7 +117,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_order> GetModelList(string strWhere)
+		public List<Model.tb_order> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -125,16 +125,16 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_order> DataTableToList(DataTable dt)
+		public List<Model.tb_order> DataTableToList(DataTable dt)
 		{
-			List<Ctl.Model.tb_order> modelList = new List<Ctl.Model.tb_order>();
+			List<Model.tb_order> modelList = new List<Model.tb_order>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Ctl.Model.tb_order model;
+				Model.tb_order model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Ctl.Model.tb_order();
+					model = new Model.tb_order();
 					if(dt.Rows[n]["o_id"]!=null && dt.Rows[n]["o_id"].ToString()!="")
 					{
 						model.o_id=int.Parse(dt.Rows[n]["o_id"].ToString());

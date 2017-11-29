@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
     /// <summary>
     /// 数据访问类:tb_user
@@ -37,7 +37,7 @@ namespace Ctl.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Ctl.Model.tb_user model)
+        public int Add(Model.tb_user model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder strSql1 = new StringBuilder();
@@ -113,7 +113,7 @@ namespace Ctl.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Ctl.Model.tb_user model)
+        public bool Update(Model.tb_user model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update tb_user set ");
@@ -251,14 +251,14 @@ namespace Ctl.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Ctl.Model.tb_user GetModel(int u_id)
+        public Model.tb_user GetModel(int u_id)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1  ");
             strSql.Append(" u_id,u_log,u_pwd,u_no,u_name,u_tel,u_email,u_type,u_sex,u_address,u_adddate ");
             strSql.Append(" from tb_user ");
             strSql.Append(" where u_id=" + u_id + "");
-            Ctl.Model.tb_user model = new Ctl.Model.tb_user();
+            Model.tb_user model = new Model.tb_user();
             DataSet ds = DbSQL.Query(strSql.ToString());
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -315,14 +315,14 @@ namespace Ctl.DAL
         }
 
 
-        public Ctl.Model.tb_user GetModel(string log, string pwd)
+        public Model.tb_user GetModel(string log, string pwd)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1  ");
             strSql.Append(" u_id,u_log,u_pwd,u_no,u_name,u_tel,u_email,u_type,u_sex,u_address,u_adddate ");
             strSql.Append(" from tb_user ");
             strSql.Append(" where u_log='" + log + "' and u_pwd='" + pwd + "' ");
-            Ctl.Model.tb_user model = new Ctl.Model.tb_user();
+            Model.tb_user model = new Model.tb_user();
             DataSet ds = DbSQL.Query(strSql.ToString());
             if (ds.Tables[0].Rows.Count > 0)
             {

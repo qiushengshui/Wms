@@ -22,8 +22,8 @@ namespace WinFrm.Views
             BindData("");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_proc dal = new Ctl.BLL.tb_proc();
-        Ctl.Model.tb_proc model = new Ctl.Model.tb_proc();
+        BLL.tb_proc dal = new BLL.tb_proc();
+        Model.tb_proc model = new Model.tb_proc();
 
         private void BindData(string where)
         {
@@ -99,7 +99,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_proc();
+                    model = new Model.tb_proc();
 
                     if (!string.IsNullOrEmpty(optrowid))
                     {

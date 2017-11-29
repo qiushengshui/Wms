@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
 	/// <summary>
 	/// tb_ruzhu
 	/// </summary>
 	public partial class tb_ruzhu
 	{
-		private readonly Ctl.DAL.tb_ruzhu dal=new Ctl.DAL.tb_ruzhu();
+		private readonly DAL.tb_ruzhu dal=new DAL.tb_ruzhu();
 		public tb_ruzhu()
 		{}
 		#region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Ctl.Model.tb_ruzhu model)
+		public int  Add(Model.tb_ruzhu model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +42,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_ruzhu model)
+		public bool Update(Model.tb_ruzhu model)
 		{
 			return dal.Update(model);
 		}
@@ -66,7 +66,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_ruzhu GetModel(int r_id)
+		public Model.tb_ruzhu GetModel(int r_id)
 		{
 			
 			return dal.GetModel(r_id);
@@ -75,7 +75,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Ctl.Model.tb_ruzhu GetModelByCache(int r_id)
+		public Model.tb_ruzhu GetModelByCache(int r_id)
 		{
 			
 			string CacheKey = "tb_ruzhuModel-" + r_id;
@@ -93,7 +93,7 @@ namespace Ctl.BLL
 				}
 				catch{}
 			}
-			return (Ctl.Model.tb_ruzhu)objModel;
+			return (Model.tb_ruzhu)objModel;
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_ruzhu> GetModelList(string strWhere)
+		public List<Model.tb_ruzhu> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -121,16 +121,16 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_ruzhu> DataTableToList(DataTable dt)
+		public List<Model.tb_ruzhu> DataTableToList(DataTable dt)
 		{
-			List<Ctl.Model.tb_ruzhu> modelList = new List<Ctl.Model.tb_ruzhu>();
+			List<Model.tb_ruzhu> modelList = new List<Model.tb_ruzhu>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Ctl.Model.tb_ruzhu model;
+				Model.tb_ruzhu model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Ctl.Model.tb_ruzhu();
+					model = new Model.tb_ruzhu();
 					if(dt.Rows[n]["r_id"]!=null && dt.Rows[n]["r_id"].ToString()!="")
 					{
 						model.r_id=int.Parse(dt.Rows[n]["r_id"].ToString());

@@ -33,8 +33,8 @@ namespace WinFrm
                 return;
             }
             // 业务逻辑层（BLL）/实体类库（Model）/数据访问层（DAL） 三层调用
-            Ctl.BLL.tb_user dal = new Ctl.BLL.tb_user();
-            Ctl.Model.tb_user user = new Ctl.Model.tb_user();
+            BLL.tb_user dal = new BLL.tb_user();
+            Model.tb_user user = new Model.tb_user();
             user = dal.GetModel(pgname, pgpwd);
 
             if (user != null)

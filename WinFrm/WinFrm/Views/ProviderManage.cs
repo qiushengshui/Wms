@@ -22,8 +22,8 @@ namespace WinFrm.Views
             BindData(" ");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_ruzhu dal = new Ctl.BLL.tb_ruzhu();
-        Ctl.Model.tb_ruzhu model = new Ctl.Model.tb_ruzhu();
+        BLL.tb_ruzhu dal = new BLL.tb_ruzhu();
+        Model.tb_ruzhu model = new Model.tb_ruzhu();
 
         private void BindData(string where)
         {
@@ -134,7 +134,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_ruzhu();
+                    model = new Model.tb_ruzhu();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.r_no = this.txtno.Text;

@@ -22,8 +22,8 @@ namespace WinFrm.Views
             BindData(" ");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_kehu dal = new Ctl.BLL.tb_kehu();
-        Ctl.Model.tb_kehu model = new Ctl.Model.tb_kehu();
+        BLL.tb_kehu dal = new BLL.tb_kehu();
+        Model.tb_kehu model = new Model.tb_kehu();
 
         private void BindData(string where)
         {
@@ -137,7 +137,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_kehu();
+                    model = new Model.tb_kehu();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.h_no = this.txtno.Text;

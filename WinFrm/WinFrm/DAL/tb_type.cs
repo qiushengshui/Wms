@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
 	/// <summary>
 	/// 数据访问类:tb_type
@@ -37,7 +37,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Ctl.Model.tb_type model)
+		public int Add(Model.tb_type model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();
@@ -83,7 +83,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_type model)
+		public bool Update(Model.tb_type model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update tb_type set ");
@@ -169,14 +169,14 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_type GetModel(int t_id)
+		public Model.tb_type GetModel(int t_id)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1  ");
 			strSql.Append(" t_id,t_paid,t_no,t_name,t_desc ");
 			strSql.Append(" from tb_type ");
 			strSql.Append(" where t_id="+t_id+"" );
-			Ctl.Model.tb_type model=new Ctl.Model.tb_type();
+			Model.tb_type model=new Model.tb_type();
 			DataSet ds=DbSQL.Query(strSql.ToString());
 			if(ds.Tables[0].Rows.Count>0)
 			{

@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
 	/// <summary>
 	/// 数据访问类:tb_kehu
@@ -37,7 +37,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Ctl.Model.tb_kehu model)
+		public int Add(Model.tb_kehu model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();
@@ -98,7 +98,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_kehu model)
+		public bool Update(Model.tb_kehu model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update tb_kehu set ");
@@ -212,14 +212,14 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_kehu GetModel(int h_id)
+		public Model.tb_kehu GetModel(int h_id)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1  ");
 			strSql.Append(" h_id,h_no,h_name,h_tel,h_address,h_zipcode,h_uname,h_remark ");
 			strSql.Append(" from tb_kehu ");
 			strSql.Append(" where h_id="+h_id+"" );
-			Ctl.Model.tb_kehu model=new Ctl.Model.tb_kehu();
+			Model.tb_kehu model=new Model.tb_kehu();
 			DataSet ds=DbSQL.Query(strSql.ToString());
 			if(ds.Tables[0].Rows.Count>0)
 			{

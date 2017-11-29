@@ -24,8 +24,8 @@ namespace WinFrm.Views
         }
 
         public string optrowid = null;
-        Ctl.BLL.tb_churu dal = new Ctl.BLL.tb_churu();
-        Ctl.Model.tb_churu model = new Ctl.Model.tb_churu();
+        BLL.tb_churu dal = new BLL.tb_churu();
+        Model.tb_churu model = new Model.tb_churu();
 
         private void BindData(string where)
         {
@@ -46,7 +46,7 @@ namespace WinFrm.Views
         }
         private void BindDdl()
         {
-            Ctl.BLL.tb_order dalo = new Ctl.BLL.tb_order();
+            BLL.tb_order dalo = new BLL.tb_order();
             DataTable dt = dalo.GetList(1000, "o_type=3", "o_type desc").Tables[0];
             //this.txtorder.DataSource = dt;
             //txtorder.DisplayMember = "o_no";
@@ -142,7 +142,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_churu();
+                    model = new Model.tb_churu();
 
                     if (!string.IsNullOrEmpty(optrowid))
                     {
@@ -163,8 +163,8 @@ namespace WinFrm.Views
 
                         if (dal.Add(model) > 0)
                         {
-                            Ctl.BLL.tb_proc dap = new Ctl.BLL.tb_proc();
-                            Ctl.Model.tb_proc mop = new Ctl.Model.tb_proc();
+                            BLL.tb_proc dap = new BLL.tb_proc();
+                            Model.tb_proc mop = new Model.tb_proc();
                             mop = dap.GetModel(int.Parse(txttyid.Text));
                             if (!string.IsNullOrEmpty(mop.p_xx))
                             {
@@ -223,8 +223,8 @@ namespace WinFrm.Views
                 model = dal.GetModel(int.Parse(optrowid));
                 if (model != null)
                 {
-                    Ctl.BLL.tb_proc dalp = new Ctl.BLL.tb_proc();
-                    Ctl.Model.tb_proc molp = new Ctl.Model.tb_proc();
+                    BLL.tb_proc dalp = new BLL.tb_proc();
+                    Model.tb_proc molp = new Model.tb_proc();
                     molp = dalp.GetModel(int.Parse(model.cr_pid.ToString()));
                     this.txtno.Text = molp.p_no;
                     this.txtname.Text = molp.p_name;
@@ -255,7 +255,7 @@ namespace WinFrm.Views
                 //}
             }
         }
-        Ctl.BLL.tb_proc dalt = new Ctl.BLL.tb_proc();
+        BLL.tb_proc dalt = new BLL.tb_proc();
         private void GetStr(string _no)
         {
             string reStr = "";

@@ -21,8 +21,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_user dal = new Ctl.BLL.tb_user();
-        Ctl.Model.tb_user model = new Ctl.Model.tb_user();
+        BLL.tb_user dal = new BLL.tb_user();
+        Model.tb_user model = new Model.tb_user();
 
         private void BindData(string where)
         {
@@ -140,7 +140,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_user();
+                    model = new Model.tb_user();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.u_name = this.txtname.Text;

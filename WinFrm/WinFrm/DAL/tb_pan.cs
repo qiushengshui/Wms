@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
 	/// <summary>
 	/// 数据访问类:tb_pan
@@ -37,7 +37,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Ctl.Model.tb_pan model)
+		public int Add(Model.tb_pan model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();
@@ -93,7 +93,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_pan model)
+		public bool Update(Model.tb_pan model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update tb_pan set ");
@@ -199,14 +199,14 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_pan GetModel(int p_id)
+		public Model.tb_pan GetModel(int p_id)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1  ");
 			strSql.Append(" p_id,p_pid,p_time,p_user,p_numold,p_numnow,p_remark ");
 			strSql.Append(" from tb_pan ");
 			strSql.Append(" where p_id="+p_id+"" );
-			Ctl.Model.tb_pan model=new Ctl.Model.tb_pan();
+			Model.tb_pan model=new Model.tb_pan();
 			DataSet ds=DbSQL.Query(strSql.ToString());
 			if(ds.Tables[0].Rows.Count>0)
 			{

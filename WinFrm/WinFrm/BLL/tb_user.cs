@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
     /// <summary>
     /// tb_user
     /// </summary>
     public partial class tb_user
     {
-        private readonly Ctl.DAL.tb_user dal = new Ctl.DAL.tb_user();
+        private readonly DAL.tb_user dal = new DAL.tb_user();
         public tb_user()
         { }
         #region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Ctl.Model.tb_user model)
+        public int Add(Model.tb_user model)
         {
             return dal.Add(model);
         }
@@ -42,7 +42,7 @@ namespace Ctl.BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Ctl.Model.tb_user model)
+        public bool Update(Model.tb_user model)
         {
             return dal.Update(model);
         }
@@ -66,12 +66,12 @@ namespace Ctl.BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Ctl.Model.tb_user GetModel(int u_id)
+        public Model.tb_user GetModel(int u_id)
         {
 
             return dal.GetModel(u_id);
         }
-        public Ctl.Model.tb_user GetModel(string log, string pwd)
+        public Model.tb_user GetModel(string log, string pwd)
         {
 
             return dal.GetModel(log, pwd);
@@ -80,7 +80,7 @@ namespace Ctl.BLL
         /// <summary>
         /// 得到一个对象实体，从缓存中
         /// </summary>
-        public Ctl.Model.tb_user GetModelByCache(int u_id)
+        public Model.tb_user GetModelByCache(int u_id)
         {
 
             string CacheKey = "tb_userModel-" + u_id;
@@ -98,7 +98,7 @@ namespace Ctl.BLL
                 }
                 catch { }
             }
-            return (Ctl.Model.tb_user)objModel;
+            return (Model.tb_user)objModel;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Ctl.BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Ctl.Model.tb_user> GetModelList(string strWhere)
+        public List<Model.tb_user> GetModelList(string strWhere)
         {
             DataSet ds = dal.GetList(strWhere);
             return DataTableToList(ds.Tables[0]);
@@ -126,16 +126,16 @@ namespace Ctl.BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Ctl.Model.tb_user> DataTableToList(DataTable dt)
+        public List<Model.tb_user> DataTableToList(DataTable dt)
         {
-            List<Ctl.Model.tb_user> modelList = new List<Ctl.Model.tb_user>();
+            List<Model.tb_user> modelList = new List<Model.tb_user>();
             int rowsCount = dt.Rows.Count;
             if (rowsCount > 0)
             {
-                Ctl.Model.tb_user model;
+                Model.tb_user model;
                 for (int n = 0; n < rowsCount; n++)
                 {
-                    model = new Ctl.Model.tb_user();
+                    model = new Model.tb_user();
                     if (dt.Rows[n]["u_id"] != null && dt.Rows[n]["u_id"].ToString() != "")
                     {
                         model.u_id = int.Parse(dt.Rows[n]["u_id"].ToString());

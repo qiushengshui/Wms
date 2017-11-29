@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Collections.Generic;
 using System.Web;
 
-namespace Ctl.DAL
+namespace DAL
 {
     public class DbSQL
     {

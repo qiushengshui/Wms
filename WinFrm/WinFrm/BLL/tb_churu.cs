@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
 	/// <summary>
 	/// tb_churu
 	/// </summary>
 	public partial class tb_churu
 	{
-		private readonly Ctl.DAL.tb_churu dal=new Ctl.DAL.tb_churu();
+		private readonly DAL.tb_churu dal=new DAL.tb_churu();
 		public tb_churu()
 		{}
 		#region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Ctl.Model.tb_churu model)
+		public int  Add(Model.tb_churu model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +42,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_churu model)
+		public bool Update(Model.tb_churu model)
 		{
 			return dal.Update(model);
 		}
@@ -71,7 +71,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_churu GetModel(int cr_id)
+		public Model.tb_churu GetModel(int cr_id)
 		{
 			
 			return dal.GetModel(cr_id);
@@ -80,7 +80,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Ctl.Model.tb_churu GetModelByCache(int cr_id)
+		public Model.tb_churu GetModelByCache(int cr_id)
 		{
 			
 			string CacheKey = "tb_churuModel-" + cr_id;
@@ -98,7 +98,7 @@ namespace Ctl.BLL
 				}
 				catch{}
 			}
-			return (Ctl.Model.tb_churu)objModel;
+			return (Model.tb_churu)objModel;
 		}
 
 		/// <summary>
@@ -122,7 +122,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_churu> GetModelList(string strWhere)
+		public List<Model.tb_churu> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -130,16 +130,16 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_churu> DataTableToList(DataTable dt)
+		public List<Model.tb_churu> DataTableToList(DataTable dt)
 		{
-			List<Ctl.Model.tb_churu> modelList = new List<Ctl.Model.tb_churu>();
+			List<Model.tb_churu> modelList = new List<Model.tb_churu>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Ctl.Model.tb_churu model;
+				Model.tb_churu model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Ctl.Model.tb_churu();
+					model = new Model.tb_churu();
 					if(dt.Rows[n]["cr_id"]!=null && dt.Rows[n]["cr_id"].ToString()!="")
 					{
 						model.cr_id=int.Parse(dt.Rows[n]["cr_id"].ToString());

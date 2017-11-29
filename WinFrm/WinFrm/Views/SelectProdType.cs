@@ -17,8 +17,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_type dal = new Ctl.BLL.tb_type();
-        Ctl.Model.tb_type model = new Ctl.Model.tb_type();
+        BLL.tb_type dal = new BLL.tb_type();
+        Model.tb_type model = new Model.tb_type();
 
         private void BindData(string where)
         {

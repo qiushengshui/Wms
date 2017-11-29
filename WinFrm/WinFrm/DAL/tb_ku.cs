@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
 	/// <summary>
 	/// 数据访问类:tb_ku
@@ -37,7 +37,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Ctl.Model.tb_ku model)
+		public int Add(Model.tb_ku model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();
@@ -83,7 +83,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_ku model)
+		public bool Update(Model.tb_ku model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update tb_ku set ");
@@ -169,14 +169,14 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_ku GetModel(int k_id)
+		public Model.tb_ku GetModel(int k_id)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1  ");
 			strSql.Append(" k_id,k_paid,k_no,k_name,k_desc ");
 			strSql.Append(" from tb_ku ");
 			strSql.Append(" where k_id="+k_id+"" );
-			Ctl.Model.tb_ku model=new Ctl.Model.tb_ku();
+			Model.tb_ku model=new Model.tb_ku();
 			DataSet ds=DbSQL.Query(strSql.ToString());
 			if(ds.Tables[0].Rows.Count>0)
 			{

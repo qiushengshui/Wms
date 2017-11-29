@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
 	/// <summary>
 	/// tb_kehu
 	/// </summary>
 	public partial class tb_kehu
 	{
-		private readonly Ctl.DAL.tb_kehu dal=new Ctl.DAL.tb_kehu();
+		private readonly DAL.tb_kehu dal=new DAL.tb_kehu();
 		public tb_kehu()
 		{}
 		#region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Ctl.Model.tb_kehu model)
+		public int  Add(Model.tb_kehu model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +42,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_kehu model)
+		public bool Update(Model.tb_kehu model)
 		{
 			return dal.Update(model);
 		}
@@ -66,7 +66,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_kehu GetModel(int h_id)
+		public Model.tb_kehu GetModel(int h_id)
 		{
 			
 			return dal.GetModel(h_id);
@@ -75,7 +75,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Ctl.Model.tb_kehu GetModelByCache(int h_id)
+		public Model.tb_kehu GetModelByCache(int h_id)
 		{
 			
 			string CacheKey = "tb_kehuModel-" + h_id;
@@ -93,7 +93,7 @@ namespace Ctl.BLL
 				}
 				catch{}
 			}
-			return (Ctl.Model.tb_kehu)objModel;
+			return (Model.tb_kehu)objModel;
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_kehu> GetModelList(string strWhere)
+		public List<Model.tb_kehu> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -121,16 +121,16 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_kehu> DataTableToList(DataTable dt)
+		public List<Model.tb_kehu> DataTableToList(DataTable dt)
 		{
-			List<Ctl.Model.tb_kehu> modelList = new List<Ctl.Model.tb_kehu>();
+			List<Model.tb_kehu> modelList = new List<Model.tb_kehu>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Ctl.Model.tb_kehu model;
+				Model.tb_kehu model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Ctl.Model.tb_kehu();
+					model = new Model.tb_kehu();
 					if(dt.Rows[n]["h_id"]!=null && dt.Rows[n]["h_id"].ToString()!="")
 					{
 						model.h_id=int.Parse(dt.Rows[n]["h_id"].ToString());

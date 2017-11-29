@@ -17,8 +17,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_ku dal = new Ctl.BLL.tb_ku();
-        Ctl.Model.tb_ku model = new Ctl.Model.tb_ku();
+        BLL.tb_ku dal = new BLL.tb_ku();
+        Model.tb_ku model = new Model.tb_ku();
 
         private void BindData(string where)
         {

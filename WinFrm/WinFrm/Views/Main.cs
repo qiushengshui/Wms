@@ -48,8 +48,8 @@ namespace WinFrm.Views
             {
                 tsddbMasterFileManage.Visible = false;
             }
-            Ctl.BLL.tb_proc dal = new Ctl.BLL.tb_proc();
-            Ctl.Model.tb_proc model = new Ctl.Model.tb_proc();
+            BLL.tb_proc dal = new BLL.tb_proc();
+            Model.tb_proc model = new Model.tb_proc();
 
 
             DataSet ds = dal.GetListT2("p_num<=p_xx");

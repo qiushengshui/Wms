@@ -17,8 +17,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_kehu dal = new Ctl.BLL.tb_kehu();
-        Ctl.Model.tb_kehu model = new Ctl.Model.tb_kehu();
+        BLL.tb_kehu dal = new BLL.tb_kehu();
+        Model.tb_kehu model = new Model.tb_kehu();
         private void BindData(string where)
         {
             treeView1.Nodes.Clear();

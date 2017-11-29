@@ -22,8 +22,8 @@ namespace WinFrm.Views
             BindData("k_paid=0");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_ku dal = new Ctl.BLL.tb_ku();
-        Ctl.Model.tb_ku model = new Ctl.Model.tb_ku();
+        BLL.tb_ku dal = new BLL.tb_ku();
+        Model.tb_ku model = new Model.tb_ku();
 
         private void BindData(string where)
         {
@@ -114,7 +114,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_ku();
+                    model = new Model.tb_ku();
 
                     if (!string.IsNullOrEmpty(optrowid))
                     {

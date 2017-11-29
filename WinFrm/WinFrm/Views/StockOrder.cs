@@ -22,10 +22,10 @@ namespace WinFrm.Views
             BindData("o_type=1");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_order dal = new Ctl.BLL.tb_order();
-        Ctl.Model.tb_order model = new Ctl.Model.tb_order();
-        Ctl.BLL.tb_ruzhu dalz = new Ctl.BLL.tb_ruzhu();
-        Ctl.Model.tb_ruzhu modelz = new Ctl.Model.tb_ruzhu();
+        BLL.tb_order dal = new BLL.tb_order();
+        Model.tb_order model = new Model.tb_order();
+        BLL.tb_ruzhu dalz = new BLL.tb_ruzhu();
+        Model.tb_ruzhu modelz = new Model.tb_ruzhu();
 
         private void BindData(string where)
         {
@@ -141,7 +141,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_order();
+                    model = new Model.tb_order();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.o_busy = int.Parse(this.txtkhid.Text);

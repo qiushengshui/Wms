@@ -17,8 +17,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_proc dal = new Ctl.BLL.tb_proc();
-        Ctl.Model.tb_proc model = new Ctl.Model.tb_proc();
+        BLL.tb_proc dal = new BLL.tb_proc();
+        Model.tb_proc model = new Model.tb_proc();
 
         private void BindData(string where)
         {
@@ -114,30 +114,30 @@ namespace WinFrm.Views
         {
             BindData("");
         }
-        Ctl.BLL.tb_type dalt = new Ctl.BLL.tb_type();
-        Ctl.Model.tb_type molt = new Ctl.Model.tb_type();
-        Ctl.BLL.tb_ku dalk = new Ctl.BLL.tb_ku();
-        Ctl.Model.tb_ku molk = new Ctl.Model.tb_ku();
-        Ctl.BLL.tb_ruzhu dalr = new Ctl.BLL.tb_ruzhu();
-        Ctl.Model.tb_ruzhu molr = new Ctl.Model.tb_ruzhu();
+        BLL.tb_type dalt = new BLL.tb_type();
+        Model.tb_type molt = new Model.tb_type();
+        BLL.tb_ku dalk = new BLL.tb_ku();
+        Model.tb_ku molk = new Model.tb_ku();
+        BLL.tb_ruzhu dalr = new BLL.tb_ruzhu();
+        Model.tb_ruzhu molr = new Model.tb_ruzhu();
         private string GetStr(int type, int id)
         {
             string reStr = "";
             if (type == 1)
             {
-                molt = new Ctl.Model.tb_type();
+                molt = new Model.tb_type();
                 molt = dalt.GetModel(id);
                 reStr = molt != null ? molt.t_name : "";
             }
             else if (type == 2 || type == 3)
             {
-                molk = new Ctl.Model.tb_ku();
+                molk = new Model.tb_ku();
                 molk = dalk.GetModel(id);
                 reStr = molk != null ? molk.k_name : "";
             }
             else if (type == 4)
             {
-                molr = new Ctl.Model.tb_ruzhu();
+                molr = new Model.tb_ruzhu();
                 molr = dalr.GetModel(id);
                 reStr = molr != null ? molr.r_name : "";
             }
@@ -219,7 +219,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_proc();
+                    model = new Model.tb_proc();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.p_no = this.txtno.Text;

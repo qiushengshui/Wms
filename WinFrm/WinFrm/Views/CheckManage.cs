@@ -17,8 +17,8 @@ namespace WinFrm.Views
             InitializeComponent();
         }
         public string optrowid = null;
-        Ctl.BLL.tb_pan dal = new Ctl.BLL.tb_pan();
-        Ctl.Model.tb_pan model = new Ctl.Model.tb_pan();
+        BLL.tb_pan dal = new BLL.tb_pan();
+        Model.tb_pan model = new Model.tb_pan();
 
         private void BindData(string where)
         {
@@ -74,7 +74,7 @@ namespace WinFrm.Views
         {
             BindData("");
         }
-        Ctl.BLL.tb_proc dalt = new Ctl.BLL.tb_proc();
+        BLL.tb_proc dalt = new BLL.tb_proc();
         private string GetStr(string _no)
         {
             string reStr = "";
@@ -98,7 +98,7 @@ namespace WinFrm.Views
                 model = dal.GetModel(Int32.Parse(optrowid));
                 if (model != null)
                 {
-                    Ctl.Model.tb_proc ml = new Ctl.Model.tb_proc();
+                    Model.tb_proc ml = new Model.tb_proc();
                     ml = dalt.GetModel(int.Parse(model.p_pid.ToString()));
                     txtname.Text = ml.p_name;
                     txtno.Text = ml.p_no;                    
@@ -159,7 +159,7 @@ namespace WinFrm.Views
             {
                 if (ValidateIput())
                 {
-                    model = new Ctl.Model.tb_pan();
+                    model = new Model.tb_pan();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.p_pid = int.Parse(this.txttyid.Text);
@@ -176,8 +176,8 @@ namespace WinFrm.Views
                         int i = dal.Add(model);
                         if (i > 0)
                         {
-                            Ctl.BLL.tb_proc dalp = new Ctl.BLL.tb_proc();
-                            Ctl.Model.tb_proc molp = new Ctl.Model.tb_proc();
+                            BLL.tb_proc dalp = new BLL.tb_proc();
+                            Model.tb_proc molp = new Model.tb_proc();
                             molp = dalp.GetModel(int.Parse(model.p_pid.ToString()));
                             molp.p_num = model.p_numnow;
                             dalp.Update(molp);
@@ -192,8 +192,8 @@ namespace WinFrm.Views
                     {
                         if (dal.Update(model))
                         {
-                            Ctl.BLL.tb_proc dalp = new Ctl.BLL.tb_proc();
-                            Ctl.Model.tb_proc molp = new Ctl.Model.tb_proc();
+                            BLL.tb_proc dalp = new BLL.tb_proc();
+                            Model.tb_proc molp = new Model.tb_proc();
                             molp = dalp.GetModel(int.Parse(model.p_pid.ToString()));
                             molp.p_num = model.p_numnow;
                             dalp.Update(molp);

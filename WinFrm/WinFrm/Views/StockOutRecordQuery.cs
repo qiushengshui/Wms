@@ -22,8 +22,8 @@ namespace WinFrm.Views
             //BindData(" ");
         }
         public string optrowid = null;
-        Ctl.BLL.tb_churu dal = new Ctl.BLL.tb_churu();
-        Ctl.Model.tb_churu model = new Ctl.Model.tb_churu();
+        BLL.tb_churu dal = new BLL.tb_churu();
+        Model.tb_churu model = new Model.tb_churu();
 
         private void BindData(string where)
         {

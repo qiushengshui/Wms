@@ -2,15 +2,15 @@
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
-using Ctl.Model;
-namespace Ctl.BLL
+using Model;
+namespace BLL
 {
 	/// <summary>
 	/// tb_proc
 	/// </summary>
 	public partial class tb_proc
 	{
-		private readonly Ctl.DAL.tb_proc dal=new Ctl.DAL.tb_proc();
+		private readonly DAL.tb_proc dal=new DAL.tb_proc();
 		public tb_proc()
 		{}
 		#region  Method
@@ -34,7 +34,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int  Add(Ctl.Model.tb_proc model)
+		public int  Add(Model.tb_proc model)
 		{
 			return dal.Add(model);
 		}
@@ -42,7 +42,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_proc model)
+		public bool Update(Model.tb_proc model)
 		{
 			return dal.Update(model);
 		}
@@ -66,7 +66,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_proc GetModel(int p_id)
+		public Model.tb_proc GetModel(int p_id)
 		{
 			
 			return dal.GetModel(p_id);
@@ -75,7 +75,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public Ctl.Model.tb_proc GetModelByCache(int p_id)
+		public Model.tb_proc GetModelByCache(int p_id)
 		{
 			
 			string CacheKey = "tb_procModel-" + p_id;
@@ -93,7 +93,7 @@ namespace Ctl.BLL
 				}
 				catch{}
 			}
-			return (Ctl.Model.tb_proc)objModel;
+			return (Model.tb_proc)objModel;
 		}
 
 		/// <summary>
@@ -121,7 +121,7 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_proc> GetModelList(string strWhere)
+		public List<Model.tb_proc> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -129,16 +129,16 @@ namespace Ctl.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<Ctl.Model.tb_proc> DataTableToList(DataTable dt)
+		public List<Model.tb_proc> DataTableToList(DataTable dt)
 		{
-			List<Ctl.Model.tb_proc> modelList = new List<Ctl.Model.tb_proc>();
+			List<Model.tb_proc> modelList = new List<Model.tb_proc>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				Ctl.Model.tb_proc model;
+				Model.tb_proc model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Ctl.Model.tb_proc();
+					model = new Model.tb_proc();
 					if(dt.Rows[n]["p_id"]!=null && dt.Rows[n]["p_id"].ToString()!="")
 					{
 						model.p_id=int.Parse(dt.Rows[n]["p_id"].ToString());

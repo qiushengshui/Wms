@@ -3,7 +3,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Ctl.DAL
+namespace DAL
 {
 	/// <summary>
 	/// 数据访问类:tb_order
@@ -37,7 +37,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public int Add(Ctl.Model.tb_order model)
+		public int Add(Model.tb_order model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			StringBuilder strSql1=new StringBuilder();
@@ -98,7 +98,7 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(Ctl.Model.tb_order model)
+		public bool Update(Model.tb_order model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update tb_order set ");
@@ -212,14 +212,14 @@ namespace Ctl.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Ctl.Model.tb_order GetModel(int o_id)
+		public Model.tb_order GetModel(int o_id)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select  top 1  ");
 			strSql.Append(" o_id,o_no,o_type,o_time,o_busy,o_sum,o_user,o_desc ");
 			strSql.Append(" from tb_order ");
 			strSql.Append(" where o_id="+o_id+"" );
-			Ctl.Model.tb_order model=new Ctl.Model.tb_order();
+			Model.tb_order model=new Model.tb_order();
 			DataSet ds=DbSQL.Query(strSql.ToString());
 			if(ds.Tables[0].Rows.Count>0)
 			{
