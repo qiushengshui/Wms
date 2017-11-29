@@ -52,6 +52,10 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Maticsoft.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Maticsoft.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -64,6 +68,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\tb_churu.cs" />
+    <Compile Include="BLL\tb_kehu.cs" />
+    <Compile Include="BLL\tb_ku.cs" />
+    <Compile Include="BLL\tb_order.cs" />
+    <Compile Include="BLL\tb_pan.cs" />
+    <Compile Include="BLL\tb_proc.cs" />
+    <Compile Include="BLL\tb_ruzhu.cs" />
+    <Compile Include="BLL\tb_type.cs" />
+    <Compile Include="BLL\tb_user.cs" />
+    <Compile Include="DAL\DbSQL.cs" />
+    <Compile Include="DAL\tb_churu.cs" />
+    <Compile Include="DAL\tb_kehu.cs" />
+    <Compile Include="DAL\tb_ku.cs" />
+    <Compile Include="DAL\tb_order.cs" />
+    <Compile Include="DAL\tb_pan.cs" />
+    <Compile Include="DAL\tb_proc.cs" />
+    <Compile Include="DAL\tb_ruzhu.cs" />
+    <Compile Include="DAL\tb_type.cs" />
+    <Compile Include="DAL\tb_user.cs" />
+    <Compile Include="Model\tb_churu.cs" />
+    <Compile Include="Model\tb_kehu.cs" />
+    <Compile Include="Model\tb_ku.cs" />
+    <Compile Include="Model\tb_order.cs" />
+    <Compile Include="Model\tb_pan.cs" />
+    <Compile Include="Model\tb_proc.cs" />
+    <Compile Include="Model\tb_ruzhu.cs" />
+    <Compile Include="Model\tb_type.cs" />
+    <Compile Include="Model\tb_user.cs" />
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,12 +387,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\zxing.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ctl\Ctl.csproj">
-      <Project>{be15acaa-0f3e-4f5c-8a25-34979bcffcd4}</Project>
-      <Name>Ctl</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
