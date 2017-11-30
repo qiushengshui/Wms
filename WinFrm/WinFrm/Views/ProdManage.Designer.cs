@@ -36,6 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtrzsjid = new System.Windows.Forms.TextBox();
+            this.txtrzsj = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtkqid = new System.Windows.Forms.TextBox();
             this.txtunit = new System.Windows.Forms.ComboBox();
             this.txtppai = new System.Windows.Forms.TextBox();
@@ -67,10 +71,6 @@
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtrzsjid = new System.Windows.Forms.TextBox();
-            this.txtrzsj = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -159,6 +159,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据编辑区";
             // 
+            // txtrzsjid
+            // 
+            this.txtrzsjid.Location = new System.Drawing.Point(303, 131);
+            this.txtrzsjid.Name = "txtrzsjid";
+            this.txtrzsjid.Size = new System.Drawing.Size(21, 21);
+            this.txtrzsjid.TabIndex = 59;
+            this.txtrzsjid.Visible = false;
+            // 
+            // txtrzsj
+            // 
+            this.txtrzsj.Location = new System.Drawing.Point(72, 128);
+            this.txtrzsj.Name = "txtrzsj";
+            this.txtrzsj.ReadOnly = true;
+            this.txtrzsj.Size = new System.Drawing.Size(187, 21);
+            this.txtrzsj.TabIndex = 57;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "所属商家：";
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(265, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // txtkqid
             // 
             this.txtkqid.Location = new System.Drawing.Point(507, 94);
@@ -186,7 +222,7 @@
             "把",
             "辆",
             "件"});
-            this.txtunit.Location = new System.Drawing.Point(155, 94);
+            this.txtunit.Location = new System.Drawing.Point(155, 93);
             this.txtunit.Name = "txtunit";
             this.txtunit.Size = new System.Drawing.Size(66, 20);
             this.txtunit.TabIndex = 54;
@@ -451,42 +487,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // txtrzsjid
-            // 
-            this.txtrzsjid.Location = new System.Drawing.Point(303, 131);
-            this.txtrzsjid.Name = "txtrzsjid";
-            this.txtrzsjid.Size = new System.Drawing.Size(21, 21);
-            this.txtrzsjid.TabIndex = 59;
-            this.txtrzsjid.Visible = false;
-            // 
-            // txtrzsj
-            // 
-            this.txtrzsj.Location = new System.Drawing.Point(72, 128);
-            this.txtrzsj.Name = "txtrzsj";
-            this.txtrzsj.ReadOnly = true;
-            this.txtrzsj.Size = new System.Drawing.Size(187, 21);
-            this.txtrzsj.TabIndex = 57;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "所属商家：";
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(265, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 23);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ProdManage
             // 
