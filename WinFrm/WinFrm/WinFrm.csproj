@@ -57,9 +57,11 @@
       <HintPath>bin\Debug\Maticsoft.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="zxing, Version=0.14.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
@@ -77,7 +79,7 @@
     <Compile Include="BLL\tb_ruzhu.cs" />
     <Compile Include="BLL\tb_type.cs" />
     <Compile Include="BLL\tb_user.cs" />
-    <Compile Include="DAL\DbSQL.cs" />
+    <Compile Include="DBUtility\DbSQL.cs" />
     <Compile Include="DAL\tb_churu.cs" />
     <Compile Include="DAL\tb_kehu.cs" />
     <Compile Include="DAL\tb_ku.cs" />
@@ -87,6 +89,11 @@
     <Compile Include="DAL\tb_ruzhu.cs" />
     <Compile Include="DAL\tb_type.cs" />
     <Compile Include="DAL\tb_user.cs" />
+    <Compile Include="DBUtility\CommandInfo.cs" />
+    <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\DESEncrypt.cs" />
+    <Compile Include="DBUtility\PubConstant.cs" />
+    <Compile Include="DBUtility\SQLHelper.cs" />
     <Compile Include="Model\tb_churu.cs" />
     <Compile Include="Model\tb_kehu.cs" />
     <Compile Include="Model\tb_ku.cs" />
@@ -252,7 +259,7 @@
     <Compile Include="Views\SelectCustomer.Designer.cs">
       <DependentUpon>SelectCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Views\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

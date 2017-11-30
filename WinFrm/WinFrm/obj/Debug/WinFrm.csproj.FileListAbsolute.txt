@@ -422,8 +422,8 @@ E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectWarehouseArea.resour
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectProvider.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectProdType.resources
 E:\CSProject\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectCustomer.resources
-E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.exe
-E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.pdb
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\WinFrm.exe
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\WinFrm.pdb
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Login.resources
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.ChangePwd.resources
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.AccountManage.resources
@@ -452,5 +452,5 @@ E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectProdType.resou
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Views.SelectCustomer.resources
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Properties.Resources.resources
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csproj.GenerateResource.Cache
-E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\WinFrm.exe
-E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\WinFrm.pdb
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.exe
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.pdb
