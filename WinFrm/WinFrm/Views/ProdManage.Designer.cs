@@ -173,6 +173,11 @@
             this.txtunit.FormattingEnabled = true;
             this.txtunit.Items.AddRange(new object[] {
             "个",
+            "瓶",
+            "箱",
+            "桶",
+            "斤",
+            "片",
             "台",
             "张",
             "包",

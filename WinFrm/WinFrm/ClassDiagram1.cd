@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.tb_churu" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAEoCAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_churu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_kehu" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_kehu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_ku" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAECAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_ku.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_order" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAIAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_pan" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_pan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_proc" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAECAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_proc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_ruzhu" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_ruzhu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_type" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_type.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.tb_user" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGYggQAAAICAAAAAAAAIAAAAAAEAEAAAAAAAAAMAAAI=</HashCode>
+      <FileName>BLL\tb_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_churu" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAEgCAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_churu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_kehu" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_kehu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_ku" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAACAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_ku.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_order" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAIAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_pan" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_pan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_proc" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAACAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_proc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_ruzhu" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_ruzhu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_type" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_type.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.tb_user" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAgAAAAACAAAAAAAAIAAAAAAEAAAAAAAAAAAMAAAI=</HashCode>
+      <FileName>DAL\tb_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DbSQL" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAgAAAAAAAIAAAAAAAgAAAAAAAEAAgA=</HashCode>
+      <FileName>DBUtility\DbSQL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Maticsoft.DBUtility.CommandInfo" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAAAAAAAAAAAAQAABAAAAAgAAAAAAAAAIAAAAAAIEA=</HashCode>
+      <FileName>DBUtility\CommandInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Maticsoft.DBUtility.DbHelperSQL" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBACAIAQAACgAAAAAEAKEEQAAAAgAAQAAAAEAIgA=</HashCode>
+      <FileName>DBUtility\DbHelperSQL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Maticsoft.DBUtility.DESEncrypt" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBUtility\DESEncrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Maticsoft.DBUtility.PubConstant" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>DBUtility\PubConstant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Maticsoft.DBUtility.SqlHelper" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBCmAAAAAACAAAAAAEEAAAAAAAAABAAAAAAABAAA=</HashCode>
+      <FileName>DBUtility\SQLHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_churu" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAABAAAAAAAEAAKAggABQACAAABQIAAEgAAAgAQQ=</HashCode>
+      <FileName>Model\tb_churu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_kehu" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAACCAQACQAAAAEACADAAgAQAAAAAUgQAA=</HashCode>
+      <FileName>Model\tb_kehu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_ku" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAQAAAAAQIAAAAAAgQABAABAAAIAAABA=</HashCode>
+      <FileName>Model\tb_ku.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_order" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABABAQBCABQAIEAAAAEAAAAAAABAAEAAIAAAAAQI=</HashCode>
+      <FileName>Model\tb_order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_pan" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABAAAIMIAAACAgCAAAgAAQAAIAAAoAAAAAAA=</HashCode>
+      <FileName>Model\tb_pan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_proc" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAMAAAgCKAASMpIAAAwAQABAQCIBIAAACigAJAAACAA=</HashCode>
+      <FileName>Model\tb_proc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_ruzhu" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAABAAAAAAAAgAQAUgIBAAAAgAABACAAAAAAAA=</HashCode>
+      <FileName>Model\tb_ruzhu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_type" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAsAAAAAAAgAAAAAAAAAIAAIAABABAAQIAAAAAAAA=</HashCode>
+      <FileName>Model\tb_type.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.tb_user" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAASAAAAACQoAAAAAAAECAAaAIzAIgAAAIAgABABA=</HashCode>
+      <FileName>Model\tb_user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Properties.Resources" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.AccountManage" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARggEAAAACAEABAAAACIBMFCgEgAJAQBACAABBAIECA=</HashCode>
+      <FileName>Views\AccountManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.CheckManage" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MRAgkAAAACAEEBAAAACIFMFKAEgAKAQDACAgFBAKEAg=</HashCode>
+      <FileName>Views\CheckManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.CustomerManage" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgEAAAACAEABAAAACIBMFCAGgAIAQDACAABBBKECA=</HashCode>
+      <FileName>Views\CustomerManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.InventoryWarningQuery" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oEAgEAAAACAAAAAAQACAAMBCAAgIIAQAAeAAAAAIAAA=</HashCode>
+      <FileName>Views\InventoryWarningQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.Main" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AZMlQCAAgCAAglEQQsCQRBCSAEhiIQUAUgBAFgKJBgk=</HashCode>
+      <FileName>Views\Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdAcceptance" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MRAgkAAAACCEABAAAAKIBMFKAEgAKAQDgDAwBBAKEEg=</HashCode>
+      <FileName>Views\ProdAcceptance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdCategory" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgMAAAACAEABAAAACIBMFCAEgAIAQBASBAABAIEAA=</HashCode>
+      <FileName>Views\ProdCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdInventoryQuery" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oEAgEAAAACAAAAAAQACAAMBCAAgIIAQAAeAAAAAIAAA=</HashCode>
+      <FileName>Views\ProdInventoryQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdManage" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MRAiEAAiACAEEDCAQFCaBMFKAFwIIAQDAXkwRJCKEAA=</HashCode>
+      <FileName>Views\ProdManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdScrap" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRAgkAAAACAEABAAAAKIBMFKAEggKAQDgCAgBBAKEAA=</HashCode>
+      <FileName>Views\ProdScrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProdStockOutManage" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRAgkAAAACAEABAAAAKIBMFKAEggKAQDgDAwBBAKEAg=</HashCode>
+      <FileName>Views\ProdStockOutManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.ProviderManage" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgEAAAACAEABAAAACIBOFCAGgAIAQDACAABBAKECA=</HashCode>
+      <FileName>Views\ProviderManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.SelectCustomer" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggggEAIAACAAABEAAACAQMACAUAIIgQAAGAABAAIAAA=</HashCode>
+      <FileName>Views\SelectCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.SelectProdType" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgggECIAACAAABEAAACAQMACAUAIIAQAAGAABAAMAAA=</HashCode>
+      <FileName>Views\SelectProdType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.SelectProvider" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgggEAIAACACABEAAACAQMACAUAIIgQAAGAABAAIAAA=</HashCode>
+      <FileName>Views\SelectProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.SelectWarehouse" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgggEAIAACAAABEQAACAQMACAUAIIAQAAGAABAAMAAA=</HashCode>
+      <FileName>Views\SelectWarehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.SelectWarehouseArea" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgggECIAACAAABEAAAGAQMACAUAIIAQAAGAABAAMAAA=</HashCode>
+      <FileName>Views\SelectWarehouseArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.StockOrder" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kRAgEIAgACAEABAAAACIBMFCAEwAJAQHAGAAABCIEAA=</HashCode>
+      <FileName>Views\StockOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.StockOutOrder" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kRAgEIAgACAEABIAAACIBMFCAEwAJAQDAGAAABCIEAA=</HashCode>
+      <FileName>Views\StockOutOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.StockOutRecordQuery" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAgEIAAACAAABAAAACAAMACAAgIIQQCAGAQBAAIAAA=</HashCode>
+      <FileName>Views\StockOutRecordQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.StockRecordQuery" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAgEIAAACAAABAAAACAAMACAAgIIAQCAGAQBAAIAIA=</HashCode>
+      <FileName>Views\StockRecordQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.WarehouseAreaManage" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgMACAACAEABAAAAKIBMFCAEgAIAQBBSAAABAIEAA=</HashCode>
+      <FileName>Views\WarehouseAreaManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.WarehouseManage" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgMAAAACAEABAAAACIBMFCAEgAIAQBASAAABIIEAA=</HashCode>
+      <FileName>Views\WarehouseManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Views.WarningManage" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAgEAAAACAEABAAAACIDMVCAEgAIAQDACBABBAIEAA=</HashCode>
+      <FileName>Views\WarningManage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.ChangePwd" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAAABAAAASIAIACCAAAIEQAACAAAAgIAAA=</HashCode>
+      <FileName>Views\ChangePwd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Login" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAABEAAACAAMACCAAAAEAAAQAAAAAAAAA=</HashCode>
+      <FileName>Views\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFrm.Program" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Views\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Maticsoft.DBUtility.EffentNextType" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAEAAGA=</HashCode>
+      <FileName>DBUtility\CommandInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

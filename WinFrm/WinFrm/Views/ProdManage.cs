@@ -228,8 +228,7 @@ namespace WinFrm.Views
                     model.p_model = this.txtmodel.Text;
                     model.p_price = this.txtprice.Text;
                     model.p_shang = txtchjia.Text;
-                    model.p_unit = txtunit.SelectedText;
-
+                    model.p_unit =  txtunit.Text;
                     model.p_ckid = int.Parse(this.txtckid.Text);
                     model.p_kqid = int.Parse(this.txtkqid.Text);
                     model.p_tyid = int.Parse(this.txttyid.Text);

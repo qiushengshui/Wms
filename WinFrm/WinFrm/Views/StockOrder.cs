@@ -143,7 +143,9 @@ namespace WinFrm.Views
                 {
                     model = new Model.tb_order();
                     if (!String.IsNullOrEmpty(optrowid))
-                    { model = dal.GetModel(int.Parse(optrowid)); }
+                    {
+                        model = dal.GetModel(int.Parse(optrowid)); 
+                    }
                     model.o_busy = int.Parse(this.txtkhid.Text);
                     model.o_no = this.txtno.Text;
 

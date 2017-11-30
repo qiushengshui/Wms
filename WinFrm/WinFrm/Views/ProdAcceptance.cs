@@ -283,12 +283,19 @@ namespace WinFrm.Views
             }
         }
         BLL.tb_proc dalt = new BLL.tb_proc();
+        BLL.tb_order der= new BLL.tb_order();
+        Model.tb_order mode = new Model.tb_order();
         private void GetStr(string _no)
         {
+
+           mode = der.GetModel(Convert.ToInt32(txtorder.SelectedValue));
+           String provider=Convert.ToString( mode.o_busy);
+
             string reStr = "";
             if (!string.IsNullOrEmpty(_no))
             {
-                DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid="+txtorder.SelectedValue).Tables[0];
+                //DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + txtorder.SelectedValue).Tables[0];
+                DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + provider).Tables[0];
                 if (dt.Rows.Count == 0) 
                 { 
                     MessageBox.Show("该订单所属商家下无此商品");
