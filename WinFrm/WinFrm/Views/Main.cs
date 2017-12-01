@@ -47,6 +47,8 @@ namespace WinFrm.Views
             if (m_ty == "3")
             {
                 tsddbMasterFileManage.Visible = false;
+                ttsddbSystemManage.DropDownItems[0].Visible=false;
+                ttsddbSystemManage.DropDownItems[1].Visible = false;
             }
             BLL.tb_proc dal = new BLL.tb_proc();
             Model.tb_proc model = new Model.tb_proc();
@@ -311,6 +313,16 @@ namespace WinFrm.Views
             newFrm.m_ty = m_ty;
             newFrm.MdiParent = this;
             newFrm.Show();
+        }
+
+        private void 数据备份tsmiDataBackUp(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 数据恢复tsmiDataRecover(object sender, EventArgs e)
+        {
+
         }
 
     }

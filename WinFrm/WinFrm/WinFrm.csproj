@@ -56,6 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Maticsoft.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -79,7 +82,7 @@
     <Compile Include="BLL\tb_ruzhu.cs" />
     <Compile Include="BLL\tb_type.cs" />
     <Compile Include="BLL\tb_user.cs" />
-    <Compile Include="DBUtility\DbSQL.cs" />
+    <Compile Include="Utils\DbSQL.cs" />
     <Compile Include="DAL\tb_churu.cs" />
     <Compile Include="DAL\tb_kehu.cs" />
     <Compile Include="DAL\tb_ku.cs" />
@@ -89,11 +92,11 @@
     <Compile Include="DAL\tb_ruzhu.cs" />
     <Compile Include="DAL\tb_type.cs" />
     <Compile Include="DAL\tb_user.cs" />
-    <Compile Include="DBUtility\CommandInfo.cs" />
-    <Compile Include="DBUtility\DbHelperSQL.cs" />
-    <Compile Include="DBUtility\DESEncrypt.cs" />
-    <Compile Include="DBUtility\PubConstant.cs" />
-    <Compile Include="DBUtility\SQLHelper.cs" />
+    <Compile Include="Utils\CommandInfo.cs" />
+    <Compile Include="Utils\DbHelperSQL.cs" />
+    <Compile Include="Utils\DESEncrypt.cs" />
+    <Compile Include="Utils\PubConstant.cs" />
+    <Compile Include="Utils\SQLHelper.cs" />
     <Compile Include="Model\tb_churu.cs" />
     <Compile Include="Model\tb_kehu.cs" />
     <Compile Include="Model\tb_ku.cs" />

@@ -455,3 +455,8 @@ E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csproj.GenerateResource.Ca
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.exe
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.pdb
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csprojResolveAssemblyReference.cache
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\office.dll
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\Microsoft.Office.Interop.Excel.xml
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\bin\Debug\office.xml
