@@ -21,6 +21,7 @@ namespace WinFrm.Views
         {
 
         }
+
         public string optrowid = null;
         BLL.tb_churu dal = new BLL.tb_churu();
         Model.tb_churu model = new Model.tb_churu();
@@ -57,15 +58,20 @@ namespace WinFrm.Views
             {
                 sql += " and p_name='" + txtname.Text + "' ";
             }
-            if (!string.IsNullOrEmpty(txtno.Text))
+            if (!string.IsNullOrEmpty(txtorder.Text))
             {
                 sql += " and o_no='" + txtorder.Text + "' ";
             }
-            if (!string.IsNullOrEmpty(txtname.Text))
+            if (!string.IsNullOrEmpty(txtkehu.Text))
             {
-                sql += " and h_name='" + txtkehu.Text + "' ";
+                sql += " and r_name='" + txtkehu.Text + "' ";
             }
             BindData(sql);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

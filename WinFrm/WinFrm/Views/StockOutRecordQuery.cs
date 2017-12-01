@@ -57,11 +57,11 @@ namespace WinFrm.Views
             {
                 sql += " and p_name='" + txtname.Text + "' ";
             }
-            if (!string.IsNullOrEmpty(txtno.Text))
+            if (!string.IsNullOrEmpty(txtorder.Text))
             {
                 sql += " and o_no='" + txtorder.Text + "' ";
             }
-            if (!string.IsNullOrEmpty(txtname.Text))
+            if (!string.IsNullOrEmpty(txtkehu.Text))
             {
                 sql += " and h_name='" + txtkehu.Text + "' ";
             }

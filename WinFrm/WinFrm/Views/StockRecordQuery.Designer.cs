@@ -82,7 +82,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 88;
-            this.label1.Text = "客户名称：";
+            this.label1.Text = "入驻商家：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // imageList1
             // 

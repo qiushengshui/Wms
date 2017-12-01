@@ -264,11 +264,28 @@ namespace WinFrm.Views
             string reStr = "";
             if (!string.IsNullOrEmpty(_no))
             {
-                DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + txtorder.SelectedValue).Tables[0];
-                if (dt.Rows.Count == 0) { MessageBox.Show("该订单所属商家下无此商品"); return; }
-                txttyid.Text = dt.Rows[0]["p_id"].ToString();
-                reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
-                txtname.Text = reStr;
+                //DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + txtorder.SelectedValue).Tables[0];
+                DataTable dt = dalt.GetList(" p_no='" + _no + "' ").Tables[0];
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("该超市无此商品");
+                    return;
+                }
+                else {
+                    int num = Convert.ToInt32(dt.Rows[0]["p_num"]);
+                    if (num > 0)
+                    {
+                        txttyid.Text = dt.Rows[0]["p_id"].ToString();
+                        reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
+                        txtname.Text = reStr;
+                    }
+                    else {
+                        MessageBox.Show("该商品无库存");
+                        return;
+                    }
+                }
+
+     
             }
 
         }

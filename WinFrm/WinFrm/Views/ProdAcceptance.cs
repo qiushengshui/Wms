@@ -290,7 +290,6 @@ namespace WinFrm.Views
 
            mode = der.GetModel(Convert.ToInt32(txtorder.SelectedValue));
            String provider=Convert.ToString( mode.o_busy);
-
             string reStr = "";
             if (!string.IsNullOrEmpty(_no))
             {

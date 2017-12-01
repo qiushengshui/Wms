@@ -96,11 +96,10 @@
             // 
             // txtnum
             // 
-            this.txtnum.Location = new System.Drawing.Point(790, 39);
-            this.txtnum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnum.Location = new System.Drawing.Point(592, 31);
             this.txtnum.Name = "txtnum";
             this.txtnum.ReadOnly = true;
-            this.txtnum.Size = new System.Drawing.Size(197, 25);
+            this.txtnum.Size = new System.Drawing.Size(149, 21);
             this.txtnum.TabIndex = 51;
             // 
             // imageList2
@@ -117,30 +116,27 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(681, 47);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(511, 38);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 15);
+            this.label11.Size = new System.Drawing.Size(89, 12);
             this.label11.TabIndex = 50;
             this.label11.Text = "本次报废数量：";
             // 
             // txttyid
             // 
-            this.txttyid.Location = new System.Drawing.Point(1011, 41);
-            this.txttyid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttyid.Location = new System.Drawing.Point(747, 31);
             this.txttyid.Name = "txttyid";
-            this.txttyid.Size = new System.Drawing.Size(27, 25);
+            this.txttyid.Size = new System.Drawing.Size(21, 21);
             this.txttyid.TabIndex = 48;
             this.txttyid.Visible = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 25);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1037, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -155,10 +151,9 @@
             // btn_js
             // 
             this.btn_js.Enabled = false;
-            this.btn_js.Location = new System.Drawing.Point(280, 37);
-            this.btn_js.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_js.Location = new System.Drawing.Point(212, 30);
             this.btn_js.Name = "btn_js";
-            this.btn_js.Size = new System.Drawing.Size(63, 29);
+            this.btn_js.Size = new System.Drawing.Size(47, 23);
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
@@ -181,50 +176,44 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtname);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(4, 465);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(3, 372);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1055, 152);
+            this.groupBox2.Size = new System.Drawing.Size(791, 122);
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据编辑区";
             // 
             // txtno
             // 
-            this.txtno.Location = new System.Drawing.Point(96, 39);
-            this.txtno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtno.Location = new System.Drawing.Point(72, 31);
             this.txtno.Name = "txtno";
             this.txtno.ReadOnly = true;
-            this.txtno.Size = new System.Drawing.Size(179, 25);
+            this.txtno.Size = new System.Drawing.Size(135, 21);
             this.txtno.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 43);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 22;
             this.label3.Text = "商品编号：";
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(448, 39);
-            this.txtname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtname.Location = new System.Drawing.Point(336, 31);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
-            this.txtname.Size = new System.Drawing.Size(197, 25);
+            this.txtname.Size = new System.Drawing.Size(149, 21);
             this.txtname.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(371, 46);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(278, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 15);
+            this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 7;
             this.label5.Text = "商品名称：";
             // 
@@ -241,10 +230,9 @@
             this.toolBar1.DropDownArrows = true;
             this.toolBar1.ImageList = this.imageList2;
             this.toolBar1.Location = new System.Drawing.Point(0, 0);
-            this.toolBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.toolBar1.Name = "toolBar1";
             this.toolBar1.ShowToolTips = true;
-            this.toolBar1.Size = new System.Drawing.Size(1067, 28);
+            this.toolBar1.Size = new System.Drawing.Size(800, 28);
             this.toolBar1.TabIndex = 82;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
@@ -252,24 +240,21 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 48);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1055, 412);
+            this.groupBox1.Size = new System.Drawing.Size(791, 330);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品报废列表";
             // 
             // ProdScrap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 632);
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ProdScrap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

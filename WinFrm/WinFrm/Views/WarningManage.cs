@@ -45,6 +45,7 @@ namespace WinFrm.Views
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
             dataGridView1.Columns[15].Visible = false;
+            dataGridView1.Columns[16].Visible = false;
         }
 
         private void SetModifyMode(bool blnEdit)

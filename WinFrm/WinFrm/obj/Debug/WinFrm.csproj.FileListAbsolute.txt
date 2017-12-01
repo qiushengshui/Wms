@@ -454,3 +454,4 @@ E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.Properties.Resources.resou
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csproj.GenerateResource.Cache
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.exe
 E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.pdb
+E:\CSProject\cssys\Wms\WinFrm\WinFrm\obj\Debug\WinFrm.csprojResolveAssemblyReference.cache
