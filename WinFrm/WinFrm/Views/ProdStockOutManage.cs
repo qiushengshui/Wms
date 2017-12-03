@@ -41,7 +41,7 @@ namespace WinFrm.Views
             dataGridView1.Columns[7].HeaderText = "客户名称";
             dataGridView1.Columns[8].HeaderText = "客户电话";
             dataGridView1.Columns[9].HeaderText = "客户地址";
-            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[10].HeaderText = "出库说明";
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
