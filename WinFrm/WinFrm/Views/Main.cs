@@ -50,6 +50,8 @@ namespace WinFrm.Views
                 ttsddbSystemManage.DropDownItems[0].Visible=false;
                 ttsddbSystemManage.DropDownItems[1].Visible = false;
             }
+            //开启实时时间刷新任务
+            this.timer.Enabled = true;
             BLL.tb_proc dal = new BLL.tb_proc();
             Model.tb_proc model = new Model.tb_proc();
 
@@ -61,7 +63,7 @@ namespace WinFrm.Views
                 aa.Show();
             }
             tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
-            tsslDateInfo.Text = DateTime.Now.ToString();
+            //tsslDateInfo.Text = DateTime.Now.ToString();
         }
 
         private void 修改密码tsmiChangePwd(object sender, EventArgs e)
@@ -323,6 +325,12 @@ namespace WinFrm.Views
         private void 数据恢复tsmiDataRecover(object sender, EventArgs e)
         {
 
+        }
+
+        private void 实时时间timerTick(object sender, EventArgs e)
+        {
+            DateTime dt = System.DateTime.Now;
+            tsslDateInfo.Text = dt.ToString();
         }
 
     }

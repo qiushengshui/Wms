@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslWelcomeInfo = new System.Windows.Forms.ToolStripStatusLabel();
@@ -35,6 +36,8 @@
             this.tsslDateInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ttsddbSystemManage = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiDataBackUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDataRecover = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiChangePwd = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLoginOut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +65,7 @@
             this.tmsiProdCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiWarehouseManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiWarehouseAreaManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDataBackUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDataRecover = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,24 +130,38 @@
             this.ttsddbSystemManage.Size = new System.Drawing.Size(69, 22);
             this.ttsddbSystemManage.Text = "系统管理";
             // 
+            // tsmiDataBackUp
+            // 
+            this.tsmiDataBackUp.Name = "tsmiDataBackUp";
+            this.tsmiDataBackUp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDataBackUp.Text = "数据备份";
+            this.tsmiDataBackUp.Click += new System.EventHandler(this.数据备份tsmiDataBackUp);
+            // 
+            // tsmiDataRecover
+            // 
+            this.tsmiDataRecover.Name = "tsmiDataRecover";
+            this.tsmiDataRecover.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDataRecover.Text = "数据恢复";
+            this.tsmiDataRecover.Click += new System.EventHandler(this.数据恢复tsmiDataRecover);
+            // 
             // tsmiChangePwd
             // 
             this.tsmiChangePwd.Name = "tsmiChangePwd";
-            this.tsmiChangePwd.Size = new System.Drawing.Size(152, 22);
+            this.tsmiChangePwd.Size = new System.Drawing.Size(124, 22);
             this.tsmiChangePwd.Text = "修改密码";
             this.tsmiChangePwd.Click += new System.EventHandler(this.修改密码tsmiChangePwd);
             // 
             // tsmiLoginOut
             // 
             this.tsmiLoginOut.Name = "tsmiLoginOut";
-            this.tsmiLoginOut.Size = new System.Drawing.Size(152, 22);
+            this.tsmiLoginOut.Size = new System.Drawing.Size(124, 22);
             this.tsmiLoginOut.Text = "注销用户";
             this.tsmiLoginOut.Click += new System.EventHandler(this.注销用户tsmiLoginOut);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(152, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(124, 22);
             this.tsmiExit.Text = "退出系统";
             this.tsmiExit.Click += new System.EventHandler(this.退出系统tsmiExit);
             // 
@@ -305,65 +321,55 @@
             // tmsiAccountManage
             // 
             this.tmsiAccountManage.Name = "tmsiAccountManage";
-            this.tmsiAccountManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiAccountManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiAccountManage.Text = "用户管理";
             this.tmsiAccountManage.Click += new System.EventHandler(this.用户管理tmsiAccountManage);
             // 
             // tmsiCustomerManage
             // 
             this.tmsiCustomerManage.Name = "tmsiCustomerManage";
-            this.tmsiCustomerManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiCustomerManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiCustomerManage.Text = "客户管理";
             this.tmsiCustomerManage.Click += new System.EventHandler(this.客户管理tmsiCustomerManage);
             // 
             // tmsiProviderManage
             // 
             this.tmsiProviderManage.Name = "tmsiProviderManage";
-            this.tmsiProviderManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProviderManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiProviderManage.Text = "入驻商家";
             this.tmsiProviderManage.Click += new System.EventHandler(this.入驻商家tmsiProviderManage);
             // 
             // tmsiProdManage
             // 
             this.tmsiProdManage.Name = "tmsiProdManage";
-            this.tmsiProdManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProdManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiProdManage.Text = "商品管理";
             this.tmsiProdManage.Click += new System.EventHandler(this.商品管理tmsiProdManage);
             // 
             // tmsiProdCategory
             // 
             this.tmsiProdCategory.Name = "tmsiProdCategory";
-            this.tmsiProdCategory.Size = new System.Drawing.Size(152, 22);
+            this.tmsiProdCategory.Size = new System.Drawing.Size(124, 22);
             this.tmsiProdCategory.Text = "商品分类";
             this.tmsiProdCategory.Click += new System.EventHandler(this.商品分类tmsiProdCategory);
             // 
             // tmsiWarehouseManage
             // 
             this.tmsiWarehouseManage.Name = "tmsiWarehouseManage";
-            this.tmsiWarehouseManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiWarehouseManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiWarehouseManage.Text = "仓库管理";
             this.tmsiWarehouseManage.Click += new System.EventHandler(this.仓库管理tmsiWarehouseManage);
             // 
             // tmsiWarehouseAreaManage
             // 
             this.tmsiWarehouseAreaManage.Name = "tmsiWarehouseAreaManage";
-            this.tmsiWarehouseAreaManage.Size = new System.Drawing.Size(152, 22);
+            this.tmsiWarehouseAreaManage.Size = new System.Drawing.Size(124, 22);
             this.tmsiWarehouseAreaManage.Text = "库区管理";
             this.tmsiWarehouseAreaManage.Click += new System.EventHandler(this.库区管理tmsiWarehouseAreaManage);
             // 
-            // tsmiDataBackUp
+            // timer
             // 
-            this.tsmiDataBackUp.Name = "tsmiDataBackUp";
-            this.tsmiDataBackUp.Size = new System.Drawing.Size(152, 22);
-            this.tsmiDataBackUp.Text = "数据备份";
-            this.tsmiDataBackUp.Click += new System.EventHandler(this.数据备份tsmiDataBackUp);
-            // 
-            // tsmiDataRecover
-            // 
-            this.tsmiDataRecover.Name = "tsmiDataRecover";
-            this.tsmiDataRecover.Size = new System.Drawing.Size(152, 22);
-            this.tsmiDataRecover.Text = "数据恢复";
-            this.tsmiDataRecover.Click += new System.EventHandler(this.数据恢复tsmiDataRecover);
+            this.timer.Tick += new System.EventHandler(this.实时时间timerTick);
             // 
             // Main
             // 
@@ -424,5 +430,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiInventoryWarningQuery;
         private System.Windows.Forms.ToolStripMenuItem tsmiDataBackUp;
         private System.Windows.Forms.ToolStripMenuItem tsmiDataRecover;
+        private System.Windows.Forms.Timer timer;
     }
 }
