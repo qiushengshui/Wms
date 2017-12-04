@@ -15,8 +15,6 @@ namespace WinFrm.Views
 {
     public partial class ProdInventoryQuery : Form
     {
-        EncodingOptions options = null;
-        BarcodeWriter writer = null; 
         public string m_id = null;
         public string m_ty = null;
         DataSet ds = null;
@@ -68,8 +66,9 @@ namespace WinFrm.Views
 
         private void 导出报表exportExcel(object sender, EventArgs e)
         {
-            //ExportExcels.Export("123", dataGridView1);
-            ExportExcels.SaveAsExcel(ds.Tables[0]);
+            //ExportExcels.Export("", dataGridView1);
+           ExportToExcel.OutputAsExcelFile(dataGridView1);
+            //ExportExcels.SaveAsExcel(ds.Tables[0]);
         }
 
         

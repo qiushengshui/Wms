@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using WinExcel;
 
 namespace WinFrm.Views
 {
@@ -71,7 +72,7 @@ namespace WinFrm.Views
 
         private void 导出报表exportExcel(object sender, EventArgs e)
         {
-
+            ExportToExcel.OutputAsExcelFile(dataGridView1);
         }
 
     }

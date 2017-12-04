@@ -8,7 +8,9 @@ using System.Windows.Forms;
 using ZXing.QrCode;
 using ZXing;
 using ZXing.Common;
-using ZXing.Rendering;  
+using ZXing.Rendering;
+using WinExcel;
+using WinFrm.Utils;
 
 namespace WinFrm.Views
 {
@@ -17,8 +19,6 @@ namespace WinFrm.Views
     /// </summary>
     public partial class InventoryWarningQuery : Form
     {
-        EncodingOptions options = null;
-        BarcodeWriter writer = null; 
         public string m_id = null;
         public string m_ty = null;
         public InventoryWarningQuery()
@@ -69,7 +69,7 @@ namespace WinFrm.Views
 
         private void 导出报表exportExcel(object sender, EventArgs e)
         {
-
+            ExportToExcel.OutputAsExcelFile(dataGridView1);
         }
 
         

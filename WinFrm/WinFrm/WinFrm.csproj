@@ -95,7 +95,6 @@
     <Compile Include="Utils\CommandInfo.cs" />
     <Compile Include="Utils\DbHelperSQL.cs" />
     <Compile Include="Utils\DESEncrypt.cs" />
-    <Compile Include="Utils\ExportExcels.cs" />
     <Compile Include="Utils\PubConstant.cs" />
     <Compile Include="Utils\SQLHelper.cs" />
     <Compile Include="Model\tb_churu.cs" />
@@ -107,6 +106,7 @@
     <Compile Include="Model\tb_ruzhu.cs" />
     <Compile Include="Model\tb_type.cs" />
     <Compile Include="Model\tb_user.cs" />
+    <Compile Include="Utils\ExportToExcel.cs" />
     <Compile Include="Views\DataBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,7 +374,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
