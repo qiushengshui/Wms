@@ -32,7 +32,6 @@ namespace WinFrm.Views
             dataGridView1.Columns[5].HeaderText = "本次盘点数量";
             dataGridView1.Columns[6].HeaderText = "盘点人员";
             dataGridView1.Columns[7].HeaderText = "盘点说明";
-            //dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
         }
 

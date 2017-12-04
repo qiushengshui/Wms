@@ -40,6 +40,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.z_no = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.export = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.export);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.z_name);
             this.groupBox3.Controls.Add(this.label13);
@@ -142,6 +144,16 @@
             this.label11.TabIndex = 81;
             this.label11.Text = "商品编号：";
             // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(524, 31);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 86;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
+            // 
             // ProdInventoryQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -174,5 +186,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox z_no;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button export;
     }
 }

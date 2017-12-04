@@ -2,6 +2,8 @@
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using WinFrm.Utils;
+
 
 namespace DAL
 {

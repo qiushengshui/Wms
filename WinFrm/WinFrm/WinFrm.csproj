@@ -95,6 +95,7 @@
     <Compile Include="Utils\CommandInfo.cs" />
     <Compile Include="Utils\DbHelperSQL.cs" />
     <Compile Include="Utils\DESEncrypt.cs" />
+    <Compile Include="Utils\ExportExcels.cs" />
     <Compile Include="Utils\PubConstant.cs" />
     <Compile Include="Utils\SQLHelper.cs" />
     <Compile Include="Model\tb_churu.cs" />
@@ -106,6 +107,18 @@
     <Compile Include="Model\tb_ruzhu.cs" />
     <Compile Include="Model\tb_type.cs" />
     <Compile Include="Model\tb_user.cs" />
+    <Compile Include="Views\DataBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DataBackup.designer.cs">
+      <DependentUpon>DataBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataRecover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DataRecover.designer.cs">
+      <DependentUpon>DataRecover.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +277,12 @@
     </Compile>
     <Compile Include="Views\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\DataBackup.resx">
+      <DependentUpon>DataBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataRecover.resx">
+      <DependentUpon>DataRecover.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>

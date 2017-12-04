@@ -69,7 +69,7 @@ namespace WinFrm.Views
             BindData(sql);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void 导出报表exportExcel(object sender, EventArgs e)
         {
 
         }

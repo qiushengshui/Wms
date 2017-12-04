@@ -34,16 +34,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtkehu = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtorder = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtno = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.txtkehu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtorder = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.export = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(722, 22);
+            this.button1.Location = new System.Drawing.Point(722, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 85;
@@ -80,6 +81,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.export);
             this.groupBox3.Controls.Add(this.txtkehu);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtorder);
@@ -94,6 +96,38 @@
             this.groupBox3.Size = new System.Drawing.Size(895, 53);
             this.groupBox3.TabIndex = 85;
             this.groupBox3.TabStop = false;
+            // 
+            // txtkehu
+            // 
+            this.txtkehu.Location = new System.Drawing.Point(598, 22);
+            this.txtkehu.Name = "txtkehu";
+            this.txtkehu.Size = new System.Drawing.Size(109, 21);
+            this.txtkehu.TabIndex = 89;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(540, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 88;
+            this.label1.Text = "客户名称：";
+            // 
+            // txtorder
+            // 
+            this.txtorder.Location = new System.Drawing.Point(425, 23);
+            this.txtorder.Name = "txtorder";
+            this.txtorder.Size = new System.Drawing.Size(89, 21);
+            this.txtorder.TabIndex = 87;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(366, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "订单编号：";
             // 
             // txtname
             // 
@@ -149,37 +183,15 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
-            // txtkehu
+            // export
             // 
-            this.txtkehu.Location = new System.Drawing.Point(598, 22);
-            this.txtkehu.Name = "txtkehu";
-            this.txtkehu.Size = new System.Drawing.Size(109, 21);
-            this.txtkehu.TabIndex = 89;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(540, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 88;
-            this.label1.Text = "客户名称：";
-            // 
-            // txtorder
-            // 
-            this.txtorder.Location = new System.Drawing.Point(425, 23);
-            this.txtorder.Name = "txtorder";
-            this.txtorder.Size = new System.Drawing.Size(89, 21);
-            this.txtorder.TabIndex = 87;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(366, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 86;
-            this.label2.Text = "订单编号：";
+            this.export.Location = new System.Drawing.Point(803, 21);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 91;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
             // 
             // StockOutRecordQuery
             // 
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtorder;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button export;
     }
 }

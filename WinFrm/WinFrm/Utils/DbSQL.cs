@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Collections.Generic;
 using System.Web;
 
-namespace DAL
+namespace WinFrm.Utils
 {
     public class DbSQL
     {
@@ -24,6 +24,22 @@ namespace DAL
         }
         public static bool Exists(string _a) {
             return true;
+        }
+
+        public static SqlConnection con = null;
+        public static SqlConnection getcon()
+        {
+            con = new SqlConnection(connectionString);
+            return con;
+        }
+        public static int getbyquery(string sql)
+        {
+            getcon();
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
         }
         #region  Ö´ÐÐ¼òµ¥SQLÓï¾ä
 

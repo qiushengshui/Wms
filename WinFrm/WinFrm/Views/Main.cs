@@ -319,12 +319,14 @@ namespace WinFrm.Views
 
         private void 数据备份tsmiDataBackUp(object sender, EventArgs e)
         {
-
+            DataBackup dbBackup = new DataBackup();
+            dbBackup.Show();
         }
 
         private void 数据恢复tsmiDataRecover(object sender, EventArgs e)
         {
-
+            DataRecover dbRecover = new DataRecover();
+            dbRecover.Show();
         }
 
         private void 实时时间timerTick(object sender, EventArgs e)

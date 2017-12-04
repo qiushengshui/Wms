@@ -68,5 +68,10 @@ namespace WinFrm.Views
             BindData(sql);
         }
 
+        private void 导出报表exportExcel(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

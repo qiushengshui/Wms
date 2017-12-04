@@ -8,7 +8,8 @@ using System.Windows.Forms;
 using ZXing.QrCode;
 using ZXing;
 using ZXing.Common;
-using ZXing.Rendering;  
+using ZXing.Rendering;
+using WinExcel;
 
 namespace WinFrm.Views
 {
@@ -18,6 +19,7 @@ namespace WinFrm.Views
         BarcodeWriter writer = null; 
         public string m_id = null;
         public string m_ty = null;
+        DataSet ds = null;
         public ProdInventoryQuery()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace WinFrm.Views
 
         private void BindData(string where)
         {
-            DataSet ds = dal.GetListT2(String.IsNullOrEmpty(where) ? " " : where);
+             ds = dal.GetListT2(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "商品编号";
@@ -62,6 +64,12 @@ namespace WinFrm.Views
                 sql += " and p_name='" + z_name.Text + "' ";
             }
             BindData(sql);
+        }
+
+        private void 导出报表exportExcel(object sender, EventArgs e)
+        {
+            //ExportExcels.Export("123", dataGridView1);
+            ExportExcels.SaveAsExcel(ds.Tables[0]);
         }
 
         

@@ -44,6 +44,7 @@
             this.txtno = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.export = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -83,7 +84,6 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 88;
             this.label1.Text = "入驻商家：";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // imageList1
             // 
@@ -114,6 +114,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.export);
             this.groupBox3.Controls.Add(this.txtkehu);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtorder);
@@ -182,6 +183,16 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(803, 22);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 90;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
+            // 
             // StockRecordQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -218,5 +229,6 @@
         private System.Windows.Forms.TextBox txtno;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.Button export;
     }
 }
