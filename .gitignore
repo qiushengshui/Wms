@@ -1,1 +1,4 @@
-/WinFrm/WinFrm/bin/Debug/WinFrm.exe
+*.suo
+*.cache
+[Dd]ebug*/
+[Rr]elease*/
