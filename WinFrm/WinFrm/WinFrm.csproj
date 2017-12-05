@@ -411,9 +411,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="bin\Debug\zxing.dll" />
   </ItemGroup>

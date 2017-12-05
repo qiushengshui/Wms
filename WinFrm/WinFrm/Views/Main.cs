@@ -63,7 +63,6 @@ namespace WinFrm.Views
                 aa.Show();
             }
             tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
-            //tsslDateInfo.Text = DateTime.Now.ToString();
         }
 
         private void 修改密码tsmiChangePwd(object sender, EventArgs e)
