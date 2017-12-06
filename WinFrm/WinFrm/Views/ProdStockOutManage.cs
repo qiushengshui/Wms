@@ -156,15 +156,12 @@ namespace WinFrm.Views
                     model.cr_pid = int.Parse(txttyid.Text);
                     model.cr_price = decimal.Parse(txtprice.Text);
                     model.cr_remark = txtrek.Text;
-
                     model.cr_type = 2;
                     model.cr_num = int.Parse(this.txtnum.Text);
 
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
-
-                        if (dal.Add(model) > 0)
                         {
                             BLL.tb_proc dap = new BLL.tb_proc();
                             Model.tb_proc mop = new Model.tb_proc();
@@ -173,20 +170,24 @@ namespace WinFrm.Views
                             {
                                 if (mop.p_num < int.Parse(mop.p_xx))
                                 {
-                                    MessageBox.Show("已达到库存预警上限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                                    MessageBox.Show("已达到库存预警下限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
                                 }
                             }
                             if (mop.p_num < int.Parse(this.txtnum.Text))
                             {
                                 MessageBox.Show("库存不足，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
                             }
-                            mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
-                            dap.Update(mop);
-                            MessageBox.Show("恭喜你，出库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("cr_type=2");
-                            SetModifyMode(false);
-                            optrowid = null;
+                            else
+                            {
+                                mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
+                                dal.Add(model);
+                                dap.Update(mop);
+                                MessageBox.Show("恭喜你，出库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearCtlValue();
+                                BindData("cr_type=2");
+                                SetModifyMode(false);
+                                optrowid = null;
+                            }
                         }
                     }
                     else
@@ -247,7 +248,6 @@ namespace WinFrm.Views
                 MessageBox.Show("请输入商品编号", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.txtno.Focus();
             }
-
             else
             {
                 if (txtorder.SelectedValue != "")
@@ -284,10 +284,7 @@ namespace WinFrm.Views
                         return;
                     }
                 }
-
-     
             }
-
         }
 
 

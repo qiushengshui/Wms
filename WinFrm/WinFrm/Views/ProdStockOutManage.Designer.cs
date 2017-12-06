@@ -157,7 +157,7 @@
             // 
             // txttyid
             // 
-            this.txttyid.Location = new System.Drawing.Point(502, 59);
+            this.txttyid.Location = new System.Drawing.Point(502, 58);
             this.txttyid.Name = "txttyid";
             this.txttyid.Size = new System.Drawing.Size(21, 21);
             this.txttyid.TabIndex = 48;
