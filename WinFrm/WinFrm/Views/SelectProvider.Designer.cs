@@ -89,7 +89,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(224, 29);
+            this.button1.Location = new System.Drawing.Point(224, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 75;
@@ -108,7 +108,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(59, 29);
+            this.txtname.Location = new System.Drawing.Point(59, 31);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
             this.txtname.Size = new System.Drawing.Size(152, 21);

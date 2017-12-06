@@ -74,7 +74,9 @@ namespace WinFrm.Views
         {
             BindData("");
         }
+
         BLL.tb_proc dalt = new BLL.tb_proc();
+
         private string GetStr(string _no)
         {
             string reStr = "";
@@ -230,6 +232,11 @@ namespace WinFrm.Views
             }
             txtname.Text = GetStr(txtno.Text);
             txttime.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

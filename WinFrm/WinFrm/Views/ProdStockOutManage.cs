@@ -291,6 +291,16 @@ namespace WinFrm.Views
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

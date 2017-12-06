@@ -181,7 +181,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(440, 35);
+            this.label2.Location = new System.Drawing.Point(440, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 12);
             this.label2.TabIndex = 26;
@@ -189,7 +189,7 @@
             // 
             // txttel
             // 
-            this.txttel.Location = new System.Drawing.Point(60, 58);
+            this.txttel.Location = new System.Drawing.Point(60, 60);
             this.txttel.Name = "txttel";
             this.txttel.ReadOnly = true;
             this.txttel.Size = new System.Drawing.Size(120, 21);
@@ -197,7 +197,7 @@
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(313, 61);
+            this.txtemail.Location = new System.Drawing.Point(313, 60);
             this.txtemail.Name = "txtemail";
             this.txtemail.ReadOnly = true;
             this.txtemail.Size = new System.Drawing.Size(120, 21);
@@ -223,7 +223,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(60, 27);
+            this.txtname.Location = new System.Drawing.Point(60, 29);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
             this.txtname.Size = new System.Drawing.Size(120, 21);
@@ -231,7 +231,7 @@
             // 
             // txtlogname
             // 
-            this.txtlogname.Location = new System.Drawing.Point(313, 27);
+            this.txtlogname.Location = new System.Drawing.Point(313, 29);
             this.txtlogname.Name = "txtlogname";
             this.txtlogname.ReadOnly = true;
             this.txtlogname.Size = new System.Drawing.Size(120, 21);

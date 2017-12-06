@@ -86,7 +86,7 @@
             // 
             // t_name
             // 
-            this.t_name.Location = new System.Drawing.Point(271, 31);
+            this.t_name.Location = new System.Drawing.Point(271, 30);
             this.t_name.Name = "t_name";
             this.t_name.ReadOnly = true;
             this.t_name.Size = new System.Drawing.Size(128, 21);
@@ -94,7 +94,7 @@
             // 
             // t_no
             // 
-            this.t_no.Location = new System.Drawing.Point(80, 31);
+            this.t_no.Location = new System.Drawing.Point(80, 30);
             this.t_no.Name = "t_no";
             this.t_no.ReadOnly = true;
             this.t_no.Size = new System.Drawing.Size(119, 21);

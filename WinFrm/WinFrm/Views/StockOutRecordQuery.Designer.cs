@@ -34,6 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.export = new System.Windows.Forms.Button();
             this.txtkehu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtorder = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.export = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(722, 21);
+            this.button1.Location = new System.Drawing.Point(722, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 85;
@@ -97,9 +97,19 @@
             this.groupBox3.TabIndex = 85;
             this.groupBox3.TabStop = false;
             // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(803, 22);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 91;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
+            // 
             // txtkehu
             // 
-            this.txtkehu.Location = new System.Drawing.Point(598, 22);
+            this.txtkehu.Location = new System.Drawing.Point(598, 23);
             this.txtkehu.Name = "txtkehu";
             this.txtkehu.Size = new System.Drawing.Size(109, 21);
             this.txtkehu.TabIndex = 89;
@@ -107,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(540, 28);
+            this.label1.Location = new System.Drawing.Point(540, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 88;
@@ -123,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(366, 28);
+            this.label2.Location = new System.Drawing.Point(366, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 86;
@@ -131,7 +141,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(230, 22);
+            this.txtname.Location = new System.Drawing.Point(230, 23);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(109, 21);
             this.txtname.TabIndex = 84;
@@ -139,7 +149,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(172, 28);
+            this.label13.Location = new System.Drawing.Point(172, 27);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 12);
             this.label13.TabIndex = 83;
@@ -147,7 +157,7 @@
             // 
             // txtno
             // 
-            this.txtno.Location = new System.Drawing.Point(70, 22);
+            this.txtno.Location = new System.Drawing.Point(70, 23);
             this.txtno.Name = "txtno";
             this.txtno.Size = new System.Drawing.Size(89, 21);
             this.txtno.TabIndex = 82;
@@ -182,16 +192,6 @@
             this.imageList2.Images.SetKeyName(3, "");
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(803, 21);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 91;
-            this.export.Text = "导出";
-            this.export.UseVisualStyleBackColor = true;
-            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
             // 
             // StockOutRecordQuery
             // 

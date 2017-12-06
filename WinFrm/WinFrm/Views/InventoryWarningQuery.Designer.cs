@@ -35,12 +35,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.export = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.z_name = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.z_no = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.export = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -102,9 +102,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "搜索";
             // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(524, 32);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 92;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(443, 31);
+            this.button1.Location = new System.Drawing.Point(443, 32);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 85;
@@ -114,7 +124,7 @@
             // 
             // z_name
             // 
-            this.z_name.Location = new System.Drawing.Point(278, 32);
+            this.z_name.Location = new System.Drawing.Point(278, 33);
             this.z_name.Name = "z_name";
             this.z_name.Size = new System.Drawing.Size(151, 21);
             this.z_name.TabIndex = 84;
@@ -122,7 +132,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(220, 38);
+            this.label13.Location = new System.Drawing.Point(220, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 12);
             this.label13.TabIndex = 83;
@@ -130,7 +140,7 @@
             // 
             // z_no
             // 
-            this.z_no.Location = new System.Drawing.Point(70, 32);
+            this.z_no.Location = new System.Drawing.Point(70, 33);
             this.z_no.Name = "z_no";
             this.z_no.Size = new System.Drawing.Size(131, 21);
             this.z_no.TabIndex = 82;
@@ -143,16 +153,6 @@
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 81;
             this.label11.Text = "商品编号：";
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(524, 31);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 92;
-            this.export.Text = "导出";
-            this.export.UseVisualStyleBackColor = true;
-            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
             // 
             // InventoryWarningQuery
             // 

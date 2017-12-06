@@ -96,7 +96,7 @@
             // 
             // txtnum
             // 
-            this.txtnum.Location = new System.Drawing.Point(592, 31);
+            this.txtnum.Location = new System.Drawing.Point(592, 30);
             this.txtnum.Name = "txtnum";
             this.txtnum.ReadOnly = true;
             this.txtnum.Size = new System.Drawing.Size(149, 21);
@@ -116,7 +116,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(511, 38);
+            this.label11.Location = new System.Drawing.Point(511, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 12);
             this.label11.TabIndex = 50;
@@ -124,7 +124,7 @@
             // 
             // txttyid
             // 
-            this.txttyid.Location = new System.Drawing.Point(747, 31);
+            this.txttyid.Location = new System.Drawing.Point(747, 30);
             this.txttyid.Name = "txttyid";
             this.txttyid.Size = new System.Drawing.Size(21, 21);
             this.txttyid.TabIndex = 48;
@@ -151,7 +151,7 @@
             // btn_js
             // 
             this.btn_js.Enabled = false;
-            this.btn_js.Location = new System.Drawing.Point(212, 30);
+            this.btn_js.Location = new System.Drawing.Point(212, 29);
             this.btn_js.Name = "btn_js";
             this.btn_js.Size = new System.Drawing.Size(47, 23);
             this.btn_js.TabIndex = 31;
@@ -185,7 +185,7 @@
             // 
             // txtno
             // 
-            this.txtno.Location = new System.Drawing.Point(72, 31);
+            this.txtno.Location = new System.Drawing.Point(72, 30);
             this.txtno.Name = "txtno";
             this.txtno.ReadOnly = true;
             this.txtno.Size = new System.Drawing.Size(135, 21);
@@ -202,7 +202,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(336, 31);
+            this.txtname.Location = new System.Drawing.Point(336, 30);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
             this.txtname.Size = new System.Drawing.Size(149, 21);
@@ -211,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 37);
+            this.label5.Location = new System.Drawing.Point(278, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 7;

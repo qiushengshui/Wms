@@ -54,6 +54,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtkhid = new System.Windows.Forms.TextBox();
             this.toolBar1 = new System.Windows.Forms.ToolBar();
+            this.btn_js = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtnum = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -72,16 +79,16 @@
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(72, 70);
+            this.txtuser.Location = new System.Drawing.Point(65, 99);
             this.txtuser.Name = "txtuser";
             this.txtuser.ReadOnly = true;
-            this.txtuser.Size = new System.Drawing.Size(167, 21);
+            this.txtuser.Size = new System.Drawing.Size(116, 21);
             this.txtuser.TabIndex = 51;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 74);
+            this.label1.Location = new System.Drawing.Point(4, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 50;
@@ -110,25 +117,25 @@
             // 
             // txtno
             // 
-            this.txtno.Location = new System.Drawing.Point(72, 29);
+            this.txtno.Location = new System.Drawing.Point(65, 29);
             this.txtno.Name = "txtno";
             this.txtno.ReadOnly = true;
-            this.txtno.Size = new System.Drawing.Size(167, 21);
+            this.txtno.Size = new System.Drawing.Size(117, 21);
             this.txtno.TabIndex = 49;
             // 
             // txtdesc
             // 
-            this.txtdesc.Location = new System.Drawing.Point(323, 70);
+            this.txtdesc.Location = new System.Drawing.Point(255, 96);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.ReadOnly = true;
-            this.txtdesc.Size = new System.Drawing.Size(405, 45);
+            this.txtdesc.Size = new System.Drawing.Size(529, 22);
             this.txtdesc.TabIndex = 46;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(262, 76);
+            this.label10.Location = new System.Drawing.Point(194, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 12);
             this.label10.TabIndex = 45;
@@ -175,9 +182,9 @@
             // btn_dept
             // 
             this.btn_dept.Enabled = false;
-            this.btn_dept.Location = new System.Drawing.Point(456, 28);
+            this.btn_dept.Location = new System.Drawing.Point(690, 64);
             this.btn_dept.Name = "btn_dept";
-            this.btn_dept.Size = new System.Drawing.Size(32, 23);
+            this.btn_dept.Size = new System.Drawing.Size(47, 23);
             this.btn_dept.TabIndex = 32;
             this.btn_dept.Text = "...";
             this.btn_dept.UseVisualStyleBackColor = true;
@@ -185,10 +192,10 @@
             // 
             // txtsum
             // 
-            this.txtsum.Location = new System.Drawing.Point(595, 30);
+            this.txtsum.Location = new System.Drawing.Point(65, 65);
             this.txtsum.Name = "txtsum";
             this.txtsum.ReadOnly = true;
-            this.txtsum.Size = new System.Drawing.Size(167, 21);
+            this.txtsum.Size = new System.Drawing.Size(117, 21);
             this.txtsum.TabIndex = 27;
             // 
             // tBtnEdit
@@ -207,6 +214,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtnum);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtname);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.btn_js);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtuser);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtno);
@@ -219,9 +233,9 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtkhid);
-            this.groupBox2.Location = new System.Drawing.Point(3, 367);
+            this.groupBox2.Location = new System.Drawing.Point(3, 363);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(791, 123);
+            this.groupBox2.Size = new System.Drawing.Size(791, 127);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据编辑区";
@@ -229,7 +243,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(537, 36);
+            this.label2.Location = new System.Drawing.Point(4, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 26;
@@ -237,16 +251,16 @@
             // 
             // txtkehu
             // 
-            this.txtkehu.Location = new System.Drawing.Point(323, 29);
+            this.txtkehu.Location = new System.Drawing.Point(495, 65);
             this.txtkehu.Name = "txtkehu";
             this.txtkehu.ReadOnly = true;
-            this.txtkehu.Size = new System.Drawing.Size(130, 21);
+            this.txtkehu.Size = new System.Drawing.Size(189, 21);
             this.txtkehu.TabIndex = 25;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 33);
+            this.label7.Location = new System.Drawing.Point(4, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 20;
@@ -255,7 +269,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(262, 33);
+            this.label5.Location = new System.Drawing.Point(434, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 7;
@@ -263,7 +277,7 @@
             // 
             // txtkhid
             // 
-            this.txtkhid.Location = new System.Drawing.Point(494, 29);
+            this.txtkhid.Location = new System.Drawing.Point(740, 65);
             this.txtkhid.Name = "txtkhid";
             this.txtkhid.Size = new System.Drawing.Size(18, 21);
             this.txtkhid.TabIndex = 48;
@@ -288,6 +302,67 @@
             this.toolBar1.TabIndex = 76;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            // 
+            // btn_js
+            // 
+            this.btn_js.Enabled = false;
+            this.btn_js.Location = new System.Drawing.Point(366, 28);
+            this.btn_js.Name = "btn_js";
+            this.btn_js.Size = new System.Drawing.Size(47, 23);
+            this.btn_js.TabIndex = 54;
+            this.btn_js.Text = "检索";
+            this.btn_js.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(255, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(105, 21);
+            this.textBox1.TabIndex = 53;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(195, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "商品编号：";
+            // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(492, 29);
+            this.txtname.Name = "txtname";
+            this.txtname.ReadOnly = true;
+            this.txtname.Size = new System.Drawing.Size(244, 21);
+            this.txtname.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(434, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "商品名称：";
+            // 
+            // txtnum
+            // 
+            this.txtnum.Location = new System.Drawing.Point(255, 65);
+            this.txtnum.Name = "txtnum";
+            this.txtnum.ReadOnly = true;
+            this.txtnum.Size = new System.Drawing.Size(158, 21);
+            this.txtnum.TabIndex = 58;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(195, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 57;
+            this.label11.Text = "入库数量：";
             // 
             // StockOrder
             // 
@@ -337,5 +412,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtkhid;
         private System.Windows.Forms.ToolBar toolBar1;
+        private System.Windows.Forms.Button btn_js;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtnum;
+        private System.Windows.Forms.Label label11;
     }
 }

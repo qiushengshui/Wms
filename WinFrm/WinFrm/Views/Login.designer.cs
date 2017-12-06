@@ -48,7 +48,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(143, 72);
+            this.txtUser.Location = new System.Drawing.Point(143, 71);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(162, 21);
             this.txtUser.TabIndex = 28;
@@ -57,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(72, 105);
+            this.label2.Location = new System.Drawing.Point(72, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 27;
@@ -100,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(61, 144);
+            this.label3.Location = new System.Drawing.Point(61, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 30;
@@ -112,7 +112,7 @@
             this.cbAccountType.Items.AddRange(new object[] {
             "管理员",
             "普通用户"});
-            this.cbAccountType.Location = new System.Drawing.Point(143, 142);
+            this.cbAccountType.Location = new System.Drawing.Point(143, 139);
             this.cbAccountType.Margin = new System.Windows.Forms.Padding(2);
             this.cbAccountType.Name = "cbAccountType";
             this.cbAccountType.Size = new System.Drawing.Size(162, 20);

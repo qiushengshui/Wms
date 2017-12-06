@@ -93,7 +93,7 @@
             this.txtnumold.Location = new System.Drawing.Point(72, 58);
             this.txtnumold.Name = "txtnumold";
             this.txtnumold.ReadOnly = true;
-            this.txtnumold.Size = new System.Drawing.Size(149, 21);
+            this.txtnumold.Size = new System.Drawing.Size(154, 21);
             this.txtnumold.TabIndex = 53;
             // 
             // tBtnNew
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(12, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 52;
@@ -164,11 +164,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(254, 64);
+            this.label11.Location = new System.Drawing.Point(254, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 12);
             this.label11.TabIndex = 50;
             this.label11.Text = "本次盘点数量：";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // imageList2
             // 
@@ -211,7 +212,7 @@
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(598, 55);
+            this.txtuser.Location = new System.Drawing.Point(599, 58);
             this.txtuser.Name = "txtuser";
             this.txtuser.ReadOnly = true;
             this.txtuser.Size = new System.Drawing.Size(164, 21);
@@ -244,7 +245,7 @@
             // 
             // txttime
             // 
-            this.txttime.Location = new System.Drawing.Point(598, 17);
+            this.txttime.Location = new System.Drawing.Point(599, 21);
             this.txttime.Name = "txttime";
             this.txttime.ReadOnly = true;
             this.txttime.Size = new System.Drawing.Size(164, 21);
@@ -253,7 +254,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(536, 61);
+            this.label10.Location = new System.Drawing.Point(536, 62);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 12);
             this.label10.TabIndex = 45;
@@ -262,7 +263,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(536, 23);
+            this.label2.Location = new System.Drawing.Point(536, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 26;
@@ -273,7 +274,7 @@
             this.btn_js.Enabled = false;
             this.btn_js.Location = new System.Drawing.Point(210, 20);
             this.btn_js.Name = "btn_js";
-            this.btn_js.Size = new System.Drawing.Size(47, 23);
+            this.btn_js.Size = new System.Drawing.Size(52, 23);
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
@@ -281,7 +282,7 @@
             // 
             // txtrek
             // 
-            this.txtrek.Location = new System.Drawing.Point(72, 92);
+            this.txtrek.Location = new System.Drawing.Point(72, 93);
             this.txtrek.Name = "txtrek";
             this.txtrek.ReadOnly = true;
             this.txtrek.Size = new System.Drawing.Size(529, 21);
@@ -290,7 +291,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 98);
+            this.label9.Location = new System.Drawing.Point(12, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 12);
             this.label9.TabIndex = 41;
@@ -307,7 +308,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(12, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 22;
@@ -324,7 +325,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 27);
+            this.label5.Location = new System.Drawing.Point(278, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 7;

@@ -21,6 +21,7 @@ namespace WinFrm.Views
         {
             BindData("o_type=1");
         }
+
         public string optrowid = null;
         BLL.tb_order dal = new BLL.tb_order();
         Model.tb_order model = new Model.tb_order();
@@ -54,7 +55,6 @@ namespace WinFrm.Views
             txtuser.ReadOnly = !blnEdit;
             txtdesc.ReadOnly = !blnEdit;
             txtsum.ReadOnly = !blnEdit;
-
             txtkehu.Enabled = blnEdit;
             btn_dept.Enabled = blnEdit;
         }
@@ -151,11 +151,9 @@ namespace WinFrm.Views
                     }
                     model.o_busy = int.Parse(this.txtkhid.Text);
                     model.o_no = this.txtno.Text;
-
                     model.o_sum = this.txtsum.Text;
                     model.o_desc = this.txtdesc.Text;
                     model.o_user = this.txtuser.Text;
-
                     model.o_type = 1;
                     if (String.IsNullOrEmpty(optrowid))
                     {
