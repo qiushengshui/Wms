@@ -18,6 +18,8 @@ namespace Model
 		private string _o_sum;
 		private string _o_user;
 		private string _o_desc;
+        private int? _o_num;
+        private int? _o_pid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -82,6 +84,18 @@ namespace Model
 			set{ _o_desc=value;}
 			get{return _o_desc;}
 		}
+
+        public int? o_num
+        {
+            set { _o_num = value; }
+            get { return _o_num; }
+        }
+
+        public int? o_pid
+        {
+            set { _o_pid = value; }
+            get { return _o_pid; }
+        }
 		#endregion Model
 
 	}

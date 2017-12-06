@@ -34,15 +34,18 @@ namespace WinFrm.Views
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "订单编号";
             dataGridView1.Columns[2].HeaderText = "订单时间";
-            dataGridView1.Columns[3].HeaderText = "入驻商名称";
-            dataGridView1.Columns[4].HeaderText = "商家电话";
-            dataGridView1.Columns[5].HeaderText = "商铺位置";
-            dataGridView1.Columns[6].HeaderText = "联系人";
-            dataGridView1.Columns[7].HeaderText = "订单总额";
-            dataGridView1.Columns[8].HeaderText = "经办人员";
-            dataGridView1.Columns[9].HeaderText = "备注说明";
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[3].HeaderText = "商品编号";
+            dataGridView1.Columns[4].HeaderText = "商品名称";
+            dataGridView1.Columns[5].HeaderText = "订单数量";
+            dataGridView1.Columns[6].HeaderText = "订单总额";
+            dataGridView1.Columns[7].HeaderText = "入驻商名称";
+            dataGridView1.Columns[8].HeaderText = "商家电话";
+            dataGridView1.Columns[9].HeaderText = "商铺位置";
+            dataGridView1.Columns[10].HeaderText = "联系人";
+            dataGridView1.Columns[11].HeaderText = "经办人员";
+            dataGridView1.Columns[12].HeaderText = "备注说明";
+            dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
         }
 
         private void SetModifyMode(bool blnEdit)
