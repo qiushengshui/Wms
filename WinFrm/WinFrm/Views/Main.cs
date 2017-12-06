@@ -59,8 +59,9 @@ namespace WinFrm.Views
             DataSet ds = dal.GetListT2("p_num<=p_xx");
             if (ds.Tables[0].Rows.Count > 0)
             {
-                InventoryWarningQuery aa = new InventoryWarningQuery();
-                aa.Show();
+                InventoryWarningQuery inventoryWarningQuery = new InventoryWarningQuery();
+                inventoryWarningQuery.MdiParent = this;
+                inventoryWarningQuery.Show();
             }
             tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
         }

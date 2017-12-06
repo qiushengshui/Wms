@@ -32,7 +32,6 @@ namespace WinFrm.Views
             DataSet ds = dal.GetListB(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns[0].Visible = false;
-           
             dataGridView1.Columns[1].HeaderText = "商品编号";
             dataGridView1.Columns[2].HeaderText = "商品名称";
             dataGridView1.Columns[3].HeaderText = "报废数量";
@@ -42,7 +41,7 @@ namespace WinFrm.Views
             //dataGridView1.Columns[8].HeaderText = "客户电话";
             //dataGridView1.Columns[9].HeaderText = "客户地址";
             //dataGridView1.Columns[10].Visible = false;
-          
+
         }
         private void BindDdl()
         {
@@ -160,30 +159,34 @@ namespace WinFrm.Views
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
-
-                        if (dal.Add(model) > 0)
+                        Model.tb_proc mop = new Model.tb_proc();
+                        BLL.tb_proc dap = new BLL.tb_proc();
+                        mop = dap.GetModel(int.Parse(txttyid.Text));
+                        if (mop.p_num < int.Parse(this.txtnum.Text))
                         {
-                            BLL.tb_proc dap = new BLL.tb_proc();
-                            Model.tb_proc mop = new Model.tb_proc();
-                            mop = dap.GetModel(int.Parse(txttyid.Text));
+                            MessageBox.Show("库存不足，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else
+                        {
                             if (!string.IsNullOrEmpty(mop.p_xx))
                             {
                                 if (mop.p_num < int.Parse(mop.p_xx))
                                 {
-                                    MessageBox.Show("已达到库存预警上限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                                    MessageBox.Show("已达到库存预警下限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                                if (dal.Add(model) > 0)
+                                {
+                                    mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
+                                    dap.Update(mop);
+                                    MessageBox.Show("恭喜你，报废成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ClearCtlValue();
+                                    BindData("cr_type=3");
+                                    SetModifyMode(false);
+                                    optrowid = null;
                                 }
                             }
-                            if (mop.p_num < int.Parse(this.txtnum.Text))
-                            {
-                                MessageBox.Show("库存不足，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
-                            }
-                            mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
-                            dap.Update(mop);
-                            MessageBox.Show("恭喜你，报废成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("cr_type=3");
-                            SetModifyMode(false);
-                            optrowid = null;
                         }
                     }
                     else
@@ -248,7 +251,7 @@ namespace WinFrm.Views
             else
             {
                 //if (txtorder.SelectedValue != "")
-                    GetStr(txtno.Text);
+                GetStr(txtno.Text);
                 //else
                 //{
                 //    MessageBox.Show("请选择订单", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

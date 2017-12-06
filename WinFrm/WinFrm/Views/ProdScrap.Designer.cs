@@ -257,7 +257,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "ProdScrap";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "出库管理->商品报废";
             this.Load += new System.EventHandler(this.frmchuds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

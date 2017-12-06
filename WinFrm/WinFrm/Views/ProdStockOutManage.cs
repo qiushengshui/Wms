@@ -162,10 +162,16 @@ namespace WinFrm.Views
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
+
+                        Model.tb_proc mop = new Model.tb_proc();
+                        BLL.tb_proc dap = new BLL.tb_proc();
+                        mop = dap.GetModel(int.Parse(txttyid.Text));
+                        if (mop.p_num < int.Parse(this.txtnum.Text))
                         {
-                            BLL.tb_proc dap = new BLL.tb_proc();
-                            Model.tb_proc mop = new Model.tb_proc();
-                            mop = dap.GetModel(int.Parse(txttyid.Text));
+                            MessageBox.Show("库存不足，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                        }
+                        else
+                        {
                             if (!string.IsNullOrEmpty(mop.p_xx))
                             {
                                 if (mop.p_num < int.Parse(mop.p_xx))
@@ -173,14 +179,9 @@ namespace WinFrm.Views
                                     MessageBox.Show("已达到库存预警下限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
                                 }
                             }
-                            if (mop.p_num < int.Parse(this.txtnum.Text))
-                            {
-                                MessageBox.Show("库存不足，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
-                            }
-                            else
+                            if (dal.Add(model) > 0)
                             {
                                 mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
-                                dal.Add(model);
                                 dap.Update(mop);
                                 MessageBox.Show("恭喜你，出库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearCtlValue();
@@ -189,6 +190,7 @@ namespace WinFrm.Views
                                 optrowid = null;
                             }
                         }
+
                     }
                     else
                     {
@@ -271,7 +273,8 @@ namespace WinFrm.Views
                     MessageBox.Show("该超市无此商品");
                     return;
                 }
-                else {
+                else
+                {
                     int num = Convert.ToInt32(dt.Rows[0]["p_num"]);
                     if (num > 0)
                     {
@@ -279,7 +282,8 @@ namespace WinFrm.Views
                         reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
                         txtname.Text = reStr;
                     }
-                    else {
+                    else
+                    {
                         MessageBox.Show("该商品无库存");
                         return;
                     }
