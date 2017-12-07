@@ -1,4 +1,4 @@
-﻿namespace WinFrm
+﻿namespace Wms
 {
     partial class ChangePwd
     {

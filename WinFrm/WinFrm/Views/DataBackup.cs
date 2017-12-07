@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using WinFrm.Utils;
+using Wms.Utils;
 
-namespace WinFrm.Views
+namespace Wms.Views
 {
     public partial class DataBackup : Form
     {

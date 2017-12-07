@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using WinExcel;
 
-namespace WinFrm.Views
+namespace Wms.Views
 {
     public partial class ProdReturnQuery : Form
     {

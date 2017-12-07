@@ -10,9 +10,9 @@ using ZXing;
 using ZXing.Common;
 using ZXing.Rendering;
 using WinExcel;
-using WinFrm.Utils;
+using Wms.Utils;
 
-namespace WinFrm.Views
+namespace Wms.Views
 {
     /// <summary>
     /// 商品库存报警

@@ -5,10 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using WinFrm.Utils;
+using Wms.Utils;
 
 
-namespace WinFrm.Views
+namespace Wms.Views
 {
     public partial class DataRecover : Form
     {

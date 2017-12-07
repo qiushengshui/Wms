@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
-using WinFrm.Utils;
+using Wms.Utils;
 
 namespace DAL
 {

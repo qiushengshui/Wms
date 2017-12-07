@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WinFrm
+namespace Wms
 {
     /// <summary>
     /// 登陆

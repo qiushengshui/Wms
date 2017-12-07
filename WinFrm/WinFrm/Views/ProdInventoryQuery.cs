@@ -11,7 +11,7 @@ using ZXing.Common;
 using ZXing.Rendering;
 using WinExcel;
 
-namespace WinFrm.Views
+namespace Wms.Views
 {
     public partial class ProdInventoryQuery : Form
     {

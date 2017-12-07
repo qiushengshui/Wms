@@ -1,4 +1,4 @@
-﻿namespace WinFrm.Views
+﻿namespace Wms.Views
 {
     partial class CheckManage
     {

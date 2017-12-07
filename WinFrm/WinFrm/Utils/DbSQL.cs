@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Collections.Generic;
 using System.Web;
 
-namespace WinFrm.Utils
+namespace Wms.Utils
 {
     public class DbSQL
     {
