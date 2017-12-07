@@ -1,6 +1,6 @@
 ﻿namespace WinFrm.Views
 {
-    partial class ProdStockOutManage
+    partial class ProdReturnManage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdStockOutManage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdReturnManage));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tBtnCancel = new System.Windows.Forms.ToolBarButton();
-            this.txtorder = new System.Windows.Forms.ComboBox();
             this.tBtnQuit = new System.Windows.Forms.ToolBarButton();
-            this.txtprice = new System.Windows.Forms.TextBox();
             this.tBtnSubmit = new System.Windows.Forms.ToolBarButton();
             this.tBtnDelete = new System.Windows.Forms.ToolBarButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtnum = new System.Windows.Forms.TextBox();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.txttyid = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.tBtnEdit = new System.Windows.Forms.ToolBarButton();
             this.btn_js = new System.Windows.Forms.Button();
-            this.txtrek = new System.Windows.Forms.TextBox();
             this.tBtnNew = new System.Windows.Forms.ToolBarButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +50,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.toolBar1 = new System.Windows.Forms.ToolBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtdesc = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,30 +75,12 @@
             this.tBtnCancel.Text = "取消";
             this.tBtnCancel.ToolTipText = "取消";
             // 
-            // txtorder
-            // 
-            this.txtorder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtorder.Enabled = false;
-            this.txtorder.FormattingEnabled = true;
-            this.txtorder.Location = new System.Drawing.Point(72, 25);
-            this.txtorder.Name = "txtorder";
-            this.txtorder.Size = new System.Drawing.Size(149, 20);
-            this.txtorder.TabIndex = 54;
-            // 
             // tBtnQuit
             // 
             this.tBtnQuit.ImageIndex = 5;
             this.tBtnQuit.Name = "tBtnQuit";
             this.tBtnQuit.Text = "退出";
             this.tBtnQuit.ToolTipText = "退出";
-            // 
-            // txtprice
-            // 
-            this.txtprice.Location = new System.Drawing.Point(72, 57);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.ReadOnly = true;
-            this.txtprice.Size = new System.Drawing.Size(149, 21);
-            this.txtprice.TabIndex = 53;
             // 
             // tBtnSubmit
             // 
@@ -118,18 +96,9 @@
             this.tBtnDelete.Text = "删除";
             this.tBtnDelete.ToolTipText = "删除";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "出库单价：";
-            // 
             // txtnum
             // 
-            this.txtnum.Location = new System.Drawing.Point(336, 57);
+            this.txtnum.Location = new System.Drawing.Point(592, 31);
             this.txtnum.Name = "txtnum";
             this.txtnum.ReadOnly = true;
             this.txtnum.Size = new System.Drawing.Size(149, 21);
@@ -149,15 +118,15 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(254, 61);
+            this.label11.Location = new System.Drawing.Point(511, 38);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 12);
             this.label11.TabIndex = 50;
-            this.label11.Text = "本次出库数量：";
+            this.label11.Text = "本次退货数量：";
             // 
             // txttyid
             // 
-            this.txttyid.Location = new System.Drawing.Point(497, 57);
+            this.txttyid.Location = new System.Drawing.Point(747, 31);
             this.txttyid.Name = "txttyid";
             this.txttyid.Size = new System.Drawing.Size(21, 21);
             this.txttyid.TabIndex = 48;
@@ -173,15 +142,6 @@
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "所属订单：";
-            // 
             // tBtnEdit
             // 
             this.tBtnEdit.ImageIndex = 1;
@@ -193,21 +153,13 @@
             // btn_js
             // 
             this.btn_js.Enabled = false;
-            this.btn_js.Location = new System.Drawing.Point(474, 24);
+            this.btn_js.Location = new System.Drawing.Point(212, 30);
             this.btn_js.Name = "btn_js";
             this.btn_js.Size = new System.Drawing.Size(47, 23);
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
             this.btn_js.Click += new System.EventHandler(this.btnChooseClick);
-            // 
-            // txtrek
-            // 
-            this.txtrek.Location = new System.Drawing.Point(72, 94);
-            this.txtrek.Name = "txtrek";
-            this.txtrek.ReadOnly = true;
-            this.txtrek.Size = new System.Drawing.Size(529, 21);
-            this.txtrek.TabIndex = 42;
             // 
             // tBtnNew
             // 
@@ -216,27 +168,14 @@
             this.tBtnNew.Text = "新增";
             this.tBtnNew.ToolTipText = "新增";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 98);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "出库说明：";
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtorder);
-            this.groupBox2.Controls.Add(this.txtprice);
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtdesc);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtnum);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txttyid);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btn_js);
-            this.groupBox2.Controls.Add(this.txtrek);
-            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtno);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtname);
@@ -250,7 +189,7 @@
             // 
             // txtno
             // 
-            this.txtno.Location = new System.Drawing.Point(336, 25);
+            this.txtno.Location = new System.Drawing.Point(72, 31);
             this.txtno.Name = "txtno";
             this.txtno.ReadOnly = true;
             this.txtno.Size = new System.Drawing.Size(135, 21);
@@ -259,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(276, 29);
+            this.label3.Location = new System.Drawing.Point(12, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 22;
@@ -267,7 +206,7 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(616, 25);
+            this.txtname.Location = new System.Drawing.Point(336, 31);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
             this.txtname.Size = new System.Drawing.Size(149, 21);
@@ -276,7 +215,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(558, 29);
+            this.label5.Location = new System.Drawing.Point(278, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 7;
@@ -310,9 +249,27 @@
             this.groupBox1.Size = new System.Drawing.Size(791, 330);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "商品出库列表";
+            this.groupBox1.Text = "商品报废列表";
             // 
-            // ProdStockOutManage
+            // txtdesc
+            // 
+            this.txtdesc.Location = new System.Drawing.Point(71, 69);
+            this.txtdesc.Multiline = true;
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.ReadOnly = true;
+            this.txtdesc.Size = new System.Drawing.Size(670, 21);
+            this.txtdesc.TabIndex = 53;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "退货原因：";
+            // 
+            // ProdReturnManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,10 +278,10 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "ProdStockOutManage";
+            this.Name = "ProdReturnManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "出库管理->商品出库管理";
-            this.Load += new System.EventHandler(this.prodStockOutManage_Load);
+            this.Text = "出库管理->商品退货管理";
+            this.Load += new System.EventHandler(this.prodReturnManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -338,23 +295,17 @@
 
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolBarButton tBtnCancel;
-        private System.Windows.Forms.ComboBox txtorder;
         private System.Windows.Forms.ToolBarButton tBtnQuit;
-        private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.ToolBarButton tBtnSubmit;
         private System.Windows.Forms.ToolBarButton tBtnDelete;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtnum;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txttyid;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolBarButton tBtnEdit;
         private System.Windows.Forms.Button btn_js;
-        private System.Windows.Forms.TextBox txtrek;
         private System.Windows.Forms.ToolBarButton tBtnNew;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtno;
         private System.Windows.Forms.Label label3;
@@ -362,5 +313,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolBar toolBar1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtdesc;
+        private System.Windows.Forms.Label label10;
     }
 }

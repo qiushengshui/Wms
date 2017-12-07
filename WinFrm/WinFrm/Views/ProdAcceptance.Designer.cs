@@ -188,7 +188,7 @@
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
-            this.btn_js.Click += new System.EventHandler(this.btn_js_Click);
+            this.btn_js.Click += new System.EventHandler(this.btnChooseClick);
             // 
             // txtrek
             // 
@@ -259,7 +259,7 @@
             this.toolBar1.Size = new System.Drawing.Size(800, 28);
             this.toolBar1.TabIndex = 79;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // tBtnNew
             // 
@@ -323,7 +323,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // groupBox1
             // 
@@ -347,7 +347,7 @@
             this.Name = "ProdAcceptance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入库管理->商品验收入库";
-            this.Load += new System.EventHandler(this.frmruds_Load);
+            this.Load += new System.EventHandler(this.prodAcceptance_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

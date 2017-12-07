@@ -13,21 +13,21 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_churu dal = new BLL.tb_churu();
+        private Model.tb_churu model = new Model.tb_churu();
+
         public StockRecordQuery()
         {
             InitializeComponent();
         }
 
-        private void frmcxr_Load(object sender, EventArgs e)
+        private void stockRecordQuery_Load(object sender, EventArgs e)
         {
 
         }
 
-        public string optrowid = null;
-        BLL.tb_churu dal = new BLL.tb_churu();
-        Model.tb_churu model = new Model.tb_churu();
-
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -48,7 +48,7 @@ namespace WinFrm.Views
             dataGridView1.Columns[14].Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnQueryClick(object sender, EventArgs e)
         {
             string sql = " cr_type=1 ";
             if (!string.IsNullOrEmpty(txtno.Text))
@@ -67,7 +67,7 @@ namespace WinFrm.Views
             {
                 sql += " and r_name='" + txtkehu.Text + "' ";
             }
-            BindData(sql);
+            bindData(sql);
         }
 
         private void 导出报表exportExcel(object sender, EventArgs e)

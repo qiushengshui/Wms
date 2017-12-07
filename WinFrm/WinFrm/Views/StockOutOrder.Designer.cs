@@ -165,7 +165,7 @@
             this.btnSearch.TabIndex = 59;
             this.btnSearch.Text = "检索";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearchClick);
             // 
             // txtProdNo
             // 
@@ -236,7 +236,7 @@
             this.btnChoose.TabIndex = 32;
             this.btnChoose.Text = "...";
             this.btnChoose.UseVisualStyleBackColor = true;
-            this.btnChoose.Click += new System.EventHandler(this.btn_dept_Click);
+            this.btnChoose.Click += new System.EventHandler(this.btnChooseClick);
             // 
             // txtsum
             // 
@@ -290,7 +290,7 @@
             this.toolBar1.Size = new System.Drawing.Size(797, 28);
             this.toolBar1.TabIndex = 73;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // tBtnNew
             // 
@@ -363,7 +363,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // StockOutOrder
             // 
@@ -377,7 +377,7 @@
             this.Name = "StockOutOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "出库管理>出库订单管理";
-            this.Load += new System.EventHandler(this.frmchu_Load);
+            this.Load += new System.EventHandler(this.stockOutOrder_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

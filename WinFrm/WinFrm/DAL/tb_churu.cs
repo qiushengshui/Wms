@@ -295,6 +295,7 @@ namespace DAL
 			}
 			return DbSQL.Query(strSql.ToString());
 		}
+
         public DataSet GetListC(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
@@ -310,7 +311,7 @@ namespace DAL
         public DataSet GetListB(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select cr_id,p_no,p_name,cr_num,cr_time");
+            strSql.Append("select cr_id,p_no,p_name,cr_num,cr_time,cr_remark");
             strSql.Append(" FROM tb_churu ta  inner join tb_proc tc on ta.cr_pid=tc.p_id ");
             if (strWhere.Trim() != "")
             {

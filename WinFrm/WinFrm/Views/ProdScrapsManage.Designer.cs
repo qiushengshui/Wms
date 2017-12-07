@@ -1,6 +1,6 @@
 ﻿namespace WinFrm.Views
 {
-    partial class ProdScrap
+    partial class ProdScrapsManage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdScrap));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdScrapsManage));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tBtnCancel = new System.Windows.Forms.ToolBarButton();
             this.tBtnQuit = new System.Windows.Forms.ToolBarButton();
@@ -50,6 +50,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.toolBar1 = new System.Windows.Forms.ToolBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtdesc = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -138,7 +140,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // tBtnEdit
             // 
@@ -157,7 +159,7 @@
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
-            this.btn_js.Click += new System.EventHandler(this.btn_js_Click);
+            this.btn_js.Click += new System.EventHandler(this.btnCheckClick);
             // 
             // tBtnNew
             // 
@@ -168,6 +170,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtdesc);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtnum);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txttyid);
@@ -235,7 +239,7 @@
             this.toolBar1.Size = new System.Drawing.Size(800, 28);
             this.toolBar1.TabIndex = 82;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // groupBox1
             // 
@@ -247,7 +251,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品报废列表";
             // 
-            // ProdScrap
+            // txtdesc
+            // 
+            this.txtdesc.Location = new System.Drawing.Point(72, 70);
+            this.txtdesc.Multiline = true;
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.ReadOnly = true;
+            this.txtdesc.Size = new System.Drawing.Size(670, 21);
+            this.txtdesc.TabIndex = 55;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 77);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "报废原因：";
+            // 
+            // ProdScrapsManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -256,10 +278,10 @@
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.Name = "ProdScrap";
+            this.Name = "ProdScrapsManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "出库管理->商品报废";
-            this.Load += new System.EventHandler(this.frmchuds_Load);
+            this.Load += new System.EventHandler(this.prodScrapsManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -291,5 +313,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolBar toolBar1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtdesc;
+        private System.Windows.Forms.Label label10;
     }
 }

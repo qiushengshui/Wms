@@ -13,15 +13,16 @@ namespace WinFrm.Views
         public string m_id = null;
         public string m_ty = null;
         public string m_paid = null;
+        public string optrowid = null;
+        private BLL.tb_ku dal = new BLL.tb_ku();
+        private Model.tb_ku model = new Model.tb_ku();
+
         public SelectWarehouseArea()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_ku dal = new BLL.tb_ku();
-        Model.tb_ku model = new Model.tb_ku();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             treeView1.Nodes.Clear();
             DataTable dt = dal.GetList(String.IsNullOrEmpty(where) ? " " : where).Tables[0];
@@ -31,21 +32,21 @@ namespace WinFrm.Views
                 TreeNode node = treeView1.Nodes.Add(r["k_id"].ToString(), r["k_name"].ToString());
             }
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             txtname.Text = "";
         }
 
-
-        private void frmsupp_Load(object sender, EventArgs e)
+        private void selectWarehouseArea_Load(object sender, EventArgs e)
         {
-            BindData(" k_paid=" + m_paid);
+            bindData(" k_paid=" + m_paid);
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void tvSelectWarehouseArea(object sender, TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode != null)
-            {                
+            {
                 optrowid = treeView1.SelectedNode.Name.ToString();
                 string txt = treeView1.SelectedNode.Text.ToString();
                 lbldeptname.Text = txt;
@@ -53,15 +54,14 @@ namespace WinFrm.Views
                 txtname.Text = txt;
             }
         }
-        public TextBox Fathertxtbox { get; set; }
-        public TextBox Fatxtzid { get; set; }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnConfirmClick(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lbldeptid.Text))
             {
                 Fathertxtbox.Text = lbldeptname.Text;
                 Fatxtzid.Text = lbldeptid.Text;
-                
+
                 this.Close();
             }
             else
@@ -70,6 +70,9 @@ namespace WinFrm.Views
             }
         }
 
+        public TextBox Fathertxtbox { get; set; }
+
+        public TextBox Fatxtzid { get; set; }
 
     }
 }

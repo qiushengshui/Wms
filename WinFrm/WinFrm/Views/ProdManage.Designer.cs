@@ -193,7 +193,7 @@
             this.button1.TabIndex = 58;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnProviderClick);
             // 
             // txtkqid
             // 
@@ -261,7 +261,7 @@
             this.btn_dept.TabIndex = 32;
             this.btn_dept.Text = "...";
             this.btn_dept.UseVisualStyleBackColor = true;
-            this.btn_dept.Click += new System.EventHandler(this.btn_dept_Click);
+            this.btn_dept.Click += new System.EventHandler(this.btnSelectWarehouseAreaClick);
             // 
             // label11
             // 
@@ -314,7 +314,7 @@
             this.btn_cangku.TabIndex = 36;
             this.btn_cangku.Text = "...";
             this.btn_cangku.UseVisualStyleBackColor = true;
-            this.btn_cangku.Click += new System.EventHandler(this.btn_cangku_Click);
+            this.btn_cangku.Click += new System.EventHandler(this.btnWarehouseClick);
             // 
             // txtchjia
             // 
@@ -359,7 +359,7 @@
             this.btn_type.TabIndex = 31;
             this.btn_type.Text = "...";
             this.btn_type.UseVisualStyleBackColor = true;
-            this.btn_type.Click += new System.EventHandler(this.btn_type_Click);
+            this.btn_type.Click += new System.EventHandler(this.btnSelectProdTypeClick);
             // 
             // txtprice
             // 
@@ -413,7 +413,7 @@
             this.toolBar1.Size = new System.Drawing.Size(800, 28);
             this.toolBar1.TabIndex = 73;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // tBtnNew
             // 
@@ -486,7 +486,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // ProdManage
             // 
@@ -500,7 +500,7 @@
             this.Name = "ProdManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->商品管理";
-            this.Load += new System.EventHandler(this.frmchan_Load);
+            this.Load += new System.EventHandler(this.prodManage_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -214,7 +214,7 @@
             this.Name = "WarehouseManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主档管理->仓库管理";
-            this.Load += new System.EventHandler(this.frmku_Load);
+            this.Load += new System.EventHandler(this.warehouseManage_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

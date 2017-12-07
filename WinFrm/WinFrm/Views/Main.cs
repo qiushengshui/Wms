@@ -13,9 +13,12 @@ namespace WinFrm.Views
     /// </summary>
     public partial class Main : Form
     {
-        public string m_username = null;
         public string m_id = null;
         public string m_ty = null;
+        public string m_username = null;
+        private BLL.tb_proc dal = new BLL.tb_proc();
+        private Model.tb_proc model = new Model.tb_proc();
+
         public Main()
         {
             InitializeComponent();
@@ -42,25 +45,23 @@ namespace WinFrm.Views
             return false;
         }
 
-        private void frmain_Load(object sender, EventArgs e)
+        private void main_Load(object sender, EventArgs e)
         {
             if (m_ty == "3")
             {
                 tsddbMasterFileManage.Visible = false;
-                ttsddbSystemManage.DropDownItems[0].Visible=false;
+                ttsddbSystemManage.DropDownItems[0].Visible = false;
                 ttsddbSystemManage.DropDownItems[1].Visible = false;
             }
             //开启实时时间刷新任务
             this.timer.Enabled = true;
-            BLL.tb_proc dal = new BLL.tb_proc();
-            Model.tb_proc model = new Model.tb_proc();
-
-
             DataSet ds = dal.GetListT2("p_num<=p_xx");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 InventoryWarningQuery inventoryWarningQuery = new InventoryWarningQuery();
                 inventoryWarningQuery.MdiParent = this;
+                inventoryWarningQuery.m_id = m_id;
+                inventoryWarningQuery.m_ty = m_ty;
                 inventoryWarningQuery.Show();
             }
             tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
@@ -72,17 +73,17 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ChangePwd newFrm = new ChangePwd();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ChangePwd changePwd = new ChangePwd();
+            changePwd.m_id = m_id;
+            changePwd.m_ty = m_ty;
+            changePwd.MdiParent = this;
+            changePwd.Show();
         }
 
         private void 注销用户tsmiLoginOut(object sender, EventArgs e)
         {
-            Login newFrm = new Login();
-            newFrm.Show();
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 
@@ -98,11 +99,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            StockOrder newFrm = new StockOrder();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            StockOrder stockOrder = new StockOrder();
+            stockOrder.m_id = m_id;
+            stockOrder.m_ty = m_ty;
+            stockOrder.MdiParent = this;
+            stockOrder.Show();
         }
 
         private void 商品验收入库tsmiProdAcceptance(object sender, EventArgs e)
@@ -111,11 +112,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProdAcceptance newFrm = new ProdAcceptance();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProdAcceptance prodAcceptance = new ProdAcceptance();
+            prodAcceptance.m_id = m_id;
+            prodAcceptance.m_ty = m_ty;
+            prodAcceptance.MdiParent = this;
+            prodAcceptance.Show();
         }
 
         private void 出库订单管理tsmiStockOutOrder(object sender, EventArgs e)
@@ -124,11 +125,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            StockOutOrder newFrm = new StockOutOrder();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            StockOutOrder stockOutOrder = new StockOutOrder();
+            stockOutOrder.m_id = m_id;
+            stockOutOrder.m_ty = m_ty;
+            stockOutOrder.MdiParent = this;
+            stockOutOrder.Show();
         }
 
         private void 商品出库管理tsmiProdStockOutManage(object sender, EventArgs e)
@@ -137,22 +138,29 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProdStockOutManage newFrm = new ProdStockOutManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProdStockOutManage prodStockOutManage = new ProdStockOutManage();
+            prodStockOutManage.m_id = m_id;
+            prodStockOutManage.m_ty = m_ty;
+            prodStockOutManage.MdiParent = this;
+            prodStockOutManage.Show();
         }
 
         private void 商品报废tsmiprodScrap(object sender, EventArgs e)
         {
-            ProdScrap aa = new ProdScrap();
-            aa.Show();
+            ProdScrapsManage prodScrap = new ProdScrapsManage();
+            prodScrap.MdiParent = this;
+            prodScrap.m_id = m_id;
+            prodScrap.m_ty = m_ty;
+            prodScrap.Show();
         }
 
         private void 退货管理tsmiReturnManage(object sender, EventArgs e)
         {
-
+            ProdReturnManage prodReturn = new ProdReturnManage();
+            prodReturn.MdiParent = this;
+            prodReturn.m_id = m_id;
+            prodReturn.m_ty = m_ty;
+            prodReturn.Show();
         }
 
         private void 预警管理tsmiWarningManage(object sender, EventArgs e)
@@ -161,11 +169,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            WarningManage newFrm = new WarningManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            WarningManage warningManage = new WarningManage();
+            warningManage.m_id = m_id;
+            warningManage.m_ty = m_ty;
+            warningManage.MdiParent = this;
+            warningManage.Show();
         }
 
         private void 盘点管理tsmiCheckManage(object sender, EventArgs e)
@@ -174,11 +182,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            CheckManage newFrm = new CheckManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            CheckManage checkManage = new CheckManage();
+            checkManage.m_id = m_id;
+            checkManage.m_ty = m_ty;
+            checkManage.MdiParent = this;
+            checkManage.Show();
         }
 
         private void 商品库存查询tsmiProdInventoryQuery(object sender, EventArgs e)
@@ -187,11 +195,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProdInventoryQuery newFrm = new ProdInventoryQuery();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProdInventoryQuery prodInventoryQuery = new ProdInventoryQuery();
+            prodInventoryQuery.m_id = m_id;
+            prodInventoryQuery.m_ty = m_ty;
+            prodInventoryQuery.MdiParent = this;
+            prodInventoryQuery.Show();
         }
 
         private void 入库记录查询tmsiStockRecordQuery(object sender, EventArgs e)
@@ -200,11 +208,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            StockRecordQuery newFrm = new StockRecordQuery();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            StockRecordQuery stockRecordQuery = new StockRecordQuery();
+            stockRecordQuery.m_id = m_id;
+            stockRecordQuery.m_ty = m_ty;
+            stockRecordQuery.MdiParent = this;
+            stockRecordQuery.Show();
         }
 
         private void 出库记录查询tsmiStockOutRecordQuery(object sender, EventArgs e)
@@ -213,17 +221,46 @@ namespace WinFrm.Views
             {
                 return;
             }
-            StockOutRecordQuery newFrm = new StockOutRecordQuery();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            StockOutRecordQuery stockOutRecordQuery = new StockOutRecordQuery();
+            stockOutRecordQuery.m_id = m_id;
+            stockOutRecordQuery.m_ty = m_ty;
+            stockOutRecordQuery.MdiParent = this;
+            stockOutRecordQuery.Show();
         }
 
         private void 库存预警查询tsmiInventoryWarningQuery(object sender, EventArgs e)
         {
-            InventoryWarningQuery aa = new InventoryWarningQuery();
-            aa.Show();
+            InventoryWarningQuery inventoryWarningQuery = new InventoryWarningQuery();
+            inventoryWarningQuery.m_id = m_id;
+            inventoryWarningQuery.m_ty = m_ty;
+            inventoryWarningQuery.MdiParent = this;
+            inventoryWarningQuery.Show();
+        }
+
+        private void 商品退货查询tmsiProdReturnQuery(object sender, EventArgs e)
+        {
+            if (this.checkChildFormIsExist("ProdReturnQuery") == true)
+            {
+                return;
+            }
+            ProdReturnQuery prodReturnQuery = new ProdReturnQuery();
+            prodReturnQuery.m_id = m_id;
+            prodReturnQuery.m_ty = m_ty;
+            prodReturnQuery.MdiParent = this;
+            prodReturnQuery.Show();
+        }
+
+        private void 商品报废查询tmsiProdScrapsQuery(object sender, EventArgs e)
+        {
+            if (this.checkChildFormIsExist("ProdScrapsQuery") == true)
+            {
+                return;
+            }
+            ProdScrapsQuery prodScrapsQuery = new ProdScrapsQuery();
+            prodScrapsQuery.m_id = m_id;
+            prodScrapsQuery.m_ty = m_ty;
+            prodScrapsQuery.MdiParent = this;
+            prodScrapsQuery.Show();
         }
 
         private void 用户管理tmsiAccountManage(object sender, EventArgs e)
@@ -232,11 +269,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            AccountManage newFrm = new AccountManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            AccountManage accountManage = new AccountManage();
+            accountManage.m_id = m_id;
+            accountManage.m_ty = m_ty;
+            accountManage.MdiParent = this;
+            accountManage.Show();
         }
 
         private void 客户管理tmsiCustomerManage(object sender, EventArgs e)
@@ -245,11 +282,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            CustomerManage newFrm = new CustomerManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            CustomerManage customerManage = new CustomerManage();
+            customerManage.m_id = m_id;
+            customerManage.m_ty = m_ty;
+            customerManage.MdiParent = this;
+            customerManage.Show();
         }
 
         private void 入驻商家tmsiProviderManage(object sender, EventArgs e)
@@ -258,11 +295,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProviderManage newFrm = new ProviderManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProviderManage providerManage = new ProviderManage();
+            providerManage.m_id = m_id;
+            providerManage.m_ty = m_ty;
+            providerManage.MdiParent = this;
+            providerManage.Show();
         }
 
         private void 商品管理tmsiProdManage(object sender, EventArgs e)
@@ -271,11 +308,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProdManage newFrm = new ProdManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProdManage prodManage = new ProdManage();
+            prodManage.m_id = m_id;
+            prodManage.m_ty = m_ty;
+            prodManage.MdiParent = this;
+            prodManage.Show();
         }
 
         private void 商品分类tmsiProdCategory(object sender, EventArgs e)
@@ -284,11 +321,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            ProdCategory newFrm = new ProdCategory();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            ProdCategory prodCategory = new ProdCategory();
+            prodCategory.m_id = m_id;
+            prodCategory.m_ty = m_ty;
+            prodCategory.MdiParent = this;
+            prodCategory.Show();
         }
 
         private void 仓库管理tmsiWarehouseManage(object sender, EventArgs e)
@@ -297,11 +334,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            WarehouseManage newFrm = new WarehouseManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            WarehouseManage warehouseManage = new WarehouseManage();
+            warehouseManage.m_id = m_id;
+            warehouseManage.m_ty = m_ty;
+            warehouseManage.MdiParent = this;
+            warehouseManage.Show();
         }
 
         private void 库区管理tmsiWarehouseAreaManage(object sender, EventArgs e)
@@ -310,11 +347,11 @@ namespace WinFrm.Views
             {
                 return;
             }
-            WarehouseAreaManage newFrm = new WarehouseAreaManage();
-            newFrm.m_id = m_id;
-            newFrm.m_ty = m_ty;
-            newFrm.MdiParent = this;
-            newFrm.Show();
+            WarehouseAreaManage warehouseAreaManage = new WarehouseAreaManage();
+            warehouseAreaManage.m_id = m_id;
+            warehouseAreaManage.m_ty = m_ty;
+            warehouseAreaManage.MdiParent = this;
+            warehouseAreaManage.Show();
         }
 
         private void 数据备份tsmiDataBackUp(object sender, EventArgs e)

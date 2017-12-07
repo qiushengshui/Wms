@@ -112,7 +112,7 @@
             this.btnOK.TabIndex = 20;
             this.btnOK.Text = "确定";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.Click += new System.EventHandler(this.btnConfirmClick);
             // 
             // groupBox1
             // 
@@ -140,7 +140,7 @@
             this.Name = "ChangePwd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改密码";
-            this.Load += new System.EventHandler(this.frmudtpwd_Load);
+            this.Load += new System.EventHandler(this.changePwd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

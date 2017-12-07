@@ -106,7 +106,7 @@
             this.button1.TabIndex = 75;
             this.button1.Text = "确认选择";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnConfirmClick);
             // 
             // label1
             // 
@@ -132,7 +132,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(290, 428);
             this.treeView1.TabIndex = 46;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvSelectWarehouseArea);
             // 
             // imageList1
             // 
@@ -165,7 +165,7 @@
             this.Name = "SelectWarehouseArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库区";
-            this.Load += new System.EventHandler(this.frmsupp_Load);
+            this.Load += new System.EventHandler(this.selectWarehouseArea_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

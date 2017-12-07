@@ -13,18 +13,23 @@ namespace WinFrm.Views
     /// </summary>
     public partial class AccountManage : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
+        public string m_id;
+        public string m_ty;
+        public string optrowid;
+        private BLL.tb_user dal = new BLL.tb_user();
+        private Model.tb_user model = new Model.tb_user();
 
         public AccountManage()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_user dal = new BLL.tb_user();
-        Model.tb_user model = new Model.tb_user();
 
-        private void BindData(string where)
+        private void accountManage_Load(object sender, EventArgs e)
+        {
+            bindData(" u_type=1 ");
+        }
+
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -41,15 +46,15 @@ namespace WinFrm.Views
             dataGridView1.Columns[10].Visible = false;
         }
 
-        private void SetModifyMode(bool blnEdit)
+        private void setModifyMode(bool blnEdit)
         {
             txtname.ReadOnly = !blnEdit;
             txtlogname.ReadOnly = !blnEdit;
-
             txttel.ReadOnly = !blnEdit;
             txtemail.ReadOnly = !blnEdit;
         }
-        private bool ValidateIput()
+
+        private bool validateInput()
         {
             if (this.txtname.Text.Trim() == "")
             {
@@ -66,13 +71,14 @@ namespace WinFrm.Views
 
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             txtname.Text = txtlogname.Text = "";
             txttel.Text = txtemail.Text = "";
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -83,31 +89,25 @@ namespace WinFrm.Views
                 {
                     txtname.Text = model.u_name;
                     txtlogname.Text = model.u_log;
-
-                    txttel.Text = model.u_tel;                
+                    txttel.Text = model.u_tel;
                     txtemail.Text = model.u_email;
                 }
             }
         }
 
-        private void frmoptuser_Load(object sender, EventArgs e)
-        {
-            BindData(" u_type=3 ");
-        }
-
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
             {
-                ClearCtlValue();
-                SetModifyMode(true);
+                rstValue();
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -123,10 +123,10 @@ namespace WinFrm.Views
                     if (result == DialogResult.OK)
                     {
                         dal.Delete(int.Parse(optrowid));
-                        ClearCtlValue();
+                        rstValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData(" u_type=3 ");
-                        SetModifyMode(false);
+                        bindData(" u_type=1 ");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -138,29 +138,27 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateInput())
                 {
                     model = new Model.tb_user();
                     if (!String.IsNullOrEmpty(optrowid))
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.u_name = this.txtname.Text;
-                    model.u_log = this.txtlogname.Text;                   
+                    model.u_log = this.txtlogname.Text;
                     model.u_tel = this.txttel.Text;
                     model.u_email = this.txtemail.Text;
-                   
                     if (String.IsNullOrEmpty(optrowid))
                     {
-                        model.u_type = 3;
+                        model.u_type = 1;
                         model.u_adddate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-
                         model.u_pwd = "000000";
                         int i = dal.Add(model);
                         if (i > 0)
                         {
                             MessageBox.Show("恭喜你，新增成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData(" u_type=3 ");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData(" u_type=1 ");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -169,9 +167,9 @@ namespace WinFrm.Views
                         if (dal.Update(model))
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData(" u_type=3 ");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData(" u_type=1 ");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -180,9 +178,9 @@ namespace WinFrm.Views
 
             if (e.Button.ToolTipText == "取消")
             {
-                BindData(" u_type=3 ");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData(" u_type=1 ");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
 

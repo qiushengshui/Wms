@@ -12,20 +12,21 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_proc dal = new BLL.tb_proc();
+        private Model.tb_proc model = new Model.tb_proc();
+
         public WarningManage()
         {
             InitializeComponent();
         }
 
-        private void frmdrug_Load(object sender, EventArgs e)
+        private void warningManage_Load(object sender, EventArgs e)
         {
-            BindData("");
+            bindData("");
         }
-        public string optrowid = null;
-        BLL.tb_proc dal = new BLL.tb_proc();
-        Model.tb_proc model = new Model.tb_proc();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -48,13 +49,14 @@ namespace WinFrm.Views
             dataGridView1.Columns[16].Visible = false;
         }
 
-        private void SetModifyMode(bool blnEdit)
+        private void setModifyMode(bool blnEdit)
         {
-            this.txtsx.ReadOnly = !blnEdit;            
+            this.txtsx.ReadOnly = !blnEdit;
             this.txtxx.ReadOnly = !blnEdit;
 
         }
-        private bool ValidateIput()
+
+        private bool validateIput()
         {
             if (this.txtsx.Text.Trim() == "")
             {
@@ -71,24 +73,23 @@ namespace WinFrm.Views
 
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             string val = "";
-
             this.txtname.Text = val;
-
             this.txtno.Text = val;
             this.txtsx.Text = val;
             this.txtxx.Text = val;
         }
 
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -98,7 +99,7 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateIput())
                 {
                     model = new Model.tb_proc();
 
@@ -115,30 +116,28 @@ namespace WinFrm.Views
                         if (dal.Update(model))
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
                 }
             }
-
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData("");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
-
             if (e.Button.ToolTipText == "退出")
             {
                 this.Close();
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -154,7 +153,5 @@ namespace WinFrm.Views
                 }
             }
         }
-
-
     }
 }

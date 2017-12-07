@@ -21,15 +21,21 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_proc dal = new BLL.tb_proc();
+        private Model.tb_proc model = new Model.tb_proc();
+
         public InventoryWarningQuery()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_proc dal = new BLL.tb_proc();
-        Model.tb_proc model = new Model.tb_proc();
 
-        private void BindData(string where)
+        private void inventoryWarningQuery_Load(object sender, EventArgs e)
+        {
+            bindData("p_num<p_xx");
+        }
+
+        private void bindData(string where)
         {
             DataSet ds = dal.GetListT2(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -44,16 +50,9 @@ namespace WinFrm.Views
             dataGridView1.Columns[8].HeaderText = "所存库区";
             dataGridView1.Columns[9].HeaderText = "生产厂家";
             dataGridView1.Columns[10].HeaderText = "所属商家";
-            
         }
 
-        private void frmchan_Load(object sender, EventArgs e)
-        {
-            BindData("p_num<p_xx");
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnQueryClick(object sender, EventArgs e)
         {
             string sql = " 1=1 and p_num<p_xx ";
             if (!string.IsNullOrEmpty(z_no.Text))
@@ -64,7 +63,7 @@ namespace WinFrm.Views
             {
                 sql += " and p_name='" + z_name.Text + "' ";
             }
-            BindData(sql);
+            bindData(sql);
         }
 
         private void 导出报表exportExcel(object sender, EventArgs e)
@@ -72,6 +71,5 @@ namespace WinFrm.Views
             ExportToExcel.OutputAsExcelFile(dataGridView1);
         }
 
-        
     }
 }

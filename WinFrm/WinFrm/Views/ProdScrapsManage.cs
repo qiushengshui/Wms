@@ -8,26 +8,27 @@ using System.Windows.Forms;
 
 namespace WinFrm.Views
 {
-    public partial class ProdScrap : Form
+    public partial class ProdScrapsManage : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
-        public ProdScrap()
+        public string m_id;
+        public string m_ty;
+        public string optrowid;
+        private BLL.tb_churu dal = new BLL.tb_churu();
+        private BLL.tb_proc dalt = new BLL.tb_proc();
+        private Model.tb_churu model = new Model.tb_churu();
+
+        public ProdScrapsManage()
         {
             InitializeComponent();
         }
 
-        private void frmchuds_Load(object sender, EventArgs e)
+        private void prodScrapsManage_Load(object sender, EventArgs e)
         {
-            BindDdl();
-            BindData("cr_type=3");
+            bindDdl();
+            bindData("cr_type=3");
         }
 
-        public string optrowid = null;
-        BLL.tb_churu dal = new BLL.tb_churu();
-        Model.tb_churu model = new Model.tb_churu();
-
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetListB(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -36,32 +37,25 @@ namespace WinFrm.Views
             dataGridView1.Columns[2].HeaderText = "商品名称";
             dataGridView1.Columns[3].HeaderText = "报废数量";
             dataGridView1.Columns[4].HeaderText = "报废时间";
-            //dataGridView1.Columns[6].HeaderText = "出库单价";
-            //dataGridView1.Columns[7].HeaderText = "客户名称";
-            //dataGridView1.Columns[8].HeaderText = "客户电话";
-            //dataGridView1.Columns[9].HeaderText = "客户地址";
-            //dataGridView1.Columns[10].Visible = false;
-
+            dataGridView1.Columns[5].HeaderText = "报废原因";
         }
-        private void BindDdl()
+
+        private void bindDdl()
         {
             BLL.tb_order dalo = new BLL.tb_order();
             DataTable dt = dalo.GetList(1000, "o_type=3", "o_type desc").Tables[0];
-            //this.txtorder.DataSource = dt;
-            //txtorder.DisplayMember = "o_no";
-            //txtorder.ValueMember = "o_id";
         }
-        private void SetModifyMode(bool blnEdit)
+
+        private void setModifyMode(bool blnEdit)
         {
             this.txtno.ReadOnly = !blnEdit;
-            //this.txtorder.Enabled = blnEdit;
-            //this.txtprice.ReadOnly = !blnEdit;
             this.txtnum.ReadOnly = !blnEdit;
-            //this.txtrek.ReadOnly = !blnEdit;
+            this.txtdesc.ReadOnly = !blnEdit;
             this.btn_js.Enabled = blnEdit;
 
         }
-        private bool ValidateIput()
+
+        private bool validateInput()
         {
             if (this.txttyid.Text.Trim() == "")
             {
@@ -69,46 +63,38 @@ namespace WinFrm.Views
                 this.txtno.Focus();
                 return false;
             }
-            //if (this.txtorder.Text.Trim() == "")
-            //{
-            //    MessageBox.Show("请选择所属订单", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            //    this.txtorder.Focus();
-            //    return false;
-            //}
             if (this.txtnum.Text.Trim() == "")
             {
                 MessageBox.Show("请输入本次报废数量", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.txtnum.Focus();
                 return false;
             }
-
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             string val = "";
-            //this.txtorder.Text = val;
             this.txtno.Text = val;
             this.txttyid.Text = val;
             this.txtname.Text = val;
-            //this.txtprice.Text = val;
             this.txtnum.Text = val;
-            //this.txtrek.Text = val;
+            this.txtdesc.Text = val;
         }
 
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
             {
-                ClearCtlValue();
-                SetModifyMode(true);
+                rstValue();
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -124,10 +110,10 @@ namespace WinFrm.Views
                     if (result == DialogResult.OK)
                     {
                         dal.Delete(int.Parse(optrowid));
-                        ClearCtlValue();
+                        rstValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData("cr_type=3");
-                        SetModifyMode(false);
+                        bindData("cr_type=3");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -139,23 +125,17 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateInput())
                 {
                     model = new Model.tb_churu();
-
                     if (!string.IsNullOrEmpty(optrowid))
                     {
                         model = dal.GetModel(int.Parse(optrowid));
                     }
-
-                    //model.cr_oid = int.Parse(this.txtorder.SelectedValue.ToString());
                     model.cr_pid = int.Parse(txttyid.Text);
-                    //model.cr_price = decimal.Parse(txtprice.Text);
-                    //model.cr_remark = txtrek.Text;
-
+                    model.cr_remark = txtdesc.Text;
                     model.cr_type = 3;
                     model.cr_num = int.Parse(this.txtnum.Text);
-
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
@@ -176,16 +156,16 @@ namespace WinFrm.Views
                                     MessageBox.Show("已达到库存预警下限", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-                                if (dal.Add(model) > 0)
-                                {
-                                    mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
-                                    dap.Update(mop);
-                                    MessageBox.Show("恭喜你，报废成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    ClearCtlValue();
-                                    BindData("cr_type=3");
-                                    SetModifyMode(false);
-                                    optrowid = null;
-                                }
+                            }
+                            if (dal.Add(model) > 0)
+                            {
+                                mop.p_num = mop.p_num - int.Parse(this.txtnum.Text);
+                                dap.Update(mop);
+                                MessageBox.Show("恭喜你，报废成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                rstValue();
+                                bindData("cr_type=3");
+                                setModifyMode(false);
+                                optrowid = null;
                             }
                         }
                     }
@@ -194,9 +174,9 @@ namespace WinFrm.Views
                         if (dal.Update(model))
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("cr_type=3");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("cr_type=3");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -205,9 +185,9 @@ namespace WinFrm.Views
 
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("cr_type=3");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData("cr_type=3");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
 
@@ -217,7 +197,7 @@ namespace WinFrm.Views
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -232,15 +212,13 @@ namespace WinFrm.Views
                     this.txtno.Text = molp.p_no;
                     this.txtname.Text = molp.p_name;
                     this.txttyid.Text = model.cr_pid.ToString();
-                    //this.txtorder.SelectedValue = model.cr_oid.ToString();
-                    //this.txtprice.Text = model.cr_price.ToString();
-                    //this.txtrek.Text = model.cr_remark;
+                    this.txtdesc.Text = model.cr_remark;
                     this.txtnum.Text = model.cr_num.ToString();
                 }
             }
         }
 
-        private void btn_js_Click(object sender, EventArgs e)
+        private void btnCheckClick(object sender, EventArgs e)
         {
             if (this.txtno.Text.Trim() == "")
             {
@@ -250,21 +228,16 @@ namespace WinFrm.Views
 
             else
             {
-                //if (txtorder.SelectedValue != "")
-                GetStr(txtno.Text);
-                //else
-                //{
-                //    MessageBox.Show("请选择订单", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                //}
+                getStr(txtno.Text);
             }
         }
-        BLL.tb_proc dalt = new BLL.tb_proc();
-        private void GetStr(string _no)
+
+        private void getStr(string no)
         {
             string reStr = "";
-            if (!string.IsNullOrEmpty(_no))
+            if (!string.IsNullOrEmpty(no))
             {
-                DataTable dt = dalt.GetList(" p_no='" + _no + "'").Tables[0];
+                DataTable dt = dalt.GetList(" p_no='" + no + "'").Tables[0];
                 if (dt.Rows.Count == 0) { MessageBox.Show("无此商品"); return; }
                 txttyid.Text = dt.Rows[0]["p_id"].ToString();
                 reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";

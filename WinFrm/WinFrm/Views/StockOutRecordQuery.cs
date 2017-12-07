@@ -11,22 +11,23 @@ namespace WinFrm.Views
 {
     public partial class StockOutRecordQuery : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
+        public string m_id;
+        public string m_ty;
+        public string optrowid = null;
+        private BLL.tb_churu dal = new BLL.tb_churu();
+        private Model.tb_churu model = new Model.tb_churu();
+
         public StockOutRecordQuery()
         {
             InitializeComponent();
         }
 
-        private void frmcx_Load(object sender, EventArgs e)
+        private void stockOutRecordQuery_Load(object sender, EventArgs e)
         {
             //BindData(" ");
         }
-        public string optrowid = null;
-        BLL.tb_churu dal = new BLL.tb_churu();
-        Model.tb_churu model = new Model.tb_churu();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetListC(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -47,7 +48,7 @@ namespace WinFrm.Views
             dataGridView1.Columns[14].Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnQueryClick(object sender, EventArgs e)
         {
             string sql = " cr_type=2 ";
             if (!string.IsNullOrEmpty(txtno.Text))
@@ -66,7 +67,7 @@ namespace WinFrm.Views
             {
                 sql += " and h_name='" + txtkehu.Text + "' ";
             }
-            BindData(sql);
+            bindData(sql);
         }
 
         private void 导出报表exportExcel(object sender, EventArgs e)

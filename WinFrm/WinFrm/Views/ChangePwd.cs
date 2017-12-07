@@ -13,14 +13,20 @@ namespace WinFrm
     /// </summary>
     public partial class ChangePwd : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
+        public string m_id;
+        public string m_ty;
+
         public ChangePwd()
         {
             InitializeComponent();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void changePwd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmClick(object sender, EventArgs e)
         {
             BLL.tb_user dal = new BLL.tb_user();
             Model.tb_user model = new Model.tb_user();
@@ -42,7 +48,6 @@ namespace WinFrm
                 this.txtpasswordok.Focus();
                 return;
             }
-
             if (!String.IsNullOrEmpty(m_id))
             {
                 DataRow[] dr = dal.GetList(" ").Tables[0].Select(" u_id=" + m_id);
@@ -65,9 +70,9 @@ namespace WinFrm
                         else
                         {
                             model = dal.GetModel(int.Parse(m_id));
-                            model.u_pwd = this.txtpasswordok.Text;                           
+                            model.u_pwd = this.txtpasswordok.Text;
                             dal.Update(model);
-                           // DialogResult result= MessageBox.Show("","",MessageBo)
+                            // DialogResult result= MessageBox.Show("","",MessageBo)
                             MessageBox.Show("修改密码成功", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.txtpwd.Text = "";
                             this.txtpassword.Text = "";
@@ -82,11 +87,6 @@ namespace WinFrm
         private void btncancle_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void frmudtpwd_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

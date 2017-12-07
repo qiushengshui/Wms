@@ -120,7 +120,7 @@
             this.button1.TabIndex = 85;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnQueryClick);
             // 
             // z_name
             // 
@@ -165,7 +165,7 @@
             this.Name = "ProdInventoryQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "综合查询>商品库存查询";
-            this.Load += new System.EventHandler(this.frmchan_Load);
+            this.Load += new System.EventHandler(this.prodInventoryQuery_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);

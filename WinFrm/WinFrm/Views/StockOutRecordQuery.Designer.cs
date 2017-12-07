@@ -77,7 +77,7 @@
             this.button1.TabIndex = 85;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnQueryClick);
             // 
             // groupBox3
             // 
@@ -203,8 +203,8 @@
             this.MaximizeBox = false;
             this.Name = "StockOutRecordQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "综合查询>出库履历查询";
-            this.Load += new System.EventHandler(this.frmcx_Load);
+            this.Text = "综合查询>出库记录查询";
+            this.Load += new System.EventHandler(this.stockOutRecordQuery_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);

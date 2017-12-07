@@ -159,7 +159,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // imageList2
             // 
@@ -188,7 +188,7 @@
             this.btnChoose.TabIndex = 32;
             this.btnChoose.Text = "...";
             this.btnChoose.UseVisualStyleBackColor = true;
-            this.btnChoose.Click += new System.EventHandler(this.btn_dept_Click);
+            this.btnChoose.Click += new System.EventHandler(this.btnChooseClick);
             // 
             // txtsum
             // 
@@ -283,7 +283,7 @@
             this.btnSearch.TabIndex = 54;
             this.btnSearch.Text = "检索";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btn_js_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearchClick);
             // 
             // txtProdNo
             // 
@@ -363,7 +363,7 @@
             this.toolBar1.Size = new System.Drawing.Size(797, 28);
             this.toolBar1.TabIndex = 76;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // StockOrder
             // 
@@ -377,7 +377,7 @@
             this.Name = "StockOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "入库管理>入库订单管理";
-            this.Load += new System.EventHandler(this.frmru_Load);
+            this.Load += new System.EventHandler(this.stockOrder_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -12,21 +12,22 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_ku dal = new BLL.tb_ku();
+        private Model.tb_ku model = new Model.tb_ku();
+
         public WarehouseAreaManage()
         {
             InitializeComponent();
         }
 
-        private void frmkuqu_Load(object sender, EventArgs e)
+        private void warehouseAreaManage_Load(object sender, EventArgs e)
         {
-            BindDdl();
-            BindData("ta.k_paid>0 and tb.k_paid=0");
+            bindDdl();
+            bindData("ta.k_paid>0 and tb.k_paid=0");
         }
-        public string optrowid = null;
-        BLL.tb_ku dal = new BLL.tb_ku();
-        Model.tb_ku model = new Model.tb_ku();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetListT(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -37,21 +38,24 @@ namespace WinFrm.Views
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
         }
-        private void BindDdl()
+
+        private void bindDdl()
         {
             DataTable dt = dal.GetList("k_paid=0").Tables[0];
             this.txtpaid.DataSource = dt;
             txtpaid.DisplayMember = "k_name";
             txtpaid.ValueMember = "k_id";
         }
-        private void SetModifyMode(bool blnEdit)
+
+        private void setModifyMode(bool blnEdit)
         {
             this.txtpaid.Enabled = blnEdit;
             this.t_name.ReadOnly = !blnEdit;
             this.t_no.ReadOnly = !blnEdit;
 
         }
-        private bool ValidateIput()
+
+        private bool validateIput()
         {
             if (this.txtpaid.Text.Trim() == "")
             {
@@ -71,32 +75,30 @@ namespace WinFrm.Views
                 this.t_name.Focus();
                 return false;
             }
-
-
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             string val = "";
             this.txtpaid.Text = val;
             this.t_name.Text = val;
-
             this.t_no.Text = val;
         }
 
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
             {
-                ClearCtlValue();
-                SetModifyMode(true);
+                rstValue();
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -112,10 +114,10 @@ namespace WinFrm.Views
                     if (result == DialogResult.OK)
                     {
                         dal.Delete(int.Parse(optrowid));
-                        ClearCtlValue();
+                        rstValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData("ta.k_paid>0 and tb.k_paid=0");
-                        SetModifyMode(false);
+                        bindData("ta.k_paid>0 and tb.k_paid=0");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -127,7 +129,7 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateIput())
                 {
                     model = new Model.tb_ku();
 
@@ -135,15 +137,12 @@ namespace WinFrm.Views
                     {
                         model = dal.GetModel(int.Parse(optrowid));
                     }
-
                     model.k_name = this.t_name.Text;
-
                     model.k_paid = int.Parse(this.txtpaid.SelectedValue.ToString());
                     model.k_no = this.t_no.Text;
-
                     if (String.IsNullOrEmpty(optrowid))
                     {
-                        DataTable dt = dal.GetList(" k_paid="+model.k_paid+" and (k_name='" + model.k_name + "' or k_no='" + model.k_no + "') ").Tables[0];
+                        DataTable dt = dal.GetList(" k_paid=" + model.k_paid + " and (k_name='" + model.k_name + "' or k_no='" + model.k_no + "') ").Tables[0];
                         if (dt.Rows.Count > 0)
                         {
                             MessageBox.Show("已存在该名称，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -152,9 +151,9 @@ namespace WinFrm.Views
                         if (dal.Add(model) > 0)
                         {
                             MessageBox.Show("恭喜你，新增成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("ta.k_paid>0 and tb.k_paid=0");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("ta.k_paid>0 and tb.k_paid=0");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -163,30 +162,28 @@ namespace WinFrm.Views
                         if (dal.Update(model))
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("ta.k_paid>0 and tb.k_paid=0");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("ta.k_paid>0 and tb.k_paid=0");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
                 }
             }
-
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("ta.k_paid>0 and tb.k_paid=0");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData("ta.k_paid>0 and tb.k_paid=0");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
-
             if (e.Button.ToolTipText == "退出")
             {
                 this.Close();
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -201,7 +198,5 @@ namespace WinFrm.Views
                 }
             }
         }
-
-
-    }
+   }
 }

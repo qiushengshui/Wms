@@ -17,18 +17,18 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
-        DataSet ds = null;
+        public string optrowid = null;
+        private BLL.tb_proc dal = new BLL.tb_proc();
+        private Model.tb_proc model = new Model.tb_proc();
+
         public ProdInventoryQuery()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_proc dal = new BLL.tb_proc();
-        Model.tb_proc model = new Model.tb_proc();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
-             ds = dal.GetListT2(String.IsNullOrEmpty(where) ? " " : where);
+            DataSet ds = dal.GetListT2(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "商品编号";
@@ -41,16 +41,14 @@ namespace WinFrm.Views
             dataGridView1.Columns[8].HeaderText = "所存库区";
             dataGridView1.Columns[9].HeaderText = "生产厂家";
             dataGridView1.Columns[10].HeaderText = "所属商家";
-            
         }
 
-        private void frmchan_Load(object sender, EventArgs e)
+        private void prodInventoryQuery_Load(object sender, EventArgs e)
         {
-            BindData("");
+            bindData("");
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnQueryClick(object sender, EventArgs e)
         {
             string sql = " 1=1 ";
             if (!string.IsNullOrEmpty(z_no.Text))
@@ -61,16 +59,12 @@ namespace WinFrm.Views
             {
                 sql += " and p_name='" + z_name.Text + "' ";
             }
-            BindData(sql);
+            bindData(sql);
         }
 
         private void 导出报表exportExcel(object sender, EventArgs e)
         {
-            //ExportExcels.Export("", dataGridView1);
-           ExportToExcel.OutputAsExcelFile(dataGridView1);
-            //ExportExcels.SaveAsExcel(ds.Tables[0]);
+            ExportToExcel.OutputAsExcelFile(dataGridView1);
         }
-
-        
     }
 }

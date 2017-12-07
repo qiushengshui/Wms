@@ -152,7 +152,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(778, 304);
             this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClick);
             // 
             // tBtnQuit
             // 
@@ -169,7 +169,6 @@
             this.label11.Size = new System.Drawing.Size(89, 12);
             this.label11.TabIndex = 50;
             this.label11.Text = "本次盘点数量：";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // imageList2
             // 
@@ -200,7 +199,7 @@
             this.toolBar1.Size = new System.Drawing.Size(800, 28);
             this.toolBar1.TabIndex = 76;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
-            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);
+            this.toolBar1.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.tbBtnClick);
             // 
             // txttyid
             // 
@@ -278,7 +277,7 @@
             this.btn_js.TabIndex = 31;
             this.btn_js.Text = "检索";
             this.btn_js.UseVisualStyleBackColor = true;
-            this.btn_js.Click += new System.EventHandler(this.btn_js_Click);
+            this.btn_js.Click += new System.EventHandler(this.btnChooseClick);
             // 
             // txtrek
             // 
@@ -343,7 +342,7 @@
             this.Name = "CheckManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "库内管理->库存盘点管理";
-            this.Load += new System.EventHandler(this.frmpan_Load);
+            this.Load += new System.EventHandler(this.checkManage_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

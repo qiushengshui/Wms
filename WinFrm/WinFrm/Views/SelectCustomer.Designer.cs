@@ -101,7 +101,7 @@
             this.button1.TabIndex = 75;
             this.button1.Text = "确认选择";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnConfirmClick);
             // 
             // label1
             // 
@@ -143,7 +143,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(290, 428);
             this.treeView1.TabIndex = 46;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvCustomers);
             // 
             // lbldeptid2
             // 
@@ -165,7 +165,7 @@
             this.Name = "SelectCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "选择客户";
-            this.Load += new System.EventHandler(this.sel_tea_Load);
+            this.Load += new System.EventHandler(this.selectCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

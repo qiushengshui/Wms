@@ -10,23 +10,27 @@ namespace WinFrm.Views
 {
     public partial class ProdAcceptance : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
+        public string m_id;
+        public string m_ty;
+        public string optrowid = null;
+        private BLL.tb_churu dal = new BLL.tb_churu();
+        private BLL.tb_proc dalt = new BLL.tb_proc();
+        private BLL.tb_order der = new BLL.tb_order();
+        private Model.tb_churu model = new Model.tb_churu();
+        private Model.tb_order mode = new Model.tb_order();
+
         public ProdAcceptance()
         {
             InitializeComponent();
         }
 
-        private void frmruds_Load(object sender, EventArgs e)
+        private void prodAcceptance_Load(object sender, EventArgs e)
         {
-            BindDdl();
-            BindData("cr_type=1");
+            bindDdl();
+            bindData("cr_type=1");
         }
-        public string optrowid = null;
-        BLL.tb_churu dal = new BLL.tb_churu();
-        Model.tb_churu model = new Model.tb_churu();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -46,7 +50,8 @@ namespace WinFrm.Views
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
         }
-        private void BindDdl()
+
+        private void bindDdl()
         {
             DataTable mydt = new DataTable("cs");
             DataColumn dc = null;
@@ -68,12 +73,13 @@ namespace WinFrm.Views
             txtstatus.ValueMember = "cid";
 
             BLL.tb_order dalo = new BLL.tb_order();
-            DataTable dt = dalo.GetList(1000,"o_type=1","o_id desc").Tables[0];
+            DataTable dt = dalo.GetList(1000, "o_type=1", "o_id desc").Tables[0];
             this.txtorder.DataSource = dt;
             txtorder.DisplayMember = "o_no";
             txtorder.ValueMember = "o_id";
         }
-        private void SetModifyMode(bool blnEdit)
+
+        private void setModifyMode(bool blnEdit)
         {
             this.txtno.ReadOnly = !blnEdit;
             this.txtorder.Enabled = blnEdit;
@@ -84,6 +90,7 @@ namespace WinFrm.Views
             this.btn_js.Enabled = blnEdit;
 
         }
+
         private bool ValidateIput()
         {
             if (this.txttyid.Text.Trim() == "")
@@ -110,11 +117,10 @@ namespace WinFrm.Views
                 this.txtstatus.Focus();
                 return false;
             }
-
-
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             string val = "";
             this.txtorder.Text = val;
@@ -123,23 +129,23 @@ namespace WinFrm.Views
             this.txtname.Text = val;
             this.txtprice.Text = val;
             this.txtnum.Text = val;
-            this.txtstatus.SelectedValue = "1";
             this.txtrek.Text = val;
+            this.txtstatus.SelectedValue = "1";
         }
 
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
             {
-                ClearCtlValue();
-                SetModifyMode(true);
+                rstValue();
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -155,10 +161,10 @@ namespace WinFrm.Views
                     if (result == DialogResult.OK)
                     {
                         dal.Delete(int.Parse(optrowid));
-                        ClearCtlValue();
+                        rstValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData("cr_type=1");
-                        SetModifyMode(false);
+                        bindData("cr_type=1");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -178,20 +184,16 @@ namespace WinFrm.Views
                     {
                         model = dal.GetModel(int.Parse(optrowid));
                     }
-
                     model.cr_oid = int.Parse(this.txtorder.SelectedValue.ToString());
                     model.cr_pid = int.Parse(txttyid.Text);
                     model.cr_price = decimal.Parse(txtprice.Text);
                     model.cr_remark = txtrek.Text;
-
                     model.cr_type = 1;
                     model.cr_yan = int.Parse(this.txtstatus.SelectedValue.ToString());
                     model.cr_num = int.Parse(this.txtnum.Text);
-
                     if (String.IsNullOrEmpty(optrowid))
                     {
-                            model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
-                        
+                        model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
                         if (dal.Add(model) > 0)
                         {
                             BLL.tb_proc dap = new BLL.tb_proc();
@@ -207,9 +209,9 @@ namespace WinFrm.Views
                             }
                             dap.Update(mop);
                             MessageBox.Show("恭喜你，入库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("cr_type=1");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("cr_type=1");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -218,9 +220,9 @@ namespace WinFrm.Views
                         if (dal.Update(model))
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("cr_type=1");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("cr_type=1");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -229,9 +231,9 @@ namespace WinFrm.Views
 
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("cr_type=1");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData("cr_type=1");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
 
@@ -241,7 +243,7 @@ namespace WinFrm.Views
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -265,7 +267,7 @@ namespace WinFrm.Views
             }
         }
 
-        private void btn_js_Click(object sender, EventArgs e)
+        private void btnChooseClick(object sender, EventArgs e)
         {
             if (this.txtno.Text.Trim() == "")
             {
@@ -275,36 +277,33 @@ namespace WinFrm.Views
             else
             {
                 if (txtorder.SelectedValue != "")
-                    GetStr(txtno.Text);
+                    getStr(txtno.Text);
                 else
                 {
                     MessageBox.Show("请选择订单", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
-        BLL.tb_proc dalt = new BLL.tb_proc();
-        BLL.tb_order der= new BLL.tb_order();
-        Model.tb_order mode = new Model.tb_order();
-        private void GetStr(string _no)
-        {
 
-           mode = der.GetModel(Convert.ToInt32(txtorder.SelectedValue));
-           String provider=Convert.ToString( mode.o_busy);
+        private void getStr(string _no)
+        {
+            mode = der.GetModel(Convert.ToInt32(txtorder.SelectedValue));
+            String provider = Convert.ToString(mode.o_busy);
             string reStr = "";
             if (!string.IsNullOrEmpty(_no))
             {
                 //DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + txtorder.SelectedValue).Tables[0];
                 DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + provider).Tables[0];
-                if (dt.Rows.Count == 0) 
-                { 
+                if (dt.Rows.Count == 0)
+                {
                     MessageBox.Show("该订单所属商家下无此商品");
                     return;
                 }
                 txttyid.Text = dt.Rows[0]["p_id"].ToString();
-                reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";                
+                reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
                 txtname.Text = reStr;
             }
-
         }
+
     }
 }

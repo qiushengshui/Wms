@@ -83,7 +83,7 @@
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancelClick);
             // 
             // btnOK
             // 
@@ -94,7 +94,7 @@
             this.btnOK.TabIndex = 24;
             this.btnOK.Text = "登录";
             this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.Click += new System.EventHandler(this.btnConfirmClick);
             // 
             // label3
             // 

@@ -8,8 +8,7 @@ using System.Windows.Forms;
 using WinFrm.Utils;
 
 
- namespace WinFrm.Views
-
+namespace WinFrm.Views
 {
     public partial class DataRecover : Form
     {
@@ -36,19 +35,16 @@ using WinFrm.Utils;
         {
             try
             {
-
                 string sql = string.Format("use master restore database dbcvT from disk='" + textBox1.Text.Trim() + "'");
                 int i = DbSQL.getbyquery(sql);
-             
                 if (MessageBox.Show("OK", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
                 { this.Close(); }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        }
     }
+}
 

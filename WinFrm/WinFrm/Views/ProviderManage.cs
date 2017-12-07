@@ -12,6 +12,10 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_ruzhu dal = new BLL.tb_ruzhu();
+        private Model.tb_ruzhu model = new Model.tb_ruzhu();
+
         public ProviderManage()
         {
             InitializeComponent();
@@ -21,9 +25,6 @@ namespace WinFrm.Views
         {
             BindData(" ");
         }
-        public string optrowid = null;
-        BLL.tb_ruzhu dal = new BLL.tb_ruzhu();
-        Model.tb_ruzhu model = new Model.tb_ruzhu();
 
         private void BindData(string where)
         {
@@ -46,6 +47,7 @@ namespace WinFrm.Views
             txttel.ReadOnly = !blnEdit;
             txtaddress.ReadOnly = !blnEdit;
         }
+
         private bool ValidateIput()
         {
             if (this.txtno.Text.Trim() == "")
@@ -60,9 +62,9 @@ namespace WinFrm.Views
                 this.txtname.Focus();
                 return false;
             }
-
             return true;
         }
+
         private void ClearCtlValue()
         {
             txtno.Text = txtname.Text = "";
@@ -81,14 +83,13 @@ namespace WinFrm.Views
                 {
                     txtno.Text = model.r_no;
                     txtname.Text = model.r_name;
-
                     txttel.Text = model.r_utel;
                     txtuname.Text = model.r_uname;
-
                     txtaddress.Text = model.r_address;
                 }
             }
         }
+
         private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
@@ -139,12 +140,9 @@ namespace WinFrm.Views
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.r_no = this.txtno.Text;
                     model.r_name = this.txtname.Text;
-
                     model.r_utel = this.txttel.Text;
                     model.r_uname = this.txtuname.Text;
-
                     model.r_address = this.txtaddress.Text;
-
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         int i = dal.Add(model);
@@ -170,7 +168,6 @@ namespace WinFrm.Views
                     }
                 }
             }
-
             if (e.Button.ToolTipText == "取消")
             {
                 BindData(" ");
@@ -178,13 +175,11 @@ namespace WinFrm.Views
                 SetModifyMode(false);
                 optrowid = null;
             }
-
             if (e.Button.ToolTipText == "退出")
             {
                 this.Close();
             }
         }
-
 
     }
 }

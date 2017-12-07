@@ -12,31 +12,31 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_kehu dal = new BLL.tb_kehu();
+        private Model.tb_kehu model = new Model.tb_kehu();
+
         public SelectCustomer()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_kehu dal = new BLL.tb_kehu();
-        Model.tb_kehu model = new Model.tb_kehu();
-        private void BindData(string where)
+
+        private void bindData(string where)
         {
             treeView1.Nodes.Clear();
             DataTable dt = dal.GetList(String.IsNullOrEmpty(where) ? " " : where).Tables[0];
-
             foreach (DataRow r in dt.Rows)
             {
                 TreeNode node = treeView1.Nodes.Add(r["h_id"].ToString(), r["h_name"].ToString());
             }
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
             txtname.Text = "";
         }
 
-
-        
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void tvCustomers(object sender, TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode != null)
             {
@@ -45,18 +45,15 @@ namespace WinFrm.Views
                 lbldeptname.Text = txt;
                 lbldeptid.Text = optrowid;
                 txtname.Text = txt;
-                
-
             }
         }
-        public TextBox Fathertxtbox { get; set; }
-        public TextBox FathertxtboxT { get; set; }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnConfirmClick(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lbldeptid.Text))
             {
                 Fathertxtbox.Text = lbldeptname.Text;
-                FathertxtboxT.Text = lbldeptid.Text;               
+                FathertxtboxT.Text = lbldeptid.Text;
                 this.Close();
             }
             else
@@ -65,10 +62,14 @@ namespace WinFrm.Views
             }
         }
 
-        private void sel_tea_Load(object sender, EventArgs e)
+        private void selectCustomer_Load(object sender, EventArgs e)
         {
             string sql = "";
-            BindData(sql);
+            bindData(sql);
         }
+
+        public TextBox Fathertxtbox { get; set; }
+
+        public TextBox FathertxtboxT { get; set; }
     }
 }

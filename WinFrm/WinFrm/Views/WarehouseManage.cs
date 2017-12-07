@@ -12,20 +12,21 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_ku dal = new BLL.tb_ku();
+        private Model.tb_ku model = new Model.tb_ku();
+
         public WarehouseManage()
         {
             InitializeComponent();
         }
 
-        private void frmku_Load(object sender, EventArgs e)
+        private void warehouseManage_Load(object sender, EventArgs e)
         {
-            BindData("k_paid=0");
+            bindData("k_paid=0");
         }
-        public string optrowid = null;
-        BLL.tb_ku dal = new BLL.tb_ku();
-        Model.tb_ku model = new Model.tb_ku();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -36,13 +37,14 @@ namespace WinFrm.Views
             dataGridView1.Columns[4].Visible = false;
         }
 
-        private void SetModifyMode(bool blnEdit)
+        private void setModifyMode(bool blnEdit)
         {
             this.t_name.ReadOnly = !blnEdit;
             this.t_no.ReadOnly = !blnEdit;
 
         }
-        private bool ValidateIput()
+
+        private bool validateIput()
         {
             if (this.t_no.Text.Trim() == "")
             {
@@ -56,10 +58,9 @@ namespace WinFrm.Views
                 this.t_name.Focus();
                 return false;
             }
-
-
             return true;
         }
+
         private void ClearCtlValue()
         {
             string val = "";
@@ -74,14 +75,14 @@ namespace WinFrm.Views
             if (e.Button.ToolTipText == "新增")
             {
                 ClearCtlValue();
-                SetModifyMode(true);
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -99,8 +100,8 @@ namespace WinFrm.Views
                         dal.Delete(int.Parse(optrowid));
                         ClearCtlValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData("k_paid=0");
-                        SetModifyMode(false);
+                        bindData("k_paid=0");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -112,7 +113,7 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateIput())
                 {
                     model = new Model.tb_ku();
 
@@ -124,7 +125,7 @@ namespace WinFrm.Views
                     model.k_name = this.t_name.Text;
 
                     model.k_no = this.t_no.Text;
-                    
+
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         DataTable dt = dal.GetList(" k_paid=0 and (k_name='" + model.k_name + "' or k_no='" + model.k_no + "') ").Tables[0];
@@ -137,8 +138,8 @@ namespace WinFrm.Views
                         {
                             MessageBox.Show("恭喜你，新增成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearCtlValue();
-                            BindData("k_paid=0");
-                            SetModifyMode(false);
+                            bindData("k_paid=0");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -148,8 +149,8 @@ namespace WinFrm.Views
                         {
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearCtlValue();
-                            BindData("k_paid=0");
-                            SetModifyMode(false);
+                            bindData("k_paid=0");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -158,9 +159,9 @@ namespace WinFrm.Views
 
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("k_paid=0");
+                bindData("k_paid=0");
                 ClearCtlValue();
-                SetModifyMode(false);
+                setModifyMode(false);
                 optrowid = null;
             }
 
@@ -185,7 +186,5 @@ namespace WinFrm.Views
                 }
             }
         }
-
-
     }
 }

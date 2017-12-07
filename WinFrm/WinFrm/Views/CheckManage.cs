@@ -10,17 +10,19 @@ namespace WinFrm.Views
 {
     public partial class CheckManage : Form
     {
-        public string m_id = null;
-        public string m_ty = null;
+        public string m_id;
+        public string m_ty;
+        public string optrowid;
+        private BLL.tb_pan dal = new BLL.tb_pan();
+        private BLL.tb_proc dalt = new BLL.tb_proc();
+        private Model.tb_pan model = new Model.tb_pan();
+
         public CheckManage()
         {
             InitializeComponent();
         }
-        public string optrowid = null;
-        BLL.tb_pan dal = new BLL.tb_pan();
-        Model.tb_pan model = new Model.tb_pan();
 
-        private void BindData(string where)
+        private void bindData(string where)
         {
             DataSet ds = dal.GetList(String.IsNullOrEmpty(where) ? " " : where);
             dataGridView1.DataSource = ds.Tables[0];
@@ -35,17 +37,16 @@ namespace WinFrm.Views
             dataGridView1.Columns[8].Visible = false;
         }
 
-        private void SetModifyMode(bool blnEdit)
+        private void setModifyMode(bool blnEdit)
         {
-            txtno.ReadOnly = !blnEdit;            
+            txtno.ReadOnly = !blnEdit;
             txtnumnow.ReadOnly = !blnEdit;
             txtuser.ReadOnly = !blnEdit;
             txtrek.ReadOnly = !blnEdit;
-
             btn_js.Enabled = blnEdit;
-
         }
-        private bool ValidateIput()
+
+        private bool validateInput()
         {
             if (this.txttyid.Text.Trim() == "")
             {
@@ -59,39 +60,23 @@ namespace WinFrm.Views
                 this.txtname.Focus();
                 return false;
             }
-            
             return true;
         }
-        private void ClearCtlValue()
+
+        private void rstValue()
         {
+            txttyid.Text = "";
             txtno.Text = txtname.Text = "";
             txttime.Text = txtrek.Text = "";
-            txttyid.Text = "";
-
             txtnumnow.Text = txtnumold.Text = txtuser.Text = "";
         }
-        private void frmpan_Load(object sender, EventArgs e)
+
+        private void checkManage_Load(object sender, EventArgs e)
         {
-            BindData("");
+            bindData("");
         }
 
-        BLL.tb_proc dalt = new BLL.tb_proc();
-
-        private string GetStr(string _no)
-        {
-            string reStr = "";
-            if (!string.IsNullOrEmpty(_no))
-            {
-                DataTable dt = dalt.GetList(" p_no='" + _no + "' ").Tables[0];
-                txttyid.Text = dt.Rows[0]["p_id"].ToString();
-                txtnumold.Text = dt.Rows[0]["p_num"].ToString();
-                reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
-            }
-
-            return reStr;
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             optrowid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -103,7 +88,7 @@ namespace WinFrm.Views
                     Model.tb_proc ml = new Model.tb_proc();
                     ml = dalt.GetModel(int.Parse(model.p_pid.ToString()));
                     txtname.Text = ml.p_name;
-                    txtno.Text = ml.p_no;                    
+                    txtno.Text = ml.p_no;
                     txttyid.Text = model.p_pid.ToString();
 
                     txttime.Text = model.p_time;
@@ -116,19 +101,19 @@ namespace WinFrm.Views
             }
         }
 
-        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        private void tbBtnClick(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button.ToolTipText == "新增")
             {
-                ClearCtlValue();
-                SetModifyMode(true);
+                rstValue();
+                setModifyMode(true);
                 optrowid = null;
             }
             if (e.Button.ToolTipText == "修改")
             {
                 if (!String.IsNullOrEmpty(optrowid))
                 {
-                    SetModifyMode(true);
+                    setModifyMode(true);
                 }
                 else
                 {
@@ -144,10 +129,10 @@ namespace WinFrm.Views
                     if (result == DialogResult.OK)
                     {
                         dal.Delete(int.Parse(optrowid));
-                        ClearCtlValue();
+                        rstValue();
                         MessageBox.Show("恭喜你，删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        BindData("");
-                        SetModifyMode(false);
+                        bindData("");
+                        setModifyMode(false);
                         optrowid = null;
                     }
                 }
@@ -159,7 +144,7 @@ namespace WinFrm.Views
             }
             if (e.Button.ToolTipText == "提交")
             {
-                if (ValidateIput())
+                if (validateInput())
                 {
                     model = new Model.tb_pan();
                     if (!String.IsNullOrEmpty(optrowid))
@@ -171,10 +156,10 @@ namespace WinFrm.Views
                     model.p_user = txtuser.Text;
                     model.p_remark = this.txtrek.Text;
 
-                    
+
                     if (String.IsNullOrEmpty(optrowid))
                     {
-                        
+
                         int i = dal.Add(model);
                         if (i > 0)
                         {
@@ -184,9 +169,9 @@ namespace WinFrm.Views
                             molp.p_num = model.p_numnow;
                             dalp.Update(molp);
                             MessageBox.Show("恭喜你，新增成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -200,9 +185,9 @@ namespace WinFrm.Views
                             molp.p_num = model.p_numnow;
                             dalp.Update(molp);
                             MessageBox.Show("恭喜你，修改成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearCtlValue();
-                            BindData("");
-                            SetModifyMode(false);
+                            rstValue();
+                            bindData("");
+                            setModifyMode(false);
                             optrowid = null;
                         }
                     }
@@ -211,9 +196,9 @@ namespace WinFrm.Views
 
             if (e.Button.ToolTipText == "取消")
             {
-                BindData("");
-                ClearCtlValue();
-                SetModifyMode(false);
+                bindData("");
+                rstValue();
+                setModifyMode(false);
                 optrowid = null;
             }
 
@@ -223,20 +208,28 @@ namespace WinFrm.Views
             }
         }
 
-        private void btn_js_Click(object sender, EventArgs e)
+        private void btnChooseClick(object sender, EventArgs e)
         {
             if (this.txtno.Text.Trim() == "")
             {
                 MessageBox.Show("请输入商品编号", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.txtno.Focus();
             }
-            txtname.Text = GetStr(txtno.Text);
+            txtname.Text = getStr(txtno.Text);
             txttime.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private string getStr(string _no)
         {
-
+            string reStr = "";
+            if (!string.IsNullOrEmpty(_no))
+            {
+                DataTable dt = dalt.GetList(" p_no='" + _no + "' ").Tables[0];
+                txttyid.Text = dt.Rows[0]["p_id"].ToString();
+                txtnumold.Text = dt.Rows[0]["p_num"].ToString();
+                reStr = dt.Rows.Count > 0 ? dt.Rows[0]["p_name"].ToString() : "";
+            }
+            return reStr;
         }
     }
 }

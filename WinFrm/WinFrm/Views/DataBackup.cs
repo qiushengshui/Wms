@@ -35,12 +35,10 @@ namespace WinFrm.Views
                 str = str.Substring(0, str.LastIndexOf("\\"));//指定获得路径
                 str = str.Substring(0, str.LastIndexOf("\\"));
                 str += @"\Backup";
-
                 string sql = string.Format("backup database dbcvT to disk='" + str + "\\" + textBox1.Text.Trim() + ".bak" + "'");
                 int i = DbSQL.getbyquery(sql);
                 if (MessageBox.Show("OK", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.OK)
                 { this.Close(); }
-
             }
             catch (Exception ex)
             {

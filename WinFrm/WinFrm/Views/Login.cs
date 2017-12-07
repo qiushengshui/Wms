@@ -13,12 +13,16 @@ namespace WinFrm
     /// </summary>
     public partial class Login : Form
     {
+        // 业务逻辑层（BLL）/实体类库（Model）/数据访问层（DAL） 三层调用
+        private BLL.tb_user dal = new BLL.tb_user();
+        private Model.tb_user user = new Model.tb_user();
+
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnConfirmClick(object sender, EventArgs e)
         {
             //string pgname = txtUser.Text.ToString().Trim();
             //string pgpwd = txtPwd.Text.ToString().Trim();
@@ -32,37 +36,12 @@ namespace WinFrm
                 txtUser.Focus();
                 return;
             }
-            // 业务逻辑层（BLL）/实体类库（Model）/数据访问层（DAL） 三层调用
-            BLL.tb_user dal = new BLL.tb_user();
-            Model.tb_user user = new Model.tb_user();
             user = dal.GetModel(pgname, pgpwd);
-
             if (user != null)
             {
                 switch (user.u_type)
                 {
-                    case 2:
-                        //gan.frmain f3 = new gan.frmain();
-                        //f3.m_id = model.u_id.ToString();
-                        //f3.m_ty = model.u_type.ToString();
-                        //f3.Show();
-                        break;
-                    case 3:
-                        if (cbAccountType.Text != "普通用户")
-                        {
-                            MessageBox.Show("登录权限错误");
-                        }
-                        else
-                        {
-                            Views.Main f3 = new Views.Main();
-                            f3.m_username = user.u_name;
-                            f3.m_id = user.u_id.ToString();
-                            f3.m_ty = user.u_type.ToString();
-                            f3.Show();
-                            this.Hide();
-                        }
-                        break;
-                    case 4:
+                    case 0:
                         if (cbAccountType.Text != "管理员")
                         {
                             MessageBox.Show("登录权限错误");
@@ -77,11 +56,26 @@ namespace WinFrm
                             this.Hide();
                         }
                         break;
+                    case 1:
+                        if (cbAccountType.Text != "普通用户")
+                        {
+                            MessageBox.Show("登录权限错误");
+                        }
+                        else
+                        {
+                            Views.Main main = new Views.Main();
+                            main.m_username = user.u_name;
+                            main.m_id = user.u_id.ToString();
+                            main.m_ty = user.u_type.ToString();
+                            main.Show();
+                            this.Hide();
+                        }
+                        break;
+
                     default:
                         MessageBox.Show("数据错误");
                         break;
                 }
-
             }
             else
             {
@@ -89,9 +83,11 @@ namespace WinFrm
                 return;
             }
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+
+        private void btnCancelClick(object sender, EventArgs e)
         {
-            txtUser.Text = txtPwd.Text = "";
+            txtUser.Text = "";
+            txtPwd.Text = "";
             this.Close();
         }
     }

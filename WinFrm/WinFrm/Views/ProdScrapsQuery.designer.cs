@@ -1,6 +1,6 @@
 ﻿namespace WinFrm.Views
 {
-    partial class InventoryWarningQuery
+    partial class ProdScrapsQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,107 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryWarningQuery));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdScrapsQuery));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.export = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.z_name = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.z_no = new System.Windows.Forms.TextBox();
+            this.txtno = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(15, 56);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(898, 405);
+            this.groupBox1.TabIndex = 83;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "出库履历列表";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(886, 368);
+            this.dataGridView1.TabIndex = 45;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(722, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 85;
+            this.button1.Text = "查询";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnQueryClick);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.export);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.txtname);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.txtno);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Location = new System.Drawing.Point(18, -5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(895, 53);
+            this.groupBox3.TabIndex = 85;
+            this.groupBox3.TabStop = false;
+            // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(803, 22);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(75, 23);
+            this.export.TabIndex = 91;
+            this.export.Text = "导出";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
+            // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(230, 23);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(109, 21);
+            this.txtname.TabIndex = 84;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(172, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 12);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "商品名称：";
+            // 
+            // txtno
+            // 
+            this.txtno.Location = new System.Drawing.Point(70, 23);
+            this.txtno.Name = "txtno";
+            this.txtno.Size = new System.Drawing.Size(89, 21);
+            this.txtno.TabIndex = 82;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "商品编号：";
             // 
             // imageList1
             // 
@@ -68,104 +153,18 @@
             this.imageList2.Images.SetKeyName(4, "");
             this.imageList2.Images.SetKeyName(5, "");
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 92);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(791, 338);
-            this.groupBox1.TabIndex = 74;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "商品列表";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(778, 308);
-            this.dataGridView1.TabIndex = 45;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.export);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.z_name);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.z_no);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(784, 83);
-            this.groupBox3.TabIndex = 86;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "搜索";
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(524, 32);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 92;
-            this.export.Text = "导出";
-            this.export.UseVisualStyleBackColor = true;
-            this.export.Click += new System.EventHandler(this.导出报表exportExcel);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(443, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 85;
-            this.button1.Text = "查询";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnQueryClick);
-            // 
-            // z_name
-            // 
-            this.z_name.Location = new System.Drawing.Point(278, 33);
-            this.z_name.Name = "z_name";
-            this.z_name.Size = new System.Drawing.Size(151, 21);
-            this.z_name.TabIndex = 84;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(220, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 12);
-            this.label13.TabIndex = 83;
-            this.label13.Text = "商品名称：";
-            // 
-            // z_no
-            // 
-            this.z_no.Location = new System.Drawing.Point(70, 33);
-            this.z_no.Name = "z_no";
-            this.z_no.Size = new System.Drawing.Size(131, 21);
-            this.z_no.TabIndex = 82;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 12);
-            this.label11.TabIndex = 81;
-            this.label11.Text = "商品编号：";
-            // 
-            // InventoryWarningQuery
+            // ProdScrapsQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 438);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(920, 456);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.MaximizeBox = false;
-            this.Name = "InventoryWarningQuery";
+            this.Name = "ProdScrapsQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "综合查询>商品库存报警";
-            this.Load += new System.EventHandler(this.inventoryWarningQuery_Load);
+            this.Text = "综合查询>商品报废查询";
+            this.Load += new System.EventHandler(this.stockOutRecordQuery_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -176,16 +175,16 @@
 
         #endregion
 
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox z_name;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox z_no;
+        private System.Windows.Forms.TextBox txtno;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Button export;
     }
 }

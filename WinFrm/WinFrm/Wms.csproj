@@ -8,8 +8,8 @@
     <ProjectGuid>{1DF451A6-BDD7-449C-B3E1-C30875E481CE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFrm</RootNamespace>
-    <AssemblyName>WinFrm</AssemblyName>
+    <RootNamespace>Wms</RootNamespace>
+    <AssemblyName>Wms</AssemblyName>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -92,11 +92,6 @@
     <Compile Include="DAL\tb_ruzhu.cs" />
     <Compile Include="DAL\tb_type.cs" />
     <Compile Include="DAL\tb_user.cs" />
-    <Compile Include="Utils\CommandInfo.cs" />
-    <Compile Include="Utils\DbHelperSQL.cs" />
-    <Compile Include="Utils\DESEncrypt.cs" />
-    <Compile Include="Utils\PubConstant.cs" />
-    <Compile Include="Utils\SQLHelper.cs" />
     <Compile Include="Model\tb_churu.cs" />
     <Compile Include="Model\tb_kehu.cs" />
     <Compile Include="Model\tb_ku.cs" />
@@ -161,17 +156,23 @@
     <Compile Include="Views\ProdInventoryQuery.Designer.cs">
       <DependentUpon>ProdInventoryQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProdReturnManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProdReturnManage.designer.cs">
+      <DependentUpon>ProdReturnManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StockOutOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\StockOutOrder.Designer.cs">
       <DependentUpon>StockOutOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProdScrap.cs">
+    <Compile Include="Views\ProdScrapsManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ProdScrap.Designer.cs">
-      <DependentUpon>ProdScrap.cs</DependentUpon>
+    <Compile Include="Views\ProdScrapsManage.Designer.cs">
+      <DependentUpon>ProdScrapsManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProdStockOutManage.cs">
       <SubType>Form</SubType>
@@ -184,6 +185,18 @@
     </Compile>
     <Compile Include="Views\StockOutRecordQuery.Designer.cs">
       <DependentUpon>StockOutRecordQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdScrapsQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProdScrapsQuery.designer.cs">
+      <DependentUpon>ProdScrapsQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdReturnQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProdReturnQuery.designer.cs">
+      <DependentUpon>ProdReturnQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StockRecordQuery.cs">
       <SubType>Form</SubType>
@@ -307,17 +320,26 @@
     <EmbeddedResource Include="Views\ProdInventoryQuery.resx">
       <DependentUpon>ProdInventoryQuery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProdReturnManage.resx">
+      <DependentUpon>ProdReturnManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StockOutOrder.resx">
       <DependentUpon>StockOutOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ProdScrap.resx">
-      <DependentUpon>ProdScrap.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ProdScrapsManage.resx">
+      <DependentUpon>ProdScrapsManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProdStockOutManage.resx">
       <DependentUpon>ProdStockOutManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockOutRecordQuery.resx">
       <DependentUpon>StockOutRecordQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProdScrapsQuery.resx">
+      <DependentUpon>ProdScrapsQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProdReturnQuery.resx">
+      <DependentUpon>ProdReturnQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockRecordQuery.resx">
       <DependentUpon>StockRecordQuery.cs</DependentUpon>

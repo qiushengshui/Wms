@@ -12,37 +12,36 @@ namespace WinFrm.Views
     {
         public string m_id = null;
         public string m_ty = null;
+        public string optrowid = null;
+        private BLL.tb_ruzhu dal = new BLL.tb_ruzhu();
+        private Model.tb_ruzhu model = new Model.tb_ruzhu();
+
         public SelectProvider()
         {
             InitializeComponent();
         }
 
-        private void sel_frmrzfang_Load(object sender, EventArgs e)
+        private void selectProvider_Load(object sender, EventArgs e)
         {
             string sql = "";
-            BindData(sql);
+            bindData(sql);
         }
-        public string optrowid = null;
-        BLL.tb_ruzhu dal = new BLL.tb_ruzhu();
-        Model.tb_ruzhu model = new Model.tb_ruzhu();
-        private void BindData(string where)
+
+        private void bindData(string where)
         {
             treeView1.Nodes.Clear();
             DataTable dt = dal.GetList(String.IsNullOrEmpty(where) ? " " : where).Tables[0];
-
             foreach (DataRow r in dt.Rows)
             {
                 TreeNode node = treeView1.Nodes.Add(r["r_id"].ToString(), r["r_name"].ToString());
             }
         }
-        private void ClearCtlValue()
+        private void rstValue()
         {
             txtname.Text = "";
         }
 
-
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void tvSelectProvider(object sender, TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode != null)
             {
@@ -51,13 +50,10 @@ namespace WinFrm.Views
                 lbldeptname.Text = txt;
                 lbldeptid.Text = optrowid;
                 txtname.Text = txt;
-
-
             }
         }
-        public TextBox Fathertxtbox { get; set; }
-        public TextBox FathertxtboxT { get; set; }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btvConfirmClick(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lbldeptid.Text))
             {
@@ -71,6 +67,9 @@ namespace WinFrm.Views
             }
         }
 
+        public TextBox Fathertxtbox { get; set; }
+
+        public TextBox FathertxtboxT { get; set; }
 
     }
 }

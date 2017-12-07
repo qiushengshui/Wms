@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFrm", "WinFrm\WinFrm.csproj", "{1DF451A6-BDD7-449C-B3E1-C30875E481CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wms", "WinFrm\Wms.csproj", "{1DF451A6-BDD7-449C-B3E1-C30875E481CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
