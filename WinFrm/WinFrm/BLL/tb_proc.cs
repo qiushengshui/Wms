@@ -111,6 +111,10 @@ namespace BLL
         {
             return dal.GetListT2(strWhere);
         }
+        public DataSet GetListT3(string strWhere)
+        {
+            return dal.GetListT3(strWhere);
+        }
 		/// <summary>
 		/// 获得前几行数据
 		/// </summary>

@@ -51,16 +51,21 @@ namespace WinFrm.Views
 
         private void SetModifyMode(bool blnEdit)
         {
-            txtno.ReadOnly = !blnEdit;
+            txtOderNo.ReadOnly = !blnEdit;
             txtuser.ReadOnly = !blnEdit;
             txtdesc.ReadOnly = !blnEdit;
             txtsum.ReadOnly = !blnEdit;
-            txtkehu.Enabled = blnEdit;
-            btn_dept.Enabled = blnEdit;
+            txtProvider.ReadOnly = !blnEdit;
+            btnChoose.Enabled = blnEdit;
+
+            btnSearch.Enabled = blnEdit;
+            txtname.ReadOnly = !blnEdit;
+            txtnum.ReadOnly = !blnEdit;
+            txtProdNo.ReadOnly = !blnEdit;
         }
         private bool ValidateIput()
         {
-            if (this.txtno.Text.Trim() == "")
+            if (this.txtOderNo.Text.Trim() == "")
             {
                 MessageBox.Show("请填写订单编号", "选择提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
@@ -70,13 +75,19 @@ namespace WinFrm.Views
                 MessageBox.Show("请选择订单客户", "选择提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
-
             return true;
         }
         private void ClearCtlValue()
         {
-            txtno.Text = txtkehu.Text = txtkhid.Text = txtuser.Text = "";
-            txtdesc.Text = txtsum.Text = "";
+            txtOderNo.Text = "";
+            txtProvider.Text = "";
+            txtkhid.Text = "";
+            txtuser.Text = "";
+            txtdesc.Text = "";
+            txtsum.Text = "";
+            txtname.Text = "";
+            txtnum.Text = "";
+            txtProdNo.Text = "";
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,13 +99,20 @@ namespace WinFrm.Views
                 model = dal.GetModel(Int32.Parse(optrowid));
                 if (model != null)
                 {
-                    txtno.Text = model.o_no;
+                    txtOderNo.Text = model.o_no;
                     txtkhid.Text = model.o_busy.ToString();
                     modelz = dalz.GetModel((int)model.o_busy);
-                    txtkehu.Text = modelz.r_name;
+                    txtProvider.Text = modelz.r_name;
                     txtsum.Text = model.o_sum;
                     txtdesc.Text = model.o_desc;
                     txtuser.Text = model.o_user;
+                    txtnum.Text = model.o_num + "";
+                    DataTable dt = dalt.GetList(" p_id='" + model.o_pid + "'").Tables[0];
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtname.Text = dt.Rows[0]["p_name"].ToString();
+                        txtProdNo.Text = dt.Rows[0]["p_no"].ToString();
+                    }
                 }
             }
         }
@@ -147,13 +165,15 @@ namespace WinFrm.Views
                     model = new Model.tb_order();
                     if (!String.IsNullOrEmpty(optrowid))
                     {
-                        model = dal.GetModel(int.Parse(optrowid)); 
+                        model = dal.GetModel(int.Parse(optrowid));
                     }
                     model.o_busy = int.Parse(this.txtkhid.Text);
-                    model.o_no = this.txtno.Text;
+                    model.o_no = this.txtOderNo.Text;
                     model.o_sum = this.txtsum.Text;
                     model.o_desc = this.txtdesc.Text;
                     model.o_user = this.txtuser.Text;
+                    model.o_num = int.Parse(this.txtnum.Text);
+                    model.o_pid = pid;
                     model.o_type = 1;
                     if (String.IsNullOrEmpty(optrowid))
                     {
@@ -200,12 +220,45 @@ namespace WinFrm.Views
         private void btn_dept_Click(object sender, EventArgs e)
         {
             SelectProvider f2 = new SelectProvider();
-            f2.Fathertxtbox = this.txtkehu;
+            f2.Fathertxtbox = this.txtProvider;
             f2.FathertxtboxT = this.txtkhid;
             f2.Show();
         }
 
+        private void btn_js_Click(object sender, EventArgs e)
+        {
+            if (this.txtProdNo.Text.Trim() == "")
+            {
+                MessageBox.Show("请输入商品编号", "输入提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.txtProdNo.Focus();
+            }
+            else
+            {
+                GetStr(txtProdNo.Text);
+            }
+        }
 
+
+        BLL.tb_proc dalt = new BLL.tb_proc();
+        private int pid;
+        private void GetStr(string _no)
+        {
+            if (!string.IsNullOrEmpty(_no))
+            {
+                //DataTable dt = dalt.GetList(" p_no='" + _no + "' and p_rzfid=" + txtorder.SelectedValue).Tables[0];
+                DataTable dt = dalt.GetList(" p_no='" + _no + "'").Tables[0];
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("该系统无此商品，请先到商品管理中添加该商品！");
+                    return;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    txtname.Text = dt.Rows[0]["p_name"].ToString();
+                    pid = Convert.ToInt32(dt.Rows[0]["p_id"]);
+                }
+            }
+        }
 
     }
 }

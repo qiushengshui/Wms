@@ -430,6 +430,7 @@ namespace DAL
 			}
 			return DbSQL.Query(strSql.ToString());
 		}
+
         public DataSet GetListT(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
@@ -446,6 +447,18 @@ namespace DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select p_id,p_no,p_name,p_num,tb.t_name,p_pinpai,p_model,tc.k_name,td.k_name,p_shang,r_name ");
             strSql.Append(" FROM tb_proc ta inner join tb_type tb on ta.p_tyid=tb.t_id inner join tb_ku tc on ta.p_ckid=tc.k_id inner join tb_ku td on ta.p_kqid=td.k_id inner join tb_ruzhu te on ta.p_rzfid=te.r_id ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return DbSQL.Query(strSql.ToString());
+        }
+
+        public DataSet GetListT3(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select p_id,p_no,p_name,p_tyid,p_pinpai,p_model,p_shang,p_price,p_unit,p_sx,p_xx,p_desc,p_addtime,p_ckid,p_kqid,p_num,p_rzfid,tr.r_name ");
+            strSql.Append(" FROM tb_proc tp inner join tb_ruzhu tr on tp.p_rzfid = tr.r_id ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
