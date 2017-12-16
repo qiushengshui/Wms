@@ -190,7 +190,13 @@ namespace Wms.Views
                     model.cr_remark = txtrek.Text;
                     model.cr_type = 1;
                     model.cr_yan = int.Parse(this.txtstatus.SelectedValue.ToString());
-                    model.cr_num = int.Parse(this.txtnum.Text);
+                    int tempNum = int.Parse(this.txtnum.Text);
+                    if (tempNum <= 0)
+                    {
+                        MessageBox.Show("输入数量有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    model.cr_num = tempNum;
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");
@@ -199,16 +205,31 @@ namespace Wms.Views
                             BLL.tb_proc dap = new BLL.tb_proc();
                             Model.tb_proc mop = new Model.tb_proc();
                             mop = dap.GetModel(int.Parse(txttyid.Text));
-                            mop.p_num = mop.p_num + int.Parse(this.txtnum.Text);
+                            if (model.cr_yan == 1)
+                            {
+                                mop.p_num = mop.p_num + int.Parse(this.txtnum.Text); //验收状态：是
+                            }
+                            else
+                            {
+                                mop.p_num = mop.p_num + 0; //验收状态：否
+                            }
                             if (!string.IsNullOrEmpty(mop.p_sx))
                             {
                                 if (mop.p_num > int.Parse(mop.p_sx))
                                 {
-                                    MessageBox.Show("已超过库存预警上限，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                                    MessageBox.Show("已超过库存预警上限，请更换", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
                                 }
                             }
                             dap.Update(mop);
-                            MessageBox.Show("恭喜你，入库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (model.cr_yan == 1)
+                            {
+                                MessageBox.Show("恭喜你，验收入库成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information); //验收状态：是
+                            }
+                            else
+                            {
+                                MessageBox.Show("商品验收入库失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information); //验收状态：否
+                            }
                             rstValue();
                             bindData("cr_type=1");
                             setModifyMode(false);

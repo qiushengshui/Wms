@@ -47,7 +47,7 @@ namespace Wms.Views
 
         private void main_Load(object sender, EventArgs e)
         {
-            if (m_ty == "3")
+            if (m_ty == "1")
             {
                 tsddbMasterFileManage.Visible = false;
                 ttsddbSystemManage.DropDownItems[0].Visible = false;
@@ -64,7 +64,7 @@ namespace Wms.Views
                 inventoryWarningQuery.m_ty = m_ty;
                 inventoryWarningQuery.Show();
             }
-            tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "4" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
+            tsslWelcomeInfo.Text = this.m_username + "（" + (this.m_ty == "0" ? "管理员" : "普通用户") + "） " + tsslWelcomeInfo.Text;
         }
 
         private void 修改密码tsmiChangePwd(object sender, EventArgs e)
@@ -370,6 +370,25 @@ namespace Wms.Views
         {
             DateTime dt = System.DateTime.Now;
             tsslDateInfo.Text = dt.ToString();
+        }
+
+        private void 日历ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Calendar myrl = new Calendar();
+            myrl.MdiParent = this;
+            myrl.Show();
+        }
+
+        private void 记事本tsmiCalendar(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("notepad.exe");
+        }
+
+        private void 关于tsmiAbout(object sender, EventArgs e)
+        {
+            About myabout = new About();
+            myabout.MdiParent = this;
+            myabout.Show();
         }
 
     }

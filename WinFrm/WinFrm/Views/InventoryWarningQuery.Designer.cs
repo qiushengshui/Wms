@@ -164,7 +164,7 @@
             this.MaximizeBox = false;
             this.Name = "InventoryWarningQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "综合查询>商品库存报警";
+            this.Text = "综合查询>商品报警查询";
             this.Load += new System.EventHandler(this.inventoryWarningQuery_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

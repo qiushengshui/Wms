@@ -175,7 +175,13 @@ namespace Wms.Views
                     model.o_sum = this.txtsum.Text;
                     model.o_desc = this.txtdesc.Text;
                     model.o_user = this.txtuser.Text;
-                    model.o_num = int.Parse(this.txtnum.Text);
+                    int tempNum = int.Parse(this.txtnum.Text);
+                    if (tempNum <= 0)
+                    {
+                        MessageBox.Show("输入数量有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    model.o_num = tempNum;
                     model.o_pid = pid;
                     model.o_type = 1;
                     if (String.IsNullOrEmpty(optrowid))

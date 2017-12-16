@@ -134,7 +134,13 @@ namespace Wms.Views
                     model.cr_pid = int.Parse(txttyid.Text);
                     model.cr_remark = txtdesc.Text;
                     model.cr_type = 4;
-                    model.cr_num = int.Parse(this.txtnum.Text);
+                    int tempNum = int.Parse(this.txtnum.Text);
+                    if (tempNum <= 0)
+                    {
+                        MessageBox.Show("输入数量有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    model.cr_num = tempNum;
                     if (String.IsNullOrEmpty(optrowid))
                     {
                         model.cr_time = System.DateTime.Now.ToString("yyyy-MM-dd");

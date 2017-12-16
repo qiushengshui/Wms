@@ -107,9 +107,35 @@ namespace Wms.Views
                     {
                         model = dal.GetModel(int.Parse(optrowid));
                     }
+                    if (!string.IsNullOrEmpty(this.txtsx.Text))
+                    {
+                        int tempSx = int.Parse(this.txtsx.Text);
+                        if (tempSx < 0)
+                        {
+                            MessageBox.Show("预警上限数量输入有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        model.p_sx = tempSx + "";
+                    }
+                    else
+                    {
+                        model.p_xx = "";
+                    }
 
-                    model.p_sx = this.txtsx.Text;
-                    model.p_xx = this.txtxx.Text;
+                    if (!string.IsNullOrEmpty(this.txtxx.Text))
+                    {
+                        int tempXx = int.Parse(this.txtxx.Text);
+                        if (tempXx < 0)
+                        {
+                            MessageBox.Show("预警下限数量输入有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        model.p_xx = tempXx + "";
+                    }
+                    else
+                    {
+                        model.p_xx = "";
+                    }
 
                     if (!String.IsNullOrEmpty(optrowid))
                     {

@@ -151,8 +151,20 @@ namespace Wms.Views
                     { model = dal.GetModel(int.Parse(optrowid)); }
                     model.p_pid = int.Parse(this.txttyid.Text);
                     model.p_time = this.txttime.Text;
-                    model.p_numold = decimal.Parse(this.txtnumold.Text);
-                    model.p_numnow = int.Parse(this.txtnumnow.Text);
+                    int tempNumold = int.Parse(this.txtnumold.Text);
+                    if (tempNumold < 0)
+                    {
+                        MessageBox.Show("输入数量有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    model.p_numold = tempNumold;
+                    int tempNumnow = int.Parse(this.txtnumnow.Text);
+                    if (tempNumnow < 0)
+                    {
+                        MessageBox.Show("输入数量有误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    model.p_numnow = tempNumnow;
                     model.p_user = txtuser.Text;
                     model.p_remark = this.txtrek.Text;
 

@@ -102,6 +102,12 @@
     <Compile Include="Model\tb_type.cs" />
     <Compile Include="Model\tb_user.cs" />
     <Compile Include="Utils\ExportToExcel.cs" />
+    <Compile Include="Views\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Views\ProdReturnManage.designer.cs">
       <DependentUpon>ProdReturnManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StockOutOrder.cs">
       <SubType>Form</SubType>
@@ -290,6 +302,9 @@
     </Compile>
     <Compile Include="Views\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DataBackup.resx">
       <DependentUpon>DataBackup.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProdReturnManage.resx">
       <DependentUpon>ProdReturnManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockOutOrder.resx">
       <DependentUpon>StockOutOrder.cs</DependentUpon>
@@ -436,6 +454,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="bin\Debug\zxing.dll" />
+    <Content Include="Images\xpic10049.jpg" />
+    <Content Include="Images\xpic1333.jpg" />
+    <Content Include="Images\超市管理系统.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

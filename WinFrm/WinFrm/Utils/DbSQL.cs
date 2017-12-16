@@ -12,7 +12,8 @@ namespace Wms.Utils
 {
     public class DbSQL
     {
-        //数据库连接字符串	用户需调整
+        //数据库连接字符串	
+        //public static string connectionString = (@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=dbcvT;Data Source=.\SQLEXPRESS");
         public static string connectionString = "server=localhost;database=dbcvT;uid=sa;pwd=111111";
         //public static string connectionString = "Data Source=.\\ddzx00;Initial Catalog=dbyao;User ID=sa;pwd=111";
         public DbSQL()
