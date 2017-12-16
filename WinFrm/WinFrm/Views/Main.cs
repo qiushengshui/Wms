@@ -55,7 +55,7 @@ namespace Wms.Views
             }
             //开启实时时间刷新任务
             this.timer.Enabled = true;
-            DataSet ds = dal.GetListT2("p_num<=p_xx");
+            DataSet ds = dal.GetListT2("p_num<=p_xx OR p_num >= p_sx ");
             if (ds.Tables[0].Rows.Count > 0)
             {
                 InventoryWarningQuery inventoryWarningQuery = new InventoryWarningQuery();

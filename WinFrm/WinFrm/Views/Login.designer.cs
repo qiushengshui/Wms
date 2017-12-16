@@ -41,7 +41,7 @@
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(213, 252);
+            this.txtPwd.Location = new System.Drawing.Point(236, 252);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(162, 21);
@@ -49,7 +49,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(213, 216);
+            this.txtUser.Location = new System.Drawing.Point(236, 216);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(162, 21);
             this.txtUser.TabIndex = 28;
@@ -59,7 +59,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(98, 256);
+            this.label2.Location = new System.Drawing.Point(122, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 12);
             this.label2.TabIndex = 27;
@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(99, 220);
+            this.label1.Location = new System.Drawing.Point(122, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 12);
             this.label1.TabIndex = 26;
@@ -80,22 +80,22 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(310, 321);
+            this.btnCancel.Location = new System.Drawing.Point(333, 321);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(65, 24);
             this.btnCancel.TabIndex = 25;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "取  消";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancelClick);
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Transparent;
-            this.btnOK.Location = new System.Drawing.Point(98, 321);
+            this.btnOK.Location = new System.Drawing.Point(122, 321);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(65, 24);
             this.btnOK.TabIndex = 24;
-            this.btnOK.Text = "登录";
+            this.btnOK.Text = "登  录";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnConfirmClick);
             // 
@@ -104,7 +104,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(98, 292);
+            this.label3.Location = new System.Drawing.Point(122, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 12);
             this.label3.TabIndex = 30;
@@ -116,7 +116,7 @@
             this.cbAccountType.Items.AddRange(new object[] {
             "管理员",
             "普通用户"});
-            this.cbAccountType.Location = new System.Drawing.Point(213, 288);
+            this.cbAccountType.Location = new System.Drawing.Point(236, 288);
             this.cbAccountType.Margin = new System.Windows.Forms.Padding(2);
             this.cbAccountType.Name = "cbAccountType";
             this.cbAccountType.Size = new System.Drawing.Size(162, 20);
